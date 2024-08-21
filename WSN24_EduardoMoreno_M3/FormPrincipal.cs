@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WSN24_EduardoMoreno_M3.TipoFilme;
 
 namespace WSN24_EduardoMoreno_M3
 {
@@ -20,7 +21,24 @@ namespace WSN24_EduardoMoreno_M3
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } // Fechar
+
+        #region MenuStrip - Cinemas
+
+        #endregion
+
+
+        #region MenuStrip - Salas
+
+        #endregion
+
+
+        #region MenuStrip - Sessões
+
+        #endregion
+
+
+        #region MenuStrip - Filmes
 
         private void registarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
@@ -39,5 +57,20 @@ namespace WSN24_EduardoMoreno_M3
             using (var formListarFilme = new FormListarFilme())
             { formListarFilme.ShowDialog(); }
         }
+
+        #endregion
+
+        // neste momento estou a trabalhar aqui
+
+        #region MenuStrip - Tipos de Filme
+
+        private void registarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            using (var formListarTipoFilme = new FormRegistoTipoFilme())
+            { formListarTipoFilme.ShowDialog(); }
+        }
+
+        #endregion
+
     }
 }

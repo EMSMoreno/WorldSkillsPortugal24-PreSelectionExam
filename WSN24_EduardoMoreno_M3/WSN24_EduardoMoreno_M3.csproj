@@ -52,16 +52,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bdCineSkills_EduardoMoreno_N24DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FormEditarFilme.cs">
+    <Compile Include="Filmes\FormEditarFilme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditarFilme.Designer.cs">
+    <Compile Include="Filmes\FormEditarFilme.Designer.cs">
       <DependentUpon>FormEditarFilme.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListarFilme.cs">
+    <Compile Include="Filmes\FormListarFilme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListarFilme.Designer.cs">
+    <Compile Include="Filmes\FormListarFilme.Designer.cs">
       <DependentUpon>FormListarFilme.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
@@ -70,24 +70,30 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistoFilme.cs">
+    <Compile Include="Filmes\FormRegistoFilme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistoFilme.Designer.cs">
+    <Compile Include="Filmes\FormRegistoFilme.Designer.cs">
       <DependentUpon>FormRegistoFilme.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormEditarFilme.resx">
+    <Compile Include="TipoFilme\FormRegistoTipoFilme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoFilme\FormRegistoTipoFilme.Designer.cs">
+      <DependentUpon>FormRegistoTipoFilme.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Filmes\FormEditarFilme.resx">
       <DependentUpon>FormEditarFilme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListarFilme.resx">
+    <EmbeddedResource Include="Filmes\FormListarFilme.resx">
       <DependentUpon>FormListarFilme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistoFilme.resx">
+    <EmbeddedResource Include="Filmes\FormRegistoFilme.resx">
       <DependentUpon>FormRegistoFilme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -99,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TipoFilme\FormRegistoTipoFilme.resx">
+      <DependentUpon>FormRegistoTipoFilme.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="bdCineSkills_EduardoMoreno_N24DataSet.xsc">
       <DependentUpon>bdCineSkills_EduardoMoreno_N24DataSet.xsd</DependentUpon>
     </None>
@@ -122,6 +131,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cinemas\" />
+    <Folder Include="Salas\" />
+    <Folder Include="Sessões\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
