@@ -1,6 +1,6 @@
 # WorldSkills Pre-Selection Test: Skillian Cinemas
 
-This repository contains the project developed for the WorldSkills Pre-Selection Exam, focusing on **Skillian Cinemas**.
+This repository contains the official project developed for the WorldSkills Pre-Selection Exam, focusing on **Skillian Cinemas**.
 
 ## Description
 
@@ -38,9 +38,6 @@ The theme of the test was Skillian Cinemas, and the objective was to create a CR
 
 # Contributions
 Contributions are welcome! Feel free to open an issue or submit a pull request.
-
-# License
-This project is licensed under the MIT license.
 
 # Contact Me
 For more information, please contact me via email: emsmoreno@gmail.com
