@@ -18,7 +18,7 @@ The main technologies and tools used in the development of this project are:
 ## Features
 
 - **Movie Registration**
-- - **Types of Movies Associated w/ Movies**
+- **Types of Movies Associated w/ Movies**
 - **Session Management**
 - **Cinema Room Management**
 - **(Local) Place Management**
