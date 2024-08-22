@@ -1,6 +1,26 @@
 # WorldSkills Pre-Selection Test: Skillian Cinemas
 
 This repository contains the official project developed for the WorldSkills Pre-Selection Exam, focusing on **Skillian Cinemas**.
+Developed the app covering three fundamental modules:
+
+- Relational Model Design:
+Creating an efficient relational model to manage complex business data;
+Guarantee of data integrity and consistency through advanced modelling techniques;
+Use ER (Entity-Relationship) diagrams to represent the relationships between different entities in the system.
+
+- Databases:
+Implementation of scalable databases;
+Use of SQL to create, manipulate and query data;
+Query optimization to improve system performance.
+
+- CRUD Operations (Create, Read, Update, Delete):
+Development of UI and functionalities to allow complete interaction with the database;
+Implementation of safe and efficient CRUD operations;
+Rigorous testing to ensure the accuracy and reliability of operations;
+
+Overview:
+Delivery of a functional system that meets business needs, with a user-friendly interface and a solid data architecture;
+Demonstration of advanced technical skills and ability to solve complex problems.
 
 ## Description
 
