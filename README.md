@@ -42,14 +42,6 @@ The main technologies and tools used in the development of this project are:
 - **Session Management**
 - **Cinema Room Management**
 - **(Local) Place Management**
-- 
-## How to Run the Project
-
-To run the project locally, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/username/skillian-cinemas-project.git
 
 # About This Project
 This project was developed for the WorldSkills Portugal Pre-Selection Test, where it achieved 1st place and took place in May 2024.
