@@ -66,6 +66,8 @@
             this.lblRegistoTipoFilme = new System.Windows.Forms.Label();
             this.cbTiposFilme = new System.Windows.Forms.ComboBox();
             this.btnApagarTipoFilme = new System.Windows.Forms.Button();
+            this.lblApagarTipoFilme = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -351,7 +353,7 @@
             // 
             this.lblRegistoTipoFilme.AutoSize = true;
             this.lblRegistoTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(175, 158);
+            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(195, 158);
             this.lblRegistoTipoFilme.Name = "lblRegistoTipoFilme";
             this.lblRegistoTipoFilme.Size = new System.Drawing.Size(213, 24);
             this.lblRegistoTipoFilme.TabIndex = 9;
@@ -361,17 +363,18 @@
             // 
             this.cbTiposFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTiposFilme.FormattingEnabled = true;
-            this.cbTiposFilme.Location = new System.Drawing.Point(179, 234);
+            this.cbTiposFilme.Location = new System.Drawing.Point(199, 252);
             this.cbTiposFilme.Name = "cbTiposFilme";
             this.cbTiposFilme.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbTiposFilme.Size = new System.Drawing.Size(238, 21);
+            this.cbTiposFilme.Size = new System.Drawing.Size(209, 21);
             this.cbTiposFilme.TabIndex = 51;
             // 
             // btnApagarTipoFilme
             // 
             this.btnApagarTipoFilme.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnApagarTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnApagarTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagarTipoFilme.Location = new System.Drawing.Point(460, 226);
+            this.btnApagarTipoFilme.Location = new System.Drawing.Point(229, 305);
             this.btnApagarTipoFilme.Name = "btnApagarTipoFilme";
             this.btnApagarTipoFilme.Size = new System.Drawing.Size(138, 35);
             this.btnApagarTipoFilme.TabIndex = 52;
@@ -379,11 +382,34 @@
             this.btnApagarTipoFilme.UseVisualStyleBackColor = false;
             this.btnApagarTipoFilme.Click += new System.EventHandler(this.btnApagarTipoFilme_Click);
             // 
+            // lblApagarTipoFilme
+            // 
+            this.lblApagarTipoFilme.AutoSize = true;
+            this.lblApagarTipoFilme.Location = new System.Drawing.Point(213, 224);
+            this.lblApagarTipoFilme.Name = "lblApagarTipoFilme";
+            this.lblApagarTipoFilme.Size = new System.Drawing.Size(169, 13);
+            this.lblApagarTipoFilme.TabIndex = 54;
+            this.lblApagarTipoFilme.Text = "Escolhe o Tipo de Filme a Apagar:\r\n";
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(469, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 47);
+            this.btnClose.TabIndex = 53;
+            this.btnClose.Text = "Fechar Programa";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FormApagarTipoFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(556, 450);
+            this.Controls.Add(this.lblApagarTipoFilme);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnApagarTipoFilme);
             this.Controls.Add(this.cbTiposFilme);
             this.Controls.Add(this.lblRegistoTipoFilme);
@@ -441,5 +467,7 @@
         private System.Windows.Forms.Label lblRegistoTipoFilme;
         private System.Windows.Forms.ComboBox cbTiposFilme;
         private System.Windows.Forms.Button btnApagarTipoFilme;
+        private System.Windows.Forms.Label lblApagarTipoFilme;
+        private System.Windows.Forms.Button btnClose;
     }
 }

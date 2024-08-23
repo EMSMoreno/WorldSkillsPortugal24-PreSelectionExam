@@ -84,6 +84,12 @@
     <Compile Include="TipoFilme\FormApagarTipoFilme.Designer.cs">
       <DependentUpon>FormApagarTipoFilme.cs</DependentUpon>
     </Compile>
+    <Compile Include="TipoFilme\FormEditarTipoFilme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoFilme\FormEditarTipoFilme.Designer.cs">
+      <DependentUpon>FormEditarTipoFilme.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipoFilme\FormRegistoTipoFilme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="TipoFilme\FormApagarTipoFilme.resx">
       <DependentUpon>FormApagarTipoFilme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoFilme\FormEditarTipoFilme.resx">
+      <DependentUpon>FormEditarTipoFilme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TipoFilme\FormRegistoTipoFilme.resx">
       <DependentUpon>FormRegistoTipoFilme.cs</DependentUpon>

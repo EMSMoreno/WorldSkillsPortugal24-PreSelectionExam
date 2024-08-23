@@ -16,6 +16,8 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             LoadTiposFilme();
         }
 
+        #region Methods
+
         private void FormRegistoTipoFilme_Load(object sender, EventArgs e)
         {
             GenerateNewID();
@@ -83,6 +85,10 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
         }
 
+        #endregion
+
+        #region UI
+
         private void btnSaveType_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtTypeName.Text))
@@ -118,5 +124,12 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                 MessageBox.Show("Ocorreu um erro durante o registo do Tipo de Filme: " + ex.Message);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        #endregion
     }
 }

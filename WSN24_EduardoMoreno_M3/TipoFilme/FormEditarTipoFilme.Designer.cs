@@ -1,17 +1,16 @@
-﻿
-namespace WSN24_EduardoMoreno_M3
+﻿namespace WSN24_EduardoMoreno_M3.TipoFilme
 {
-    partial class FormPrincipal
+    partial class FormEditarTipoFilme
     {
         /// <summary>
-        /// Variável de designer necessária.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpar os recursos que estão sendo usados.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,15 +20,15 @@ namespace WSN24_EduardoMoreno_M3
             base.Dispose(disposing);
         }
 
-        #region Código gerado pelo Windows Form Designer
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necessário para suporte ao Designer - não modifique 
-        /// o conteúdo deste método com o editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarTipoFilme));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,17 +64,17 @@ namespace WSN24_EduardoMoreno_M3
             this.registarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTipoFilme = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblRegistoTipoFilme = new System.Windows.Forms.Label();
+            this.lblNomeEditadoTipoFilme = new System.Windows.Forms.Label();
+            this.txtEditarTipoFilme = new System.Windows.Forms.TextBox();
+            this.btnRegistoTipoFilme = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cbTiposFilme = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,10 +85,10 @@ namespace WSN24_EduardoMoreno_M3
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(155, 0);
+            this.panel1.Location = new System.Drawing.Point(146, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(294, 72);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(304, 72);
+            this.panel1.TabIndex = 4;
             // 
             // label3
             // 
@@ -154,39 +153,39 @@ namespace WSN24_EduardoMoreno_M3
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 549);
+            this.menuStrip1.Size = new System.Drawing.Size(152, 450);
             this.menuStrip1.Stretch = false;
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem2.Text = "                       ";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem3.Text = "                        ";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem4.Text = "                 ";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem5.Text = "                  ";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem1.Text = "                     ";
             // 
             // cinemasToolStripMenuItem
@@ -197,7 +196,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem});
             this.cinemasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cinemasToolStripMenuItem.Name = "cinemasToolStripMenuItem";
-            this.cinemasToolStripMenuItem.Size = new System.Drawing.Size(152, 25);
+            this.cinemasToolStripMenuItem.Size = new System.Drawing.Size(148, 25);
             this.cinemasToolStripMenuItem.Text = "Cinemas";
             // 
             // registarToolStripMenuItem
@@ -221,7 +220,7 @@ namespace WSN24_EduardoMoreno_M3
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem6.Text = "                ";
             // 
             // salasToolStripMenuItem
@@ -232,7 +231,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem1});
             this.salasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salasToolStripMenuItem.Name = "salasToolStripMenuItem";
-            this.salasToolStripMenuItem.Size = new System.Drawing.Size(152, 25);
+            this.salasToolStripMenuItem.Size = new System.Drawing.Size(148, 25);
             this.salasToolStripMenuItem.Text = "Salas";
             // 
             // registarToolStripMenuItem1
@@ -256,7 +255,7 @@ namespace WSN24_EduardoMoreno_M3
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem7.Text = "              ";
             // 
             // sessõesToolStripMenuItem
@@ -267,7 +266,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem2});
             this.sessõesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sessõesToolStripMenuItem.Name = "sessõesToolStripMenuItem";
-            this.sessõesToolStripMenuItem.Size = new System.Drawing.Size(152, 25);
+            this.sessõesToolStripMenuItem.Size = new System.Drawing.Size(148, 25);
             this.sessõesToolStripMenuItem.Text = "Sessões";
             // 
             // registarToolStripMenuItem2
@@ -291,7 +290,7 @@ namespace WSN24_EduardoMoreno_M3
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem8.Text = "                ";
             // 
             // filmesToolStripMenuItem
@@ -302,7 +301,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem3});
             this.filmesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(152, 25);
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(148, 25);
             this.filmesToolStripMenuItem.Text = "Filmes";
             // 
             // registarToolStripMenuItem3
@@ -310,26 +309,23 @@ namespace WSN24_EduardoMoreno_M3
             this.registarToolStripMenuItem3.Name = "registarToolStripMenuItem3";
             this.registarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.registarToolStripMenuItem3.Text = "Registar";
-            this.registarToolStripMenuItem3.Click += new System.EventHandler(this.registarToolStripMenuItem3_Click);
             // 
             // editarToolStripMenuItem4
             // 
             this.editarToolStripMenuItem4.Name = "editarToolStripMenuItem4";
             this.editarToolStripMenuItem4.Size = new System.Drawing.Size(142, 26);
             this.editarToolStripMenuItem4.Text = "Editar";
-            this.editarToolStripMenuItem4.Click += new System.EventHandler(this.editarToolStripMenuItem4_Click);
             // 
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
             this.listarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem3.Text = "Listar";
-            this.listarToolStripMenuItem3.Click += new System.EventHandler(this.listarToolStripMenuItem3_Click);
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(152, 19);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(148, 19);
             this.toolStripMenuItem9.Text = "              ";
             // 
             // tiposDeFilmeToolStripMenuItem
@@ -340,106 +336,129 @@ namespace WSN24_EduardoMoreno_M3
             this.apagarToolStripMenuItem});
             this.tiposDeFilmeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tiposDeFilmeToolStripMenuItem.Name = "tiposDeFilmeToolStripMenuItem";
-            this.tiposDeFilmeToolStripMenuItem.Size = new System.Drawing.Size(152, 25);
+            this.tiposDeFilmeToolStripMenuItem.Size = new System.Drawing.Size(148, 25);
             this.tiposDeFilmeToolStripMenuItem.Text = "Tipos de Filme";
             // 
             // registarToolStripMenuItem4
             // 
             this.registarToolStripMenuItem4.Name = "registarToolStripMenuItem4";
-            this.registarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
+            this.registarToolStripMenuItem4.Size = new System.Drawing.Size(142, 26);
             this.registarToolStripMenuItem4.Text = "Registar";
-            this.registarToolStripMenuItem4.Click += new System.EventHandler(this.registarToolStripMenuItem4_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // apagarToolStripMenuItem
             // 
             this.apagarToolStripMenuItem.Name = "apagarToolStripMenuItem";
-            this.apagarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.apagarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.apagarToolStripMenuItem.Text = "Apagar";
-            this.apagarToolStripMenuItem.Click += new System.EventHandler(this.apagarToolStripMenuItem_Click);
             // 
-            // panel2
+            // lblTipoFilme
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(155, 515);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 34);
-            this.panel2.TabIndex = 2;
+            this.lblTipoFilme.AutoSize = true;
+            this.lblTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoFilme.Location = new System.Drawing.Point(175, 93);
+            this.lblTipoFilme.Name = "lblTipoFilme";
+            this.lblTipoFilme.Size = new System.Drawing.Size(164, 29);
+            this.lblTipoFilme.TabIndex = 9;
+            this.lblTipoFilme.Text = "Tipo de Filme";
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(463, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 47);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Fechar Programa";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblRegistoTipoFilme
+            // 
+            this.lblRegistoTipoFilme.AutoSize = true;
+            this.lblRegistoTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(217, 145);
+            this.lblRegistoTipoFilme.Name = "lblRegistoTipoFilme";
+            this.lblRegistoTipoFilme.Size = new System.Drawing.Size(200, 24);
+            this.lblRegistoTipoFilme.TabIndex = 11;
+            this.lblRegistoTipoFilme.Text = "Editar Tipo de Filme";
+            // 
+            // lblNomeEditadoTipoFilme
+            // 
+            this.lblNomeEditadoTipoFilme.AutoSize = true;
+            this.lblNomeEditadoTipoFilme.Location = new System.Drawing.Point(229, 276);
+            this.lblNomeEditadoTipoFilme.Name = "lblNomeEditadoTipoFilme";
+            this.lblNomeEditadoTipoFilme.Size = new System.Drawing.Size(173, 13);
+            this.lblNomeEditadoTipoFilme.TabIndex = 60;
+            this.lblNomeEditadoTipoFilme.Text = "Edita aqui o nome to Tipo de Filme:";
+            // 
+            // txtEditarTipoFilme
+            // 
+            this.txtEditarTipoFilme.Location = new System.Drawing.Point(232, 295);
+            this.txtEditarTipoFilme.Name = "txtEditarTipoFilme";
+            this.txtEditarTipoFilme.Size = new System.Drawing.Size(170, 20);
+            this.txtEditarTipoFilme.TabIndex = 59;
+            // 
+            // btnRegistoTipoFilme
+            // 
+            this.btnRegistoTipoFilme.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRegistoTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.btnRegistoTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(234, 355);
+            this.btnRegistoTipoFilme.Name = "btnRegistoTipoFilme";
+            this.btnRegistoTipoFilme.Size = new System.Drawing.Size(168, 39);
+            this.btnRegistoTipoFilme.TabIndex = 58;
+            this.btnRegistoTipoFilme.Text = "Editar Tipo de Filme";
+            this.btnRegistoTipoFilme.UseVisualStyleBackColor = false;
+            this.btnRegistoTipoFilme.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(167, 10);
+            this.label4.Location = new System.Drawing.Point(229, 207);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(458, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
+            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Tipo de Fiilme:";
             // 
-            // button1
+            // cbTiposFilme
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(823, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 47);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Fechar Programa";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.cbTiposFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTiposFilme.FormattingEnabled = true;
+            this.cbTiposFilme.Location = new System.Drawing.Point(232, 223);
+            this.cbTiposFilme.Name = "cbTiposFilme";
+            this.cbTiposFilme.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbTiposFilme.Size = new System.Drawing.Size(170, 21);
+            this.cbTiposFilme.TabIndex = 56;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(243, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(537, 36);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Bem-vindos aos Cinemas Skillianos.\r\nPor favor selecione umas das opções, que se e" +
-    "ncontram do seu lado esquerdo.";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(286, 204);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(464, 274);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // FormPrincipal
+            // FormEditarTipoFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 549);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(550, 450);
+            this.Controls.Add(this.lblNomeEditadoTipoFilme);
+            this.Controls.Add(this.txtEditarTipoFilme);
+            this.Controls.Add(this.btnRegistoTipoFilme);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbTiposFilme);
+            this.Controls.Add(this.lblRegistoTipoFilme);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.lblTipoFilme);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormPrincipal";
-            this.Text = "Form1";
+            this.Controls.Add(this.panel1);
+            this.Name = "FormEditarTipoFilme";
+            this.Text = "FormEditarTipoFilme";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,46 +467,47 @@ namespace WSN24_EduardoMoreno_M3
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cinemasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sessõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cinemasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem salasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem sessõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem tiposDeFilmeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarToolStripMenuItem;
+        private System.Windows.Forms.Label lblTipoFilme;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblRegistoTipoFilme;
+        private System.Windows.Forms.Label lblNomeEditadoTipoFilme;
+        private System.Windows.Forms.TextBox txtEditarTipoFilme;
+        private System.Windows.Forms.Button btnRegistoTipoFilme;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbTiposFilme;
     }
 }
-

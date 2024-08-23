@@ -12,24 +12,24 @@ using System.Windows.Forms;
 
 namespace WSN24_EduardoMoreno_M3.TipoFilme
 {
-    public partial class FormApagarTipoFilme : Form
+    public partial class FormEditarTipoFilme : Form
     {
         string cs = ConfigurationManager.ConnectionStrings["WorldSkillsPreSelection"].ConnectionString;
 
-        public FormApagarTipoFilme()
+        public FormEditarTipoFilme()
         {
             InitializeComponent();
-            CarregarTiposFilme();
+            LoadTiposFilme();
         }
 
         #region Methods
 
-        private void FormApagarTipoFilme_Load(object sender, EventArgs e)
+        private void FormEditarTipoFilme_Load(object sender, EventArgs e)
         {
-            CarregarTiposFilme();
+            LoadTiposFilme();
         }
 
-        private void CarregarTiposFilme()
+        private void LoadTiposFilme()
         {
             try
             {
@@ -55,15 +55,29 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
         }
 
+        private void cbTiposFilme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTiposFilme.SelectedIndex != -1)
+            {
+                txtEditarTipoFilme.Text = cbTiposFilme.Text;
+            }
+        }
+
         #endregion
 
         #region UI
 
-        private void btnApagarTipoFilme_Click(object sender, EventArgs e)
+        private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             if (cbTiposFilme.SelectedIndex == -1)
             {
-                MessageBox.Show("Seleciona um Tipo de Filme a apagar.");
+                MessageBox.Show("Por favor, selecione um Tipo de Filme para editar.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtEditarTipoFilme.Text))
+            {
+                MessageBox.Show("O nome do Tipo de Filme não pode estar vazio.");
                 return;
             }
 
@@ -74,19 +88,20 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                 using (SqlConnection con = new SqlConnection(cs))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM TipoFilme WHERE id_tipo = @id_tipo", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE TipoFilme SET descricao = @descricao WHERE id_tipo = @id_tipo", con);
+                    cmd.Parameters.AddWithValue("@descricao", txtEditarTipoFilme.Text);
                     cmd.Parameters.AddWithValue("@id_tipo", selectedID);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Tipo de Filme apagado com sucesso!");
-                        CarregarTiposFilme();
+                        MessageBox.Show("Tipo de Filme atualizado com sucesso!");
+                        LoadTiposFilme();
                     }
                     else
                     {
-                        MessageBox.Show("Falha ao apagar o Tipo de Filme. Parece que já não existe!");
+                        MessageBox.Show("Falha ao atualizar o Tipo de Filme. Vê se ainda existe.");
                     }
 
                     con.Close();
@@ -94,7 +109,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro ao tentar apagar o Tipo de Filme: " + ex.Message);
+                MessageBox.Show("Ocorreu um erro ao tentar atualizar o Tipo de Filme: " + ex.Message);
             }
         }
 
@@ -104,5 +119,6 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         }
 
         #endregion
+
     }
 }

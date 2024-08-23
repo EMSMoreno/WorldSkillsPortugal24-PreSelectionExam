@@ -76,8 +76,13 @@ namespace WSN24_EduardoMoreno_M3
             { formApagarTipoFilme.ShowDialog(); }
         }
 
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var formEditarTipoFilme = new FormEditarTipoFilme())
+            { formEditarTipoFilme.ShowDialog(); }
+        }
+
+
         #endregion
-
-
     }
 }
