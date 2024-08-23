@@ -404,7 +404,7 @@
             // txtID_tipofilme
             // 
             this.txtID_tipofilme.Enabled = false;
-            this.txtID_tipofilme.Location = new System.Drawing.Point(260, 204);
+            this.txtID_tipofilme.Location = new System.Drawing.Point(260, 207);
             this.txtID_tipofilme.Name = "txtID_tipofilme";
             this.txtID_tipofilme.Size = new System.Drawing.Size(41, 20);
             this.txtID_tipofilme.TabIndex = 49;
@@ -429,9 +429,11 @@
             // 
             // cbTiposFilme
             // 
+            this.cbTiposFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTiposFilme.FormattingEnabled = true;
             this.cbTiposFilme.Location = new System.Drawing.Point(260, 383);
             this.cbTiposFilme.Name = "cbTiposFilme";
+            this.cbTiposFilme.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbTiposFilme.Size = new System.Drawing.Size(183, 21);
             this.cbTiposFilme.TabIndex = 50;
             // 

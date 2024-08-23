@@ -13,20 +13,39 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         public FormRegistoTipoFilme()
         {
             InitializeComponent();
+            LoadTiposFilme();
         }
 
         private void FormRegistoTipoFilme_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(cs))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(ID), 0) + 1 FROM TipoFilme", con);
-                int newID = (int)cmd.ExecuteScalar();
-                txtID_tipofilme.Text = newID.ToString();
-            }
+            GenerateNewID();
 
             LoadTiposFilme();
 
+            cbTiposFilme.SelectedIndexChanged += new EventHandler(cbTiposFilme_SelectedIndexChanged);
+        }
+
+        private void cbTiposFilme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbTiposFilme.SelectedIndex >= 0)
+            {
+                string selectedTipoFilme = cbTiposFilme.Text;
+                int selectedTipoFilmeID = (int)cbTiposFilme.SelectedValue;
+
+                MessageBox.Show($"Tipo de Filme selecionado: {selectedTipoFilme}\nID: {selectedTipoFilmeID}");
+            }
+        }
+
+        private void GenerateNewID()
+        {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(id_tipo), 0) + 1 FROM TipoFilme", con);
+                int newID = (int)cmd.ExecuteScalar();
+                txtID_tipofilme.Text = newID.ToString();
+            }
         }
 
         private void LoadTiposFilme()
@@ -42,9 +61,18 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                     DataTable dt = new DataTable();
                     dt.Load(reader);
 
-                    cbTiposFilme.DisplayMember = "descricao";
-                    cbTiposFilme.ValueMember = "id_tipo";
-                    cbTiposFilme.DataSource = dt;
+                    if (dt.Rows.Count > 0)
+                    {
+                        cbTiposFilme.DisplayMember = "descricao";
+                        cbTiposFilme.ValueMember = "id_tipo";
+                        cbTiposFilme.DataSource = dt;
+                    }
+                    else
+                    {
+                        cbTiposFilme.Items.Clear();
+                        cbTiposFilme.Items.Add("Nenhum Tipo de Filme encontrado");
+                        cbTiposFilme.SelectedIndex = 0;
+                    }
 
                     con.Close();
                 }
@@ -72,14 +100,16 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                     SqlCommand cmd = new SqlCommand("INSERT INTO TipoFilme (descricao) VALUES (@descricao); SELECT SCOPE_IDENTITY();", con);
                     cmd.Parameters.AddWithValue("@descricao", txtTypeName.Text);
 
-                    // Query Execution and Generate ID
+                    // Executa a query e obtém o ID gerado
                     int newID = Convert.ToInt32(cmd.ExecuteScalar());
 
                     MessageBox.Show("Tipo de Filme registado com sucesso!");
 
-                    // Show Generated ID
+                    // Atualiza o ID e limpa o campo de nome
                     txtID_tipofilme.Text = newID.ToString();
                     txtTypeName.Clear();
+
+                    // Recarrega os tipos de filmes na ComboBox
                     LoadTiposFilme();
                 }
             }
