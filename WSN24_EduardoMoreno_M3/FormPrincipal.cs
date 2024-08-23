@@ -54,7 +54,7 @@ namespace WSN24_EduardoMoreno_M3
 
         private void listarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            using (var formListarFilme = new FormListarFilme())
+            using (var formListarFilme = new FormApagarFilme())
             { formListarFilme.ShowDialog(); }
         }
 

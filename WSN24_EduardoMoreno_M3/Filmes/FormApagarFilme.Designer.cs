@@ -1,7 +1,7 @@
 ﻿
 namespace WSN24_EduardoMoreno_M3
 {
-    partial class FormListarFilme
+    partial class FormApagarFilme
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace WSN24_EduardoMoreno_M3
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarFilme));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApagarFilme));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +69,7 @@ namespace WSN24_EduardoMoreno_M3
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgViewMovies = new System.Windows.Forms.DataGridView();
@@ -83,7 +83,6 @@ namespace WSN24_EduardoMoreno_M3
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -384,7 +383,7 @@ namespace WSN24_EduardoMoreno_M3
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1039, 12);
+            this.button1.Location = new System.Drawing.Point(814, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 47);
             this.button1.TabIndex = 8;
@@ -398,19 +397,18 @@ namespace WSN24_EduardoMoreno_M3
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(155, 515);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(972, 34);
+            this.panel2.Size = new System.Drawing.Size(745, 34);
             this.panel2.TabIndex = 9;
             // 
-            // button3
+            // label4
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(743, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 36);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "<- Retroceder";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(138, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(458, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
             // 
             // label6
             // 
@@ -418,9 +416,9 @@ namespace WSN24_EduardoMoreno_M3
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(200, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 24);
+            this.label6.Size = new System.Drawing.Size(145, 24);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Listar Filmes";
+            this.label6.Text = "Apagar Filmes";
             // 
             // label5
             // 
@@ -439,7 +437,7 @@ namespace WSN24_EduardoMoreno_M3
             this.dgViewMovies.DataSource = this.bdCineSkillsEduardoMorenoN24DataSetBindingSource;
             this.dgViewMovies.Location = new System.Drawing.Point(204, 225);
             this.dgViewMovies.Name = "dgViewMovies";
-            this.dgViewMovies.Size = new System.Drawing.Size(616, 264);
+            this.dgViewMovies.Size = new System.Drawing.Size(338, 263);
             this.dgViewMovies.TabIndex = 19;
             this.dgViewMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewMovies_CellContentClick);
             // 
@@ -455,11 +453,12 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // btnDeleteMovie
             // 
+            this.btnDeleteMovie.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnDeleteMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMovie.Location = new System.Drawing.Point(940, 118);
+            this.btnDeleteMovie.Location = new System.Drawing.Point(651, 456);
             this.btnDeleteMovie.Name = "btnDeleteMovie";
-            this.btnDeleteMovie.Size = new System.Drawing.Size(121, 44);
+            this.btnDeleteMovie.Size = new System.Drawing.Size(192, 44);
             this.btnDeleteMovie.TabIndex = 24;
             this.btnDeleteMovie.Text = "Apagar Registo";
             this.btnDeleteMovie.UseVisualStyleBackColor = true;
@@ -468,7 +467,7 @@ namespace WSN24_EduardoMoreno_M3
             // lblSID
             // 
             this.lblSID.AutoSize = true;
-            this.lblSID.Location = new System.Drawing.Point(829, 225);
+            this.lblSID.Location = new System.Drawing.Point(576, 225);
             this.lblSID.Name = "lblSID";
             this.lblSID.Size = new System.Drawing.Size(35, 13);
             this.lblSID.TabIndex = 25;
@@ -477,7 +476,7 @@ namespace WSN24_EduardoMoreno_M3
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(829, 329);
+            this.label9.Location = new System.Drawing.Point(576, 329);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 38;
@@ -486,7 +485,7 @@ namespace WSN24_EduardoMoreno_M3
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(829, 278);
+            this.label8.Location = new System.Drawing.Point(576, 278);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 37;
@@ -494,14 +493,14 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(904, 408);
+            this.txtYear.Location = new System.Drawing.Point(651, 408);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(100, 20);
             this.txtYear.TabIndex = 36;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(904, 322);
+            this.txtDescription.Location = new System.Drawing.Point(651, 322);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(192, 67);
@@ -509,7 +508,7 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(904, 271);
+            this.txtName.Location = new System.Drawing.Point(651, 271);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(192, 20);
             this.txtName.TabIndex = 34;
@@ -517,27 +516,17 @@ namespace WSN24_EduardoMoreno_M3
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(829, 411);
+            this.label7.Location = new System.Drawing.Point(576, 411);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 13);
             this.label7.TabIndex = 39;
             this.label7.Text = "Ano";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(257, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(458, 15);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
-            // 
-            // FormListarFilme
+            // FormApagarFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 549);
+            this.ClientSize = new System.Drawing.Size(901, 549);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -549,13 +538,12 @@ namespace WSN24_EduardoMoreno_M3
             this.Controls.Add(this.dgViewMovies);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormListarFilme";
+            this.Name = "FormApagarFilme";
             this.Text = "FormListarFilme";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -606,7 +594,6 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgViewMovies;

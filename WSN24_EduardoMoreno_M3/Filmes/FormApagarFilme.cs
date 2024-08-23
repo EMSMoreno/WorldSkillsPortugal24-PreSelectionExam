@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace WSN24_EduardoMoreno_M3
 {
-    public partial class FormListarFilme : Form
+    public partial class FormApagarFilme : Form
     {
         string cs = ConfigurationManager.ConnectionStrings["WSN24_EduardoMoreno_M3_ConnectionString"].ConnectionString;
         SqlConnection con;
@@ -30,7 +30,7 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
-        public FormListarFilme()
+        public FormApagarFilme()
         {
             InitializeComponent();
             ShowDataOnGridView();
