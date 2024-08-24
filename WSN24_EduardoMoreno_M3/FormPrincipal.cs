@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WSN24_EduardoMoreno_M3.Local;
 using WSN24_EduardoMoreno_M3.TipoFilme;
 
 namespace WSN24_EduardoMoreno_M3
@@ -18,15 +12,40 @@ namespace WSN24_EduardoMoreno_M3
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Close_Click(object sender, EventArgs e)
         {
-            this.Close();
-        } // Fechar
+            Close();
+        }
+
+        #region MenuStrip - Local
+
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            using (var formRegistoLocal = new FormRegistoLocal())
+            { formRegistoLocal.ShowDialog(); }
+        }
+
+        private void toolStripMenuItem12_Click(object sender, EventArgs e)
+        {
+            using (var formEditarLocal = new FormEditarLocal())
+            { formEditarLocal.ShowDialog(); }
+        }
+
+        private void toolStripMenuItem13_Click(object sender, EventArgs e)
+        {
+            using (var formApagarLocal = new FormApagarLocal())
+            { formApagarLocal.ShowDialog(); }
+        }
+
+        #endregion
+
+        // ✅
 
         #region MenuStrip - Cinemas
 
         #endregion
 
+        // neste momento estou a trabalhar nas Salas mas preciso de criar a tabela Salas e Cinemas primeiro
 
         #region MenuStrip - Salas
 
@@ -44,19 +63,20 @@ namespace WSN24_EduardoMoreno_M3
 
         private void registarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //using (var formRegistoFilme = new FormRegistoSessao())
-            //{ formRegistoFilme.ShowDialog(); }
+            using (var formRegistoSessao = new FormRegistoSessao())
+            { formRegistoSessao.ShowDialog(); }
         }
 
         #endregion
+
 
 
         #region MenuStrip - Filmes
 
         private void registarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            using (var formRegistoFilme = new FormRegistoFilme())
-            { formRegistoFilme.ShowDialog(); }
+            using (var formEditarFilme = new FormRegistoFilme())
+            { formEditarFilme.ShowDialog(); }
         }
 
         private void editarToolStripMenuItem4_Click(object sender, EventArgs e)
@@ -71,8 +91,9 @@ namespace WSN24_EduardoMoreno_M3
             { formListarFilme.ShowDialog(); }
         }
 
-        #endregion
+        #endregion 
 
+        // ✅
 
         #region MenuStrip - Tipos de Filme
 
@@ -94,9 +115,9 @@ namespace WSN24_EduardoMoreno_M3
             { formEditarTipoFilme.ShowDialog(); }
         }
 
-
-
         #endregion
+
+        // ✅
 
     }
 }
