@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace WSN24_EduardoMoreno_M3
@@ -25,6 +25,7 @@ namespace WSN24_EduardoMoreno_M3
             GenerateNewID();
             LoadSalas();
             LoadFilmes();
+            LoadCinemas();
             ShowDataOnGridView();
         }
 
@@ -94,6 +95,30 @@ namespace WSN24_EduardoMoreno_M3
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar Filmes: " + ex.Message);
+            }
+        }
+
+        private void LoadCinemas()
+        {
+            try
+            {
+                using (con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT id_cinema, nome FROM Cinema", con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    cbCinema.DisplayMember = "nome";
+                    cbCinema.ValueMember = "id_cinema";
+                    cbCinema.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar Cinemas: " + ex.Message);
             }
         }
 

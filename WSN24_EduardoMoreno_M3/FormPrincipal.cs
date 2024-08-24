@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using WSN24_EduardoMoreno_M3.Cinema;
 using WSN24_EduardoMoreno_M3.Local;
 using WSN24_EduardoMoreno_M3.TipoFilme;
 
@@ -43,9 +44,27 @@ namespace WSN24_EduardoMoreno_M3
 
         #region MenuStrip - Cinemas
 
+        private void registarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var formRegistoCinema = new FormRegistoCinema())
+            { formRegistoCinema.ShowDialog(); }
+        }
+
+        private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (var formEditarCinema = new FormEditarCinema())
+            { formEditarCinema.ShowDialog(); }
+        }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var formApagarCinema = new FormApagarCinema())
+            { formApagarCinema.ShowDialog(); }
+        }
+
         #endregion
 
-        // neste momento estou a trabalhar nas Salas mas preciso de criar a tabela Salas e Cinemas primeiro
+        // ✅
 
         #region MenuStrip - Salas
 

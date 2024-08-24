@@ -52,6 +52,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bdCineSkills_EduardoMoreno_N24DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Cinemas\FormApagarCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cinemas\FormApagarCinema.Designer.cs">
+      <DependentUpon>FormApagarCinema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cinemas\FormEditarCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cinemas\FormEditarCinema.Designer.cs">
+      <DependentUpon>FormEditarCinema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cinemas\FormRegistoCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cinemas\FormRegistoCinema.Designer.cs">
+      <DependentUpon>FormRegistoCinema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Filmes\FormEditarFilme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +144,15 @@
     <Compile Include="TipoFilme\FormRegistoTipoFilme.Designer.cs">
       <DependentUpon>FormRegistoTipoFilme.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cinemas\FormApagarCinema.resx">
+      <DependentUpon>FormApagarCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cinemas\FormEditarCinema.resx">
+      <DependentUpon>FormEditarCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cinemas\FormRegistoCinema.resx">
+      <DependentUpon>FormRegistoCinema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Filmes\FormEditarFilme.resx">
       <DependentUpon>FormEditarFilme.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,8 +222,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cinemas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
-﻿namespace WSN24_EduardoMoreno_M3
+﻿namespace WSN24_EduardoMoreno_M3.Cinema
 {
-    partial class FormRegistoSessao
+    partial class FormApagarCinema
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistoSessao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApagarCinema));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +38,10 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cinemasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,32 +67,17 @@
             this.registarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTipoFilme = new System.Windows.Forms.Label();
-            this.lblRegistoTipoFilme = new System.Windows.Forms.Label();
-            this.txtIDSessao = new System.Windows.Forms.TextBox();
-            this.lblMID = new System.Windows.Forms.Label();
-            this.lblCodigoSala = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.txtHour = new System.Windows.Forms.TextBox();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.btnRegistoTipoFilme = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgViewSessions = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblApagarTipoFilme = new System.Windows.Forms.Label();
+            this.cbCinemas = new System.Windows.Forms.ComboBox();
+            this.btnCreateMovie = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
-            this.cbSala = new System.Windows.Forms.ComboBox();
-            this.cbCinema = new System.Windows.Forms.ComboBox();
-            this.chkActive = new System.Windows.Forms.CheckBox();
-            this.cbFilme = new System.Windows.Forms.ComboBox();
-            this.lblIDFilme = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewSessions)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,10 +89,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(153, 0);
+            this.panel1.Location = new System.Drawing.Point(155, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 72);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(294, 72);
+            this.panel1.TabIndex = 1;
             // 
             // label3
             // 
@@ -156,7 +144,7 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
             this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
+            this.toolStripMenuItem10,
             this.toolStripMenuItem1,
             this.cinemasToolStripMenuItem,
             this.toolStripMenuItem6,
@@ -171,7 +159,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(156, 450);
             this.menuStrip1.Stretch = false;
-            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem2
@@ -192,11 +180,34 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 19);
             this.toolStripMenuItem4.Text = "                 ";
             // 
-            // toolStripMenuItem5
+            // toolStripMenuItem10
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(152, 19);
-            this.toolStripMenuItem5.Text = "                  ";
+            this.toolStripMenuItem10.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem11,
+            this.toolStripMenuItem12,
+            this.toolStripMenuItem13});
+            this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 25);
+            this.toolStripMenuItem10.Text = "Local";
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem11.Text = "Registar";
+            // 
+            // toolStripMenuItem12
+            // 
+            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem12.Text = "Editar";
+            // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem1
             // 
@@ -231,7 +242,7 @@
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             this.listarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
-            this.listarToolStripMenuItem.Text = "Listar";
+            this.listarToolStripMenuItem.Text = "Apagar";
             // 
             // toolStripMenuItem6
             // 
@@ -373,250 +384,112 @@
             this.apagarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.apagarToolStripMenuItem.Text = "Apagar";
             // 
-            // lblTipoFilme
+            // panel2
             // 
-            this.lblTipoFilme.AutoSize = true;
-            this.lblTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoFilme.Location = new System.Drawing.Point(172, 93);
-            this.lblTipoFilme.Name = "lblTipoFilme";
-            this.lblTipoFilme.Size = new System.Drawing.Size(94, 29);
-            this.lblTipoFilme.TabIndex = 9;
-            this.lblTipoFilme.Text = "Sessão";
-            // 
-            // lblRegistoTipoFilme
-            // 
-            this.lblRegistoTipoFilme.AutoSize = true;
-            this.lblRegistoTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(242, 134);
-            this.lblRegistoTipoFilme.Name = "lblRegistoTipoFilme";
-            this.lblRegistoTipoFilme.Size = new System.Drawing.Size(184, 24);
-            this.lblRegistoTipoFilme.TabIndex = 10;
-            this.lblRegistoTipoFilme.Text = "Registo de Sessão";
-            // 
-            // txtIDSessao
-            // 
-            this.txtIDSessao.Enabled = false;
-            this.txtIDSessao.Location = new System.Drawing.Point(239, 187);
-            this.txtIDSessao.Name = "txtIDSessao";
-            this.txtIDSessao.Size = new System.Drawing.Size(45, 20);
-            this.txtIDSessao.TabIndex = 56;
-            // 
-            // lblMID
-            // 
-            this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(174, 187);
-            this.lblMID.Name = "lblMID";
-            this.lblMID.Size = new System.Drawing.Size(59, 13);
-            this.lblMID.TabIndex = 55;
-            this.lblMID.Text = "ID Sessão:";
-            // 
-            // lblCodigoSala
-            // 
-            this.lblCodigoSala.AutoSize = true;
-            this.lblCodigoSala.Location = new System.Drawing.Point(334, 187);
-            this.lblCodigoSala.Name = "lblCodigoSala";
-            this.lblCodigoSala.Size = new System.Drawing.Size(81, 13);
-            this.lblCodigoSala.TabIndex = 57;
-            this.lblCodigoSala.Text = "ID Código Sala:";
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(155, 416);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(549, 34);
+            this.panel2.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(356, 219);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "ID Cinema:";
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(185, 260);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(33, 13);
-            this.lblData.TabIndex = 61;
-            this.lblData.Text = "Data:";
-            // 
-            // txtHour
-            // 
-            this.txtHour.Location = new System.Drawing.Point(224, 289);
-            this.txtHour.Name = "txtHour";
-            this.txtHour.Size = new System.Drawing.Size(123, 20);
-            this.txtHour.TabIndex = 64;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(185, 292);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(33, 13);
-            this.lblHora.TabIndex = 63;
-            this.lblHora.Text = "Hora:";
-            // 
-            // btnRegistoTipoFilme
-            // 
-            this.btnRegistoTipoFilme.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRegistoTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnRegistoTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(199, 344);
-            this.btnRegistoTipoFilme.Name = "btnRegistoTipoFilme";
-            this.btnRegistoTipoFilme.Size = new System.Drawing.Size(148, 35);
-            this.btnRegistoTipoFilme.TabIndex = 67;
-            this.btnRegistoTipoFilme.Text = "Registar Sala";
-            this.btnRegistoTipoFilme.UseVisualStyleBackColor = false;
-            this.btnRegistoTipoFilme.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(353, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 35);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCancel_Click);
+            this.label4.Size = new System.Drawing.Size(458, 15);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
             // 
             // btnClose
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(942, 12);
+            this.btnClose.Location = new System.Drawing.Point(618, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 47);
-            this.btnClose.TabIndex = 69;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Fechar Programa";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label5
+            // lblApagarTipoFilme
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(546, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 24);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "Ver Sessões";
+            this.lblApagarTipoFilme.AutoSize = true;
+            this.lblApagarTipoFilme.Location = new System.Drawing.Point(319, 242);
+            this.lblApagarTipoFilme.Name = "lblApagarTipoFilme";
+            this.lblApagarTipoFilme.Size = new System.Drawing.Size(141, 13);
+            this.lblApagarTipoFilme.TabIndex = 80;
+            this.lblApagarTipoFilme.Text = "Escolhe o Cinema a Apagar:\r\n";
             // 
-            // dgViewSessions
+            // cbCinemas
             // 
-            this.dgViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgViewSessions.Location = new System.Drawing.Point(550, 184);
-            this.dgViewSessions.Name = "dgViewSessions";
-            this.dgViewSessions.Size = new System.Drawing.Size(467, 150);
-            this.dgViewSessions.TabIndex = 72;
+            this.cbCinemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCinemas.FormattingEnabled = true;
+            this.cbCinemas.Location = new System.Drawing.Point(287, 270);
+            this.cbCinemas.Name = "cbCinemas";
+            this.cbCinemas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbCinemas.Size = new System.Drawing.Size(209, 21);
+            this.cbCinemas.TabIndex = 79;
             // 
-            // panel2
+            // btnCreateMovie
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(153, 416);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(876, 34);
-            this.panel2.TabIndex = 73;
+            this.btnCreateMovie.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCreateMovie.Location = new System.Drawing.Point(303, 325);
+            this.btnCreateMovie.Name = "btnCreateMovie";
+            this.btnCreateMovie.Size = new System.Drawing.Size(167, 34);
+            this.btnCreateMovie.TabIndex = 78;
+            this.btnCreateMovie.Text = "Eliminar Cinema";
+            this.btnCreateMovie.UseVisualStyleBackColor = false;
+            this.btnCreateMovie.Click += new System.EventHandler(this.btnDeleteCinema_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(209, 10);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(261, 155);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(458, 15);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
+            this.label6.Size = new System.Drawing.Size(164, 24);
+            this.label6.TabIndex = 77;
+            this.label6.Text = "Apagar Cinemas";
             // 
-            // dtpData
+            // label5
             // 
-            this.dtpData.Location = new System.Drawing.Point(224, 254);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(207, 20);
-            this.dtpData.TabIndex = 74;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(209, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 29);
+            this.label5.TabIndex = 76;
+            this.label5.Text = "Cinemas";
             // 
-            // cbSala
-            // 
-            this.cbSala.FormattingEnabled = true;
-            this.cbSala.Location = new System.Drawing.Point(421, 184);
-            this.cbSala.Name = "cbSala";
-            this.cbSala.Size = new System.Drawing.Size(103, 21);
-            this.cbSala.TabIndex = 75;
-            // 
-            // cbCinema
-            // 
-            this.cbCinema.FormattingEnabled = true;
-            this.cbCinema.Location = new System.Drawing.Point(421, 216);
-            this.cbCinema.Name = "cbCinema";
-            this.cbCinema.Size = new System.Drawing.Size(103, 21);
-            this.cbCinema.TabIndex = 76;
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.chkActive.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.chkActive.Location = new System.Drawing.Point(365, 291);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(66, 17);
-            this.chkActive.TabIndex = 77;
-            this.chkActive.Text = "É Ativa?";
-            this.chkActive.UseVisualStyleBackColor = false;
-            // 
-            // cbFilme
-            // 
-            this.cbFilme.FormattingEnabled = true;
-            this.cbFilme.Location = new System.Drawing.Point(227, 213);
-            this.cbFilme.Name = "cbFilme";
-            this.cbFilme.Size = new System.Drawing.Size(123, 21);
-            this.cbFilme.TabIndex = 79;
-            // 
-            // lblIDFilme
-            // 
-            this.lblIDFilme.AutoSize = true;
-            this.lblIDFilme.Location = new System.Drawing.Point(174, 216);
-            this.lblIDFilme.Name = "lblIDFilme";
-            this.lblIDFilme.Size = new System.Drawing.Size(48, 13);
-            this.lblIDFilme.TabIndex = 78;
-            this.lblIDFilme.Text = "ID Filme:";
-            // 
-            // FormRegistoSessao
+            // FormApagarCinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 450);
-            this.Controls.Add(this.cbFilme);
-            this.Controls.Add(this.lblIDFilme);
-            this.Controls.Add(this.chkActive);
-            this.Controls.Add(this.cbCinema);
-            this.Controls.Add(this.cbSala);
-            this.Controls.Add(this.dtpData);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dgViewSessions);
+            this.ClientSize = new System.Drawing.Size(705, 450);
+            this.Controls.Add(this.lblApagarTipoFilme);
+            this.Controls.Add(this.cbCinemas);
+            this.Controls.Add(this.btnCreateMovie);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnRegistoTipoFilme);
-            this.Controls.Add(this.txtHour);
-            this.Controls.Add(this.lblHora);
-            this.Controls.Add(this.lblData);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblCodigoSala);
-            this.Controls.Add(this.txtIDSessao);
-            this.Controls.Add(this.lblMID);
-            this.Controls.Add(this.lblRegistoTipoFilme);
-            this.Controls.Add(this.lblTipoFilme);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormRegistoSessao";
-            this.Text = "FormRegistoSessao";
+            this.Name = "FormApagarCinema";
+            this.Text = "FormApagarCinema";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgViewSessions)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -635,7 +508,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cinemasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem;
@@ -661,27 +537,13 @@
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarToolStripMenuItem;
-        private System.Windows.Forms.Label lblTipoFilme;
-        private System.Windows.Forms.Label lblRegistoTipoFilme;
-        private System.Windows.Forms.TextBox txtIDSessao;
-        private System.Windows.Forms.Label lblMID;
-        private System.Windows.Forms.Label lblCodigoSala;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.TextBox txtHour;
-        private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.Button btnRegistoTipoFilme;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgViewSessions;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblApagarTipoFilme;
+        private System.Windows.Forms.ComboBox cbCinemas;
+        private System.Windows.Forms.Button btnCreateMovie;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpData;
-        private System.Windows.Forms.ComboBox cbSala;
-        private System.Windows.Forms.ComboBox cbCinema;
-        private System.Windows.Forms.CheckBox chkActive;
-        private System.Windows.Forms.ComboBox cbFilme;
-        private System.Windows.Forms.Label lblIDFilme;
+        private System.Windows.Forms.Label label5;
     }
 }
