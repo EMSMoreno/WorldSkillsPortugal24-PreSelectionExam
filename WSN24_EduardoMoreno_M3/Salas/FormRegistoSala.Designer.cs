@@ -74,14 +74,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnRegistoTipoFilme = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtIDCinema = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.cbSalas = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbSessao = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -112,7 +107,7 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 487);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
@@ -385,7 +380,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(155, 416);
+            this.panel2.Location = new System.Drawing.Point(155, 453);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(532, 34);
             this.panel2.TabIndex = 5;
@@ -451,7 +446,7 @@
             this.btnRegistoTipoFilme.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnRegistoTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegistoTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(168, 375);
+            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(168, 358);
             this.btnRegistoTipoFilme.Name = "btnRegistoTipoFilme";
             this.btnRegistoTipoFilme.Size = new System.Drawing.Size(148, 35);
             this.btnRegistoTipoFilme.TabIndex = 51;
@@ -464,42 +459,8 @@
             this.txtDescricao.Location = new System.Drawing.Point(266, 237);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(202, 93);
+            this.txtDescricao.Size = new System.Drawing.Size(204, 72);
             this.txtDescricao.TabIndex = 50;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(165, 339);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 13);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Sessão Disponível:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(341, 204);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 58;
-            this.label6.Text = "ID Cinema:";
-            // 
-            // txtIDCinema
-            // 
-            this.txtIDCinema.Enabled = false;
-            this.txtIDCinema.Location = new System.Drawing.Point(406, 201);
-            this.txtIDCinema.Name = "txtIDCinema";
-            this.txtIDCinema.Size = new System.Drawing.Size(62, 20);
-            this.txtIDCinema.TabIndex = 57;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Location = new System.Drawing.Point(476, 99);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 311);
-            this.panel3.TabIndex = 62;
             // 
             // cbSalas
             // 
@@ -530,22 +491,12 @@
             this.label9.TabIndex = 59;
             this.label9.Text = "Salas:";
             // 
-            // cbSessao
-            // 
-            this.cbSessao.Enabled = false;
-            this.cbSessao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbSessao.FormattingEnabled = true;
-            this.cbSessao.Location = new System.Drawing.Point(268, 336);
-            this.cbSessao.Name = "cbSessao";
-            this.cbSessao.Size = new System.Drawing.Size(202, 21);
-            this.cbSessao.TabIndex = 63;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(322, 375);
+            this.button1.Location = new System.Drawing.Point(322, 358);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 35);
             this.button1.TabIndex = 64;
@@ -557,16 +508,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 450);
+            this.ClientSize = new System.Drawing.Size(688, 487);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.cbSessao);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.cbSalas);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtIDCinema);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtIDSala);
             this.Controls.Add(this.lblMID);
             this.Controls.Add(this.label8);
@@ -640,14 +586,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnRegistoTipoFilme;
         private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtIDCinema;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbSalas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbSessao;
         private System.Windows.Forms.Button button1;
     }
 }

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using WSN24_EduardoMoreno_M3.Cinema;
 using WSN24_EduardoMoreno_M3.Local;
+using WSN24_EduardoMoreno_M3.Sala;
 using WSN24_EduardoMoreno_M3.TipoFilme;
 
 namespace WSN24_EduardoMoreno_M3
@@ -70,13 +71,25 @@ namespace WSN24_EduardoMoreno_M3
 
         private void registarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            using (var formRegistoFilme = new FormRegistoSala())
-            { formRegistoFilme.ShowDialog(); }
+            using (var formRegistoSala = new FormRegistoSala())
+            { formRegistoSala.ShowDialog(); }
+        }
+
+        private void editarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            using (var formEditarSala = new FormEditarSala())
+            { formEditarSala.ShowDialog(); }
+        }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (var formApagarSala = new FormApagarSala())
+            { formApagarSala.ShowDialog(); }
         }
 
         #endregion
 
-        // neste momento estou a trabalhar aqui
+        // ✅
 
         #region MenuStrip - Sessões
 
@@ -86,9 +99,21 @@ namespace WSN24_EduardoMoreno_M3
             { formRegistoSessao.ShowDialog(); }
         }
 
+        private void editarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            using (var formEditarSessao = new FormEditarSessao())
+            { formEditarSessao.ShowDialog(); }
+        }
+
+        private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            using (var formApagarSessao = new FormApagarSessao())
+            { formApagarSessao.ShowDialog(); }
+        }
+
         #endregion
 
-
+        // ✅
 
         #region MenuStrip - Filmes
 

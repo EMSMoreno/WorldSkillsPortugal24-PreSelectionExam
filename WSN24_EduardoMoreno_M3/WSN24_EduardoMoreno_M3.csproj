@@ -100,6 +100,18 @@
     <Compile Include="Local\FormRegistoLocal.Designer.cs">
       <DependentUpon>FormRegistoLocal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Salas\FormApagarSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salas\FormApagarSala.Designer.cs">
+      <DependentUpon>FormApagarSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Salas\FormEditarSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salas\FormEditarSala.Designer.cs">
+      <DependentUpon>FormEditarSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="Salas\FormRegistoSala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sessoes\FormApagarSessao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sessoes\FormApagarSessao.Designer.cs">
+      <DependentUpon>FormApagarSessao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sessoes\FormEditarSessao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sessoes\FormEditarSessao.Designer.cs">
+      <DependentUpon>FormEditarSessao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sessoes\FormRegistoSessao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,8 +207,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Salas\FormApagarSala.resx">
+      <DependentUpon>FormApagarSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salas\FormEditarSala.resx">
+      <DependentUpon>FormEditarSala.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Salas\FormRegistoSala.resx">
       <DependentUpon>FormRegistoSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sessoes\FormApagarSessao.resx">
+      <DependentUpon>FormApagarSessao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sessoes\FormEditarSessao.resx">
+      <DependentUpon>FormEditarSessao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sessoes\FormRegistoSessao.resx">
       <DependentUpon>FormRegistoSessao.cs</DependentUpon>
