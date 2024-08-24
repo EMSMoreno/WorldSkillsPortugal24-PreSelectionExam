@@ -1,6 +1,6 @@
-﻿namespace WSN24_EduardoMoreno_M3.TipoFilme
+﻿namespace WSN24_EduardoMoreno_M3
 {
-    partial class FormRegistoTipoFilme
+    partial class FormRegistoSala
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistoTipoFilme));
-            this.txtTypeName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistoSala));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,92 +59,35 @@
             this.registarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTipoFilme = new System.Windows.Forms.Label();
-            this.lblRegistoTipoFilme = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnRegistoTipoFilme = new System.Windows.Forms.Button();
-            this.txtID_tipofilme = new System.Windows.Forms.TextBox();
-            this.lblMID = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbTiposFilme = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTipoFilme = new System.Windows.Forms.Label();
+            this.lblRegistoTipoFilme = new System.Windows.Forms.Label();
+            this.txtIDSala = new System.Windows.Forms.TextBox();
+            this.lblMID = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnRegistoTipoFilme = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtIDCinema = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbSalas = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbSessao = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtTypeName
-            // 
-            this.txtTypeName.Location = new System.Drawing.Point(305, 213);
-            this.txtTypeName.Name = "txtTypeName";
-            this.txtTypeName.Size = new System.Drawing.Size(148, 20);
-            this.txtTypeName.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(333, 354);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tipo de Fiilme:";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(152, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 72);
-            this.panel1.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Registar Filme";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Filmes";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 24);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Cinemas Skillianos";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -176,9 +112,9 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 458);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 450);
             this.menuStrip1.Stretch = false;
-            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem2
@@ -238,7 +174,7 @@
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             this.listarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
-            this.listarToolStripMenuItem.Text = "Apagar";
+            this.listarToolStripMenuItem.Text = "Listar";
             // 
             // toolStripMenuItem6
             // 
@@ -273,7 +209,7 @@
             // 
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             this.listarToolStripMenuItem1.Size = new System.Drawing.Size(142, 26);
-            this.listarToolStripMenuItem1.Text = "Apagar";
+            this.listarToolStripMenuItem1.Text = "Listar";
             // 
             // toolStripMenuItem7
             // 
@@ -308,7 +244,7 @@
             // 
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
             this.listarToolStripMenuItem2.Size = new System.Drawing.Size(142, 26);
-            this.listarToolStripMenuItem2.Text = "Apagar";
+            this.listarToolStripMenuItem2.Text = "Listar";
             // 
             // toolStripMenuItem8
             // 
@@ -380,6 +316,90 @@
             this.apagarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.apagarToolStripMenuItem.Text = "Apagar";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(155, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(301, 72);
+            this.panel1.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(72, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Registar Filme";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(72, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Filmes";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(71, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Cinemas Skillianos";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(601, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 47);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Fechar Programa";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(155, 416);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(532, 34);
+            this.panel2.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(27, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(458, 15);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
+            // 
             // lblTipoFilme
             // 
             this.lblTipoFilme.AutoSize = true;
@@ -387,7 +407,7 @@
             this.lblTipoFilme.Location = new System.Drawing.Point(172, 93);
             this.lblTipoFilme.Name = "lblTipoFilme";
             this.lblTipoFilme.Size = new System.Drawing.Size(164, 29);
-            this.lblTipoFilme.TabIndex = 7;
+            this.lblTipoFilme.TabIndex = 8;
             this.lblTipoFilme.Text = "Tipo de Filme";
             // 
             // lblRegistoTipoFilme
@@ -396,138 +416,178 @@
             this.lblRegistoTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistoTipoFilme.Location = new System.Drawing.Point(242, 134);
             this.lblRegistoTipoFilme.Name = "lblRegistoTipoFilme";
-            this.lblRegistoTipoFilme.Size = new System.Drawing.Size(246, 24);
-            this.lblRegistoTipoFilme.TabIndex = 8;
-            this.lblRegistoTipoFilme.Text = "Registo de Tipo de Filme";
+            this.lblRegistoTipoFilme.Size = new System.Drawing.Size(156, 24);
+            this.lblRegistoTipoFilme.TabIndex = 9;
+            this.lblRegistoTipoFilme.Text = "Registo de Sala";
             // 
-            // label5
+            // txtIDSala
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(182, 312);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(444, 24);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Se já existe, pode ver todos os Tipos de Filme";
+            this.txtIDSala.Enabled = false;
+            this.txtIDSala.Location = new System.Drawing.Point(266, 201);
+            this.txtIDSala.Name = "txtIDSala";
+            this.txtIDSala.Size = new System.Drawing.Size(53, 20);
+            this.txtIDSala.TabIndex = 54;
+            // 
+            // lblMID
+            // 
+            this.lblMID.AutoSize = true;
+            this.lblMID.Location = new System.Drawing.Point(218, 204);
+            this.lblMID.Name = "lblMID";
+            this.lblMID.Size = new System.Drawing.Size(42, 13);
+            this.lblMID.TabIndex = 53;
+            this.lblMID.Text = "IDSala:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(178, 237);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 13);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Descrição Sala:";
             // 
             // btnRegistoTipoFilme
             // 
             this.btnRegistoTipoFilme.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnRegistoTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegistoTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(305, 239);
+            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(168, 375);
             this.btnRegistoTipoFilme.Name = "btnRegistoTipoFilme";
             this.btnRegistoTipoFilme.Size = new System.Drawing.Size(148, 35);
-            this.btnRegistoTipoFilme.TabIndex = 10;
-            this.btnRegistoTipoFilme.Text = "Registar Tipo de Filme";
+            this.btnRegistoTipoFilme.TabIndex = 51;
+            this.btnRegistoTipoFilme.Text = "Registar Sala";
             this.btnRegistoTipoFilme.UseVisualStyleBackColor = false;
-            this.btnRegistoTipoFilme.Click += new System.EventHandler(this.btnSaveType_Click);
+            this.btnRegistoTipoFilme.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtID_tipofilme
+            // txtDescricao
             // 
-            this.txtID_tipofilme.Enabled = false;
-            this.txtID_tipofilme.Location = new System.Drawing.Point(305, 183);
-            this.txtID_tipofilme.Name = "txtID_tipofilme";
-            this.txtID_tipofilme.Size = new System.Drawing.Size(41, 20);
-            this.txtID_tipofilme.TabIndex = 49;
+            this.txtDescricao.Location = new System.Drawing.Point(266, 237);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(202, 93);
+            this.txtDescricao.TabIndex = 50;
             // 
-            // lblMID
+            // label5
             // 
-            this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(255, 183);
-            this.lblMID.Name = "lblMID";
-            this.lblMID.Size = new System.Drawing.Size(21, 13);
-            this.lblMID.TabIndex = 48;
-            this.lblMID.Text = "ID:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(255, 213);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Nome:";
-            // 
-            // cbTiposFilme
-            // 
-            this.cbTiposFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTiposFilme.FormattingEnabled = true;
-            this.cbTiposFilme.Location = new System.Drawing.Point(284, 373);
-            this.cbTiposFilme.Name = "cbTiposFilme";
-            this.cbTiposFilme.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbTiposFilme.Size = new System.Drawing.Size(183, 21);
-            this.cbTiposFilme.TabIndex = 50;
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(571, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 47);
-            this.btnClose.TabIndex = 54;
-            this.btnClose.Text = "Fechar Programa";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.Location = new System.Drawing.Point(165, 299);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(481, 10);
-            this.panel2.TabIndex = 55;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(152, 424);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(511, 34);
-            this.panel3.TabIndex = 56;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(165, 339);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 13);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Sessão Disponível:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 10);
+            this.label6.Location = new System.Drawing.Point(341, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(458, 15);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 58;
+            this.label6.Text = "ID Cinema:";
             // 
-            // FormRegistoTipoFilme
+            // txtIDCinema
+            // 
+            this.txtIDCinema.Enabled = false;
+            this.txtIDCinema.Location = new System.Drawing.Point(406, 201);
+            this.txtIDCinema.Name = "txtIDCinema";
+            this.txtIDCinema.Size = new System.Drawing.Size(62, 20);
+            this.txtIDCinema.TabIndex = 57;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Location = new System.Drawing.Point(476, 99);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 311);
+            this.panel3.TabIndex = 62;
+            // 
+            // cbSalas
+            // 
+            this.cbSalas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbSalas.FormattingEnabled = true;
+            this.cbSalas.Location = new System.Drawing.Point(510, 237);
+            this.cbSalas.Name = "cbSalas";
+            this.cbSalas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbSalas.Size = new System.Drawing.Size(166, 21);
+            this.cbSalas.TabIndex = 61;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(500, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(176, 48);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Se já existe,\r\npode ver as Salas";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(507, 209);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "Salas:";
+            // 
+            // cbSessao
+            // 
+            this.cbSessao.Enabled = false;
+            this.cbSessao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbSessao.FormattingEnabled = true;
+            this.cbSessao.Location = new System.Drawing.Point(268, 336);
+            this.cbSessao.Name = "cbSessao";
+            this.cbSessao.Size = new System.Drawing.Size(202, 21);
+            this.cbSessao.TabIndex = 63;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(322, 375);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 35);
+            this.button1.TabIndex = 64;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // FormRegistoSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 458);
+            this.ClientSize = new System.Drawing.Size(688, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbSessao);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.cbTiposFilme);
-            this.Controls.Add(this.txtID_tipofilme);
+            this.Controls.Add(this.cbSalas);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtIDCinema);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtIDSala);
             this.Controls.Add(this.lblMID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnRegistoTipoFilme);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblRegistoTipoFilme);
             this.Controls.Add(this.lblTipoFilme);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtTypeName);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormRegistoTipoFilme";
-            this.Text = "FormRegistoTipoFilme";
+            this.Name = "FormRegistoSala";
+            this.Text = "FormRegistoSala";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,13 +595,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtTypeName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
@@ -567,22 +620,34 @@
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem3;
-        private System.Windows.Forms.Label lblTipoFilme;
-        private System.Windows.Forms.Label lblRegistoTipoFilme;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnRegistoTipoFilme;
-        private System.Windows.Forms.TextBox txtID_tipofilme;
-        private System.Windows.Forms.Label lblMID;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbTiposFilme;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem tiposDeFilmeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem4;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarToolStripMenuItem;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTipoFilme;
+        private System.Windows.Forms.Label lblRegistoTipoFilme;
+        private System.Windows.Forms.TextBox txtIDSala;
+        private System.Windows.Forms.Label lblMID;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnRegistoTipoFilme;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtIDCinema;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cbSalas;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbSessao;
+        private System.Windows.Forms.Button button1;
     }
 }

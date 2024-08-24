@@ -83,6 +83,7 @@ namespace WSN24_EduardoMoreno_M3
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -389,7 +390,7 @@ namespace WSN24_EduardoMoreno_M3
             this.button1.TabIndex = 8;
             this.button1.Text = "Fechar Programa";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -435,9 +436,9 @@ namespace WSN24_EduardoMoreno_M3
             this.dgViewMovies.AutoGenerateColumns = false;
             this.dgViewMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewMovies.DataSource = this.bdCineSkillsEduardoMorenoN24DataSetBindingSource;
-            this.dgViewMovies.Location = new System.Drawing.Point(204, 225);
+            this.dgViewMovies.Location = new System.Drawing.Point(204, 209);
             this.dgViewMovies.Name = "dgViewMovies";
-            this.dgViewMovies.Size = new System.Drawing.Size(338, 263);
+            this.dgViewMovies.Size = new System.Drawing.Size(438, 279);
             this.dgViewMovies.TabIndex = 19;
             this.dgViewMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewMovies_CellContentClick);
             // 
@@ -453,80 +454,93 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // btnDeleteMovie
             // 
+            this.btnDeleteMovie.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnDeleteMovie.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnDeleteMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteMovie.Location = new System.Drawing.Point(651, 456);
+            this.btnDeleteMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDeleteMovie.Location = new System.Drawing.Point(651, 444);
             this.btnDeleteMovie.Name = "btnDeleteMovie";
-            this.btnDeleteMovie.Size = new System.Drawing.Size(192, 44);
+            this.btnDeleteMovie.Size = new System.Drawing.Size(238, 44);
             this.btnDeleteMovie.TabIndex = 24;
-            this.btnDeleteMovie.Text = "Apagar Registo";
-            this.btnDeleteMovie.UseVisualStyleBackColor = true;
+            this.btnDeleteMovie.Text = "Apagar Filme";
+            this.btnDeleteMovie.UseVisualStyleBackColor = false;
             this.btnDeleteMovie.Click += new System.EventHandler(this.btnDeleteMovie_Click);
             // 
             // lblSID
             // 
             this.lblSID.AutoSize = true;
-            this.lblSID.Location = new System.Drawing.Point(576, 225);
+            this.lblSID.Location = new System.Drawing.Point(648, 209);
             this.lblSID.Name = "lblSID";
-            this.lblSID.Size = new System.Drawing.Size(35, 13);
+            this.lblSID.Size = new System.Drawing.Size(21, 13);
             this.lblSID.TabIndex = 25;
-            this.lblSID.Text = "label7";
+            this.lblSID.Text = "ID:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(576, 329);
+            this.label9.Location = new System.Drawing.Point(650, 306);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 38;
-            this.label9.Text = "Descrição";
+            this.label9.Text = "Descrição:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(576, 278);
+            this.label8.Location = new System.Drawing.Point(648, 259);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Nome";
+            this.label8.Text = "Nome:";
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(651, 408);
+            this.txtYear.Enabled = false;
+            this.txtYear.Location = new System.Drawing.Point(714, 225);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(100, 20);
+            this.txtYear.Size = new System.Drawing.Size(72, 20);
             this.txtYear.TabIndex = 36;
             // 
             // txtDescription
             // 
+            this.txtDescription.Enabled = false;
             this.txtDescription.Location = new System.Drawing.Point(651, 322);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(192, 67);
+            this.txtDescription.Size = new System.Drawing.Size(238, 116);
             this.txtDescription.TabIndex = 35;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(651, 271);
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(651, 275);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(192, 20);
+            this.txtName.Size = new System.Drawing.Size(238, 20);
             this.txtName.TabIndex = 34;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(576, 411);
+            this.label7.Location = new System.Drawing.Point(713, 209);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
+            this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 39;
-            this.label7.Text = "Ano";
+            this.label7.Text = "Ano:";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(651, 225);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(57, 20);
+            this.txtID.TabIndex = 40;
             // 
             // FormApagarFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 549);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -614,5 +628,6 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarToolStripMenuItem;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

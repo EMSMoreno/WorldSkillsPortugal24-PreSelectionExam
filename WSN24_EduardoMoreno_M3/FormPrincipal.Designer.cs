@@ -238,19 +238,20 @@ namespace WSN24_EduardoMoreno_M3
             // registarToolStripMenuItem1
             // 
             this.registarToolStripMenuItem1.Name = "registarToolStripMenuItem1";
-            this.registarToolStripMenuItem1.Size = new System.Drawing.Size(142, 26);
+            this.registarToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.registarToolStripMenuItem1.Text = "Registar";
+            this.registarToolStripMenuItem1.Click += new System.EventHandler(this.registarToolStripMenuItem1_Click);
             // 
             // editarToolStripMenuItem2
             // 
             this.editarToolStripMenuItem2.Name = "editarToolStripMenuItem2";
-            this.editarToolStripMenuItem2.Size = new System.Drawing.Size(142, 26);
+            this.editarToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.editarToolStripMenuItem2.Text = "Editar";
             // 
             // listarToolStripMenuItem1
             // 
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(142, 26);
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.listarToolStripMenuItem1.Text = "Listar";
             // 
             // toolStripMenuItem7
@@ -275,6 +276,7 @@ namespace WSN24_EduardoMoreno_M3
             this.registarToolStripMenuItem2.Name = "registarToolStripMenuItem2";
             this.registarToolStripMenuItem2.Size = new System.Drawing.Size(142, 26);
             this.registarToolStripMenuItem2.Text = "Registar";
+            this.registarToolStripMenuItem2.Click += new System.EventHandler(this.registarToolStripMenuItem2_Click);
             // 
             // editarToolStripMenuItem3
             // 
@@ -308,21 +310,21 @@ namespace WSN24_EduardoMoreno_M3
             // registarToolStripMenuItem3
             // 
             this.registarToolStripMenuItem3.Name = "registarToolStripMenuItem3";
-            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.registarToolStripMenuItem3.Text = "Registar";
             this.registarToolStripMenuItem3.Click += new System.EventHandler(this.registarToolStripMenuItem3_Click);
             // 
             // editarToolStripMenuItem4
             // 
             this.editarToolStripMenuItem4.Name = "editarToolStripMenuItem4";
-            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
+            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(142, 26);
             this.editarToolStripMenuItem4.Text = "Editar";
             this.editarToolStripMenuItem4.Click += new System.EventHandler(this.editarToolStripMenuItem4_Click);
             // 
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem3.Text = "Apagar";
             this.listarToolStripMenuItem3.Click += new System.EventHandler(this.listarToolStripMenuItem3_Click);
             // 

@@ -307,20 +307,20 @@
             // registarToolStripMenuItem3
             // 
             this.registarToolStripMenuItem3.Name = "registarToolStripMenuItem3";
-            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
+            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
             this.registarToolStripMenuItem3.Text = "Registar";
             // 
             // editarToolStripMenuItem4
             // 
             this.editarToolStripMenuItem4.Name = "editarToolStripMenuItem4";
-            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(142, 26);
+            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
             this.editarToolStripMenuItem4.Text = "Editar";
             // 
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
-            this.listarToolStripMenuItem3.Text = "Listar";
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.listarToolStripMenuItem3.Text = "Apagar";
             // 
             // toolStripMenuItem9
             // 

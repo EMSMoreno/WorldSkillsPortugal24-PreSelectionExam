@@ -22,7 +22,7 @@ namespace WSN24_EduardoMoreno_M3
 
         #region Methods
 
-        private void FormEditarFilme_Load(object sender, EventArgs e)
+        private void FormEditaFilme_Load(object sender, EventArgs e)
         {
             LoadTiposFilme();
             ShowDataOnGridView();
@@ -35,36 +35,23 @@ namespace WSN24_EduardoMoreno_M3
                 using (con = new SqlConnection(cs))
                 {
                     string query = @"
-            SELECT f.codigo_filme AS 'Código Filme', 
-                   f.nome AS 'Nome', 
-                   f.descricao AS 'Descrição', 
-                   f.ano AS 'Ano', 
-                   f.id_tipo AS 'ID Tipo',  -- Inclua a FK no SELECT
-                   t.descricao AS 'Tipo de Filme'
-            FROM filme f
-            JOIN TipoFilme t ON f.id_tipo = t.id_tipo";
+                    SELECT f.codigo_filme AS 'Código Filme', 
+                           f.nome AS 'Nome', 
+                           f.descricao AS 'Descrição', 
+                           FORMAT(f.ano, 'yyyy') AS 'Ano',  -- Formata a data para mostrar apenas o ano
+                           f.id_tipo AS 'ID Tipo', 
+                           t.descricao AS 'Tipo de Filme'
+                    FROM filme f
+                    JOIN TipoFilme t ON f.id_tipo = t.id_tipo";
 
                     adapter = new SqlDataAdapter(query, con);
                     dt = new DataTable();
                     adapter.Fill(dt);
 
                     dgViewMovies.DataSource = dt;
-
-                    // Configuração opcional dos cabeçalhos das colunas
-                    if (dgViewMovies.Columns.Contains("Código Filme"))
-                        dgViewMovies.Columns["Código Filme"].HeaderText = "Código Filme";
-                    if (dgViewMovies.Columns.Contains("Nome"))
-                        dgViewMovies.Columns["Nome"].HeaderText = "Nome";
-                    if (dgViewMovies.Columns.Contains("Descrição"))
-                        dgViewMovies.Columns["Descrição"].HeaderText = "Descrição";
-                    if (dgViewMovies.Columns.Contains("Ano"))
-                        dgViewMovies.Columns["Ano"].HeaderText = "Ano";
-                    if (dgViewMovies.Columns.Contains("Tipo de Filme"))
-                        dgViewMovies.Columns["Tipo de Filme"].HeaderText = "Tipo de Filme";
-
-                    // Opcional: ocultar a coluna da FK se não for necessária na interface
-                    if (dgViewMovies.Columns.Contains("ID Tipo"))
-                        dgViewMovies.Columns["ID Tipo"].Visible = false;
+                    dgViewMovies.AutoGenerateColumns = true;
+                    dgViewMovies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgViewMovies.Refresh();
                 }
             }
             catch (Exception ex)
@@ -77,29 +64,12 @@ namespace WSN24_EduardoMoreno_M3
         {
             if (e.RowIndex >= 0 && dgViewMovies.Rows.Count > 0)
             {
-                try
-                {
                     DataGridViewRow row = dgViewMovies.Rows[e.RowIndex];
 
                     txtName.Text = row.Cells["Nome"].Value.ToString();
                     txtDescription.Text = row.Cells["Descrição"].Value.ToString();
                     txtYear.Text = row.Cells["Ano"].Value.ToString();
                     txtID.Text = row.Cells["Código Filme"].Value.ToString();
-
-                    // Captura o valor da FK e seleciona no ComboBox
-                    if (row.Cells["ID Tipo"].Value != DBNull.Value)
-                    {
-                        cbTipoFilme.SelectedValue = row.Cells["ID Tipo"].Value;
-                    }
-                    else
-                    {
-                        MessageBox.Show("O valor da coluna 'ID Tipo' é nulo.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao selecionar célula: " + ex.Message);
-                }
             }
         }
 
@@ -116,9 +86,6 @@ namespace WSN24_EduardoMoreno_M3
                     DataTable dt = new DataTable();
                     dt.Load(reader);
 
-                    cbTipoFilme.DisplayMember = "descricao";
-                    cbTipoFilme.ValueMember = "id_tipo";
-                    cbTipoFilme.DataSource = dt;
                 }
             }
             catch (Exception ex)
@@ -132,7 +99,6 @@ namespace WSN24_EduardoMoreno_M3
             txtName.Clear();
             txtDescription.Clear();
             txtYear.Clear();
-            cbTipoFilme.SelectedIndex = -1;
         }
 
         #endregion
@@ -141,7 +107,7 @@ namespace WSN24_EduardoMoreno_M3
 
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtYear.Text) || string.IsNullOrWhiteSpace(txtDescription.Text) || string.IsNullOrWhiteSpace(lblID.Text))
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtYear.Text) || string.IsNullOrWhiteSpace(txtDescription.Text) || string.IsNullOrWhiteSpace(txtID.Text))
             {
                 MessageBox.Show("Preencha todos os campos antes de atualizar o filme.");
                 return;
@@ -155,8 +121,8 @@ namespace WSN24_EduardoMoreno_M3
                     cmd = new SqlCommand("UPDATE filme SET nome = @nome, descricao = @descricao, ano = @ano WHERE codigo_filme = @codigo_filme", con);
                     cmd.Parameters.AddWithValue("@nome", txtName.Text);
                     cmd.Parameters.AddWithValue("@descricao", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@ano", txtYear.Text);
-                    cmd.Parameters.AddWithValue("@codigo_filme", lblID.Text);
+                    cmd.Parameters.AddWithValue("@ano", int.Parse(txtYear.Text));
+                    cmd.Parameters.AddWithValue("@codigo_filme", txtID.Text);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Filme editado com sucesso!");

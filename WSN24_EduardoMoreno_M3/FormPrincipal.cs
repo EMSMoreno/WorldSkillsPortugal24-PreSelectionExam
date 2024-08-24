@@ -30,10 +30,23 @@ namespace WSN24_EduardoMoreno_M3
 
         #region MenuStrip - Salas
 
+        private void registarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (var formRegistoFilme = new FormRegistoSala())
+            { formRegistoFilme.ShowDialog(); }
+        }
+
         #endregion
 
+        // neste momento estou a trabalhar aqui
 
         #region MenuStrip - Sessões
+
+        private void registarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            //using (var formRegistoFilme = new FormRegistoSessao())
+            //{ formRegistoFilme.ShowDialog(); }
+        }
 
         #endregion
 
@@ -60,7 +73,6 @@ namespace WSN24_EduardoMoreno_M3
 
         #endregion
 
-        // neste momento estou a trabalhar aqui
 
         #region MenuStrip - Tipos de Filme
 
@@ -83,6 +95,8 @@ namespace WSN24_EduardoMoreno_M3
         }
 
 
+
         #endregion
+
     }
 }

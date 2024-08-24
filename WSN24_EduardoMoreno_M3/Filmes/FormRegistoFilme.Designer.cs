@@ -276,19 +276,19 @@ namespace WSN24_EduardoMoreno_M3
             // registarToolStripMenuItem3
             // 
             this.registarToolStripMenuItem3.Name = "registarToolStripMenuItem3";
-            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.registarToolStripMenuItem3.Text = "Registar";
             // 
             // editarToolStripMenuItem4
             // 
             this.editarToolStripMenuItem4.Name = "editarToolStripMenuItem4";
-            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
+            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(142, 26);
             this.editarToolStripMenuItem4.Text = "Editar";
             // 
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem3.Text = "Apagar";
             // 
             // toolStripMenuItem9
@@ -443,15 +443,16 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // btnCreateMovie
             // 
+            this.btnCreateMovie.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnCreateMovie.Location = new System.Drawing.Point(183, 450);
             this.btnCreateMovie.Name = "btnCreateMovie";
             this.btnCreateMovie.Size = new System.Drawing.Size(159, 34);
             this.btnCreateMovie.TabIndex = 15;
             this.btnCreateMovie.Text = "Adicionar Registo";
-            this.btnCreateMovie.UseVisualStyleBackColor = true;
+            this.btnCreateMovie.UseVisualStyleBackColor = false;
             this.btnCreateMovie.Click += new System.EventHandler(this.btnCreateMovie_Click);
             // 
             // lblAnoFilme
@@ -515,7 +516,7 @@ namespace WSN24_EduardoMoreno_M3
             // btnCancelarOperacao
             // 
             this.btnCancelarOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnCancelarOperacao.Location = new System.Drawing.Point(348, 450);
             this.btnCancelarOperacao.Name = "btnCancelarOperacao";
             this.btnCancelarOperacao.Size = new System.Drawing.Size(160, 34);

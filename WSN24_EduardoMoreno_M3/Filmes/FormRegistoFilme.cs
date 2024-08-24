@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace WSN24_EduardoMoreno_M3
@@ -10,6 +11,7 @@ namespace WSN24_EduardoMoreno_M3
     {
         string cs = ConfigurationManager.ConnectionStrings["WorldSkillsPreSelection"].ConnectionString;
         SqlConnection con;
+        SqlCommand cmd;
         SqlDataAdapter adapter;
         DataTable dt;
 
@@ -34,22 +36,22 @@ namespace WSN24_EduardoMoreno_M3
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    string query = @"SELECT f.codigo_filme, f.nome, f.descricao, f.ano, f.id_tipo, t.descricao AS TipoFilme
-                             FROM filme f
-                             JOIN TipoFilme t ON f.id_tipo = t.id_tipo";
+                    string query = @"
+                    SELECT f.codigo_filme, 
+                           f.nome, 
+                           f.descricao, 
+                           FORMAT(f.ano, 'yyyy') AS Ano,  -- Formata a data para mostrar apenas o ano
+                           f.id_tipo, 
+                           t.descricao AS TipoFilme
+                    FROM filme f
+                    JOIN TipoFilme t ON f.id_tipo = t.id_tipo";
 
                     adapter = new SqlDataAdapter(query, con);
                     dt = new DataTable();
                     adapter.Fill(dt);
 
-                    foreach (DataColumn col in dt.Columns)
-                    {
-                        Console.WriteLine("Coluna encontrada: " + col.ColumnName);
-                    }
-
-                    dgViewMovies.Columns.Clear();
-                    dgViewMovies.AutoGenerateColumns = true;
                     dgViewMovies.DataSource = dt;
+                    dgViewMovies.AutoGenerateColumns = true;
                     dgViewMovies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dgViewMovies.Refresh();
                 }
@@ -68,10 +70,10 @@ namespace WSN24_EduardoMoreno_M3
                 {
                     DataGridViewRow row = dgViewMovies.Rows[e.RowIndex];
 
-                    txtName.Text = row.Cells["nome"].Value.ToString();
-                    txtDescription.Text = row.Cells["descricao"].Value.ToString();
-                    txtYear.Text = row.Cells["ano"].Value.ToString();
-                    txtID_filme.Text = row.Cells["codigo_filme"].Value.ToString();
+                    txtName.Text = row.Cells["Nome"].Value.ToString();
+                    txtDescription.Text = row.Cells["Descricao"].Value.ToString();
+                    txtYear.Text = row.Cells["Ano"].Value.ToString();
+                    txtID_filme.Text = row.Cells["Codigo_Filme"].Value.ToString();
 
                     if (dt.Columns.Contains("id_tipo"))
                     {
@@ -115,6 +117,7 @@ namespace WSN24_EduardoMoreno_M3
 
         private void ClearAllData()
         {
+            txtID_filme.Clear();
             txtName.Clear();
             txtDescription.Clear();
             txtYear.Clear();
@@ -138,11 +141,11 @@ namespace WSN24_EduardoMoreno_M3
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO filme (nome, descricao, ano, id_tipo) VALUES (@nome, @descricao, @ano, @id_tipo)", con);
+                    cmd = new SqlCommand("INSERT INTO filme (nome, descricao, ano, id_tipo) VALUES (@nome, @descricao, @ano, @id_tipo)", con);
 
                     cmd.Parameters.AddWithValue("@nome", txtName.Text);
                     cmd.Parameters.AddWithValue("@descricao", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@ano", txtYear.Text);
+                    cmd.Parameters.AddWithValue("@ano", int.Parse(txtYear.Text));
                     cmd.Parameters.AddWithValue("@id_tipo", cbTipoFilme.SelectedValue);
 
                     cmd.ExecuteNonQuery();
