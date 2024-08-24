@@ -276,20 +276,20 @@ namespace WSN24_EduardoMoreno_M3
             // registarToolStripMenuItem3
             // 
             this.registarToolStripMenuItem3.Name = "registarToolStripMenuItem3";
-            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
+            this.registarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
             this.registarToolStripMenuItem3.Text = "Registar";
             // 
             // editarToolStripMenuItem4
             // 
             this.editarToolStripMenuItem4.Name = "editarToolStripMenuItem4";
-            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(142, 26);
+            this.editarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
             this.editarToolStripMenuItem4.Text = "Editar";
             // 
             // listarToolStripMenuItem3
             // 
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
-            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
-            this.listarToolStripMenuItem3.Text = "Listar";
+            this.listarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.listarToolStripMenuItem3.Text = "Apagar";
             // 
             // toolStripMenuItem9
             // 
@@ -385,14 +385,14 @@ namespace WSN24_EduardoMoreno_M3
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(155, 513);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(818, 34);
+            this.panel2.Size = new System.Drawing.Size(880, 34);
             this.panel2.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(148, 10);
+            this.label4.Location = new System.Drawing.Point(190, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(458, 15);
             this.label4.TabIndex = 4;
@@ -402,7 +402,7 @@ namespace WSN24_EduardoMoreno_M3
             // 
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(885, 12);
+            this.Close.Location = new System.Drawing.Point(950, 12);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 5;
@@ -425,10 +425,11 @@ namespace WSN24_EduardoMoreno_M3
             this.dgViewMovies.AutoGenerateColumns = false;
             this.dgViewMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewMovies.DataSource = this.bdCineSkillsEduardoMorenoN24DataSetBindingSource;
-            this.dgViewMovies.Location = new System.Drawing.Point(560, 206);
+            this.dgViewMovies.Location = new System.Drawing.Point(560, 209);
             this.dgViewMovies.Name = "dgViewMovies";
-            this.dgViewMovies.Size = new System.Drawing.Size(400, 221);
+            this.dgViewMovies.Size = new System.Drawing.Size(453, 221);
             this.dgViewMovies.TabIndex = 14;
+            this.dgViewMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewMovies_CellContentClick);
             // 
             // bdCineSkillsEduardoMorenoN24DataSetBindingSource
             // 
@@ -484,7 +485,7 @@ namespace WSN24_EduardoMoreno_M3
             // 
             this.txtYear.Location = new System.Drawing.Point(244, 370);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(100, 20);
+            this.txtYear.Size = new System.Drawing.Size(81, 20);
             this.txtYear.TabIndex = 38;
             // 
             // txtDescription
@@ -492,14 +493,14 @@ namespace WSN24_EduardoMoreno_M3
             this.txtDescription.Location = new System.Drawing.Point(244, 284);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(253, 67);
+            this.txtDescription.Size = new System.Drawing.Size(278, 67);
             this.txtDescription.TabIndex = 37;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(244, 244);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(253, 20);
+            this.txtName.Size = new System.Drawing.Size(278, 20);
             this.txtName.TabIndex = 36;
             // 
             // lblMID
@@ -521,6 +522,7 @@ namespace WSN24_EduardoMoreno_M3
             this.btnCancelarOperacao.TabIndex = 44;
             this.btnCancelarOperacao.Text = "Cancelar Operação";
             this.btnCancelarOperacao.UseVisualStyleBackColor = true;
+            this.btnCancelarOperacao.Click += new System.EventHandler(this.btnCancelarOperacao_Click);
             // 
             // txtID_filme
             // 
@@ -553,7 +555,7 @@ namespace WSN24_EduardoMoreno_M3
             // lblTipoFilme
             // 
             this.lblTipoFilme.AutoSize = true;
-            this.lblTipoFilme.Location = new System.Drawing.Point(164, 406);
+            this.lblTipoFilme.Location = new System.Drawing.Point(331, 373);
             this.lblTipoFilme.Name = "lblTipoFilme";
             this.lblTipoFilme.Size = new System.Drawing.Size(73, 13);
             this.lblTipoFilme.TabIndex = 47;
@@ -562,9 +564,9 @@ namespace WSN24_EduardoMoreno_M3
             // cbTipoFilme
             // 
             this.cbTipoFilme.FormattingEnabled = true;
-            this.cbTipoFilme.Location = new System.Drawing.Point(244, 406);
+            this.cbTipoFilme.Location = new System.Drawing.Point(410, 369);
             this.cbTipoFilme.Name = "cbTipoFilme";
-            this.cbTipoFilme.Size = new System.Drawing.Size(253, 21);
+            this.cbTipoFilme.Size = new System.Drawing.Size(112, 21);
             this.cbTipoFilme.TabIndex = 48;
             // 
             // filmeBindingSource
@@ -580,7 +582,7 @@ namespace WSN24_EduardoMoreno_M3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 547);
+            this.ClientSize = new System.Drawing.Size(1037, 547);
             this.Controls.Add(this.cbTipoFilme);
             this.Controls.Add(this.lblTipoFilme);
             this.Controls.Add(this.label7);

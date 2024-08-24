@@ -16,8 +16,10 @@ namespace WSN24_EduardoMoreno_M3
         public FormRegistoFilme()
         {
             InitializeComponent();
-            bdCineSkillsEduardoMorenoN24DataSetBindingSource.DataSource = new DataTable();
+            ShowDataOnGridView();
         }
+
+        #region Methods
 
         private void FormRegistoFilme_Load(object sender, EventArgs e)
         {
@@ -32,22 +34,58 @@ namespace WSN24_EduardoMoreno_M3
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    string query = @"SELECT f.codigo_filme, f.nome, f.descricao, f.ano, t.descricao AS TipoFilme
-                                     FROM filme f
-                                     JOIN TipoFilme t ON f.id_tipo = t.id_tipo";
+                    string query = @"SELECT f.codigo_filme, f.nome, f.descricao, f.ano, f.id_tipo, t.descricao AS TipoFilme
+                             FROM filme f
+                             JOIN TipoFilme t ON f.id_tipo = t.id_tipo";
 
                     adapter = new SqlDataAdapter(query, con);
                     dt = new DataTable();
                     adapter.Fill(dt);
 
-                    
-                    bdCineSkillsEduardoMorenoN24DataSetBindingSource.DataSource = dt;
-                    dgViewMovies.DataSource = bdCineSkillsEduardoMorenoN24DataSetBindingSource;
+                    foreach (DataColumn col in dt.Columns)
+                    {
+                        Console.WriteLine("Coluna encontrada: " + col.ColumnName);
+                    }
+
+                    dgViewMovies.Columns.Clear();
+                    dgViewMovies.AutoGenerateColumns = true;
+                    dgViewMovies.DataSource = dt;
+                    dgViewMovies.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgViewMovies.Refresh();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar dados dos filmes: " + ex.Message);
+            }
+        }
+
+        private void dgViewMovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgViewMovies.Rows.Count > 0)
+            {
+                try
+                {
+                    DataGridViewRow row = dgViewMovies.Rows[e.RowIndex];
+
+                    txtName.Text = row.Cells["nome"].Value.ToString();
+                    txtDescription.Text = row.Cells["descricao"].Value.ToString();
+                    txtYear.Text = row.Cells["ano"].Value.ToString();
+                    txtID_filme.Text = row.Cells["codigo_filme"].Value.ToString();
+
+                    if (dt.Columns.Contains("id_tipo"))
+                    {
+                        cbTipoFilme.SelectedValue = row.Cells["id_tipo"].Value;
+                    }
+                    else
+                    {
+                        MessageBox.Show("A coluna 'id_tipo' não foi encontrada.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao selecionar célula: " + ex.Message);
+                }
             }
         }
 
@@ -74,6 +112,18 @@ namespace WSN24_EduardoMoreno_M3
                 MessageBox.Show("Erro ao carregar Tipos de Filme: " + ex.Message);
             }
         }
+
+        private void ClearAllData()
+        {
+            txtName.Clear();
+            txtDescription.Clear();
+            txtYear.Clear();
+            cbTipoFilme.SelectedIndex = -1;
+        }
+
+        #endregion
+
+        #region UI
 
         private void btnCreateMovie_Click(object sender, EventArgs e)
         {
@@ -109,17 +159,16 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
-        private void ClearAllData()
-        {
-            txtName.Clear();
-            txtDescription.Clear();
-            txtYear.Clear();
-            cbTipoFilme.SelectedIndex = -1;
-        }
-
         private void Close_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        private void btnCancelarOperacao_Click(object sender, EventArgs e)
+        {
+            ClearAllData();
+        }
+
+        #endregion
     }
 }
