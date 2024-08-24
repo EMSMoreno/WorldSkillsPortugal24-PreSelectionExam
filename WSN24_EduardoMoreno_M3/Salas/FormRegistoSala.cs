@@ -18,6 +18,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             InitializeComponent();
             InitializeForm();
+            GenerateNewID();
         }
 
         private void InitializeForm()

@@ -18,6 +18,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             InitializeComponent();
             ShowDataOnGridView();
+            GenerateNewLocalID();
         }
 
         #region Methods
@@ -37,8 +38,17 @@ namespace WSN24_EduardoMoreno_M3
                     con.Open();
                     string query = "SELECT ISNULL(MAX(id_local), 0) + 1 FROM Local";
                     cmd = new SqlCommand(query, con);
-                    int newId = (int)cmd.ExecuteScalar();
-                    txtIDLocal.Text = newId.ToString();
+
+                    // Debug: Verificar o resultado da consulta
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out int newId))
+                    {
+                        txtIDLocal.Text = newId.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao gerar novo ID. Verifique a tabela Local.");
+                    }
                 }
             }
             catch (Exception ex)
