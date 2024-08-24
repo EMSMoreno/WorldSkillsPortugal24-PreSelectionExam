@@ -68,16 +68,17 @@ namespace WSN24_EduardoMoreno_M3
             this.registarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panelSkills = new System.Windows.Forms.Panel();
+            this.lblSkills = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnDarkMode = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -308,21 +309,21 @@ namespace WSN24_EduardoMoreno_M3
             // registarToolStripMenuItem2
             // 
             this.registarToolStripMenuItem2.Name = "registarToolStripMenuItem2";
-            this.registarToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.registarToolStripMenuItem2.Size = new System.Drawing.Size(142, 26);
             this.registarToolStripMenuItem2.Text = "Registar";
             this.registarToolStripMenuItem2.Click += new System.EventHandler(this.registarToolStripMenuItem2_Click);
             // 
             // editarToolStripMenuItem3
             // 
             this.editarToolStripMenuItem3.Name = "editarToolStripMenuItem3";
-            this.editarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.editarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.editarToolStripMenuItem3.Text = "Editar";
             this.editarToolStripMenuItem3.Click += new System.EventHandler(this.editarToolStripMenuItem3_Click);
             // 
             // listarToolStripMenuItem2
             // 
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
-            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.listarToolStripMenuItem2.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem2.Text = "Apagar";
             this.listarToolStripMenuItem2.Click += new System.EventHandler(this.listarToolStripMenuItem2_Click);
             // 
@@ -402,24 +403,24 @@ namespace WSN24_EduardoMoreno_M3
             this.apagarToolStripMenuItem.Text = "Apagar";
             this.apagarToolStripMenuItem.Click += new System.EventHandler(this.apagarToolStripMenuItem_Click);
             // 
-            // panel2
+            // panelSkills
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(155, 515);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 34);
-            this.panel2.TabIndex = 2;
+            this.panelSkills.BackColor = System.Drawing.Color.White;
+            this.panelSkills.Controls.Add(this.lblSkills);
+            this.panelSkills.Location = new System.Drawing.Point(155, 515);
+            this.panelSkills.Name = "panelSkills";
+            this.panelSkills.Size = new System.Drawing.Size(756, 34);
+            this.panelSkills.TabIndex = 2;
             // 
-            // label4
+            // lblSkills
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(167, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(458, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
+            this.lblSkills.AutoSize = true;
+            this.lblSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSkills.Location = new System.Drawing.Point(167, 10);
+            this.lblSkills.Name = "lblSkills";
+            this.lblSkills.Size = new System.Drawing.Size(458, 15);
+            this.lblSkills.TabIndex = 3;
+            this.lblSkills.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
             // 
             // btnClose
             // 
@@ -455,15 +456,31 @@ namespace WSN24_EduardoMoreno_M3
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // btnDarkMode
+            // 
+            this.btnDarkMode.BackColor = System.Drawing.Color.Black;
+            this.btnDarkMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDarkMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDarkMode.ForeColor = System.Drawing.Color.White;
+            this.btnDarkMode.Location = new System.Drawing.Point(650, 12);
+            this.btnDarkMode.Name = "btnDarkMode";
+            this.btnDarkMode.Size = new System.Drawing.Size(130, 47);
+            this.btnDarkMode.TabIndex = 6;
+            this.btnDarkMode.Text = "Enable Dark Mode";
+            this.btnDarkMode.UseVisualStyleBackColor = false;
+            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 549);
+            this.Controls.Add(this.btnDarkMode);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelSkills);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -475,8 +492,8 @@ namespace WSN24_EduardoMoreno_M3
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelSkills.ResumeLayout(false);
+            this.panelSkills.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -514,8 +531,8 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panelSkills;
+        private System.Windows.Forms.Label lblSkills;
         private System.Windows.Forms.Button btnClose;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label5;
@@ -529,6 +546,7 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+        private System.Windows.Forms.Button btnDarkMode;
     }
 }
 

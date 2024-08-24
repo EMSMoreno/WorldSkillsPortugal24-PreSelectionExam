@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.Drawing;
 using System.Windows.Forms;
 using WSN24_EduardoMoreno_M3.Cinema;
 using WSN24_EduardoMoreno_M3.Local;
@@ -12,6 +14,90 @@ namespace WSN24_EduardoMoreno_M3
         public FormPrincipal()
         {
             InitializeComponent();
+            InitializeUI("UIMode"); // Dark Mode
+        }
+
+        private void InitializeUI(string key)
+        {
+            try
+            {
+                var uiMode = ConfigurationManager.AppSettings[key];
+                if (uiMode == "light")
+                {
+                    ApplyLightMode();
+                }
+                else
+                {
+                    ApplyDarkMode();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inicializar o modo de UI: " + ex.Message);
+            }
+        }
+
+        private void ApplyLightMode()
+        {
+            btnDarkMode.Text = "Enable Dark Mode";
+            this.ForeColor = Color.FromArgb(3, 0, 10);
+            this.BackColor = Color.FromArgb(245, 247, 246);
+            UpdatePanelSkillsTextColor();
+        }
+
+        private void ApplyDarkMode()
+        {
+            btnDarkMode.Text = "Enable Light Mode";
+            this.ForeColor = Color.FromArgb(245, 247, 246);
+            this.BackColor = Color.FromArgb(3, 0, 10);
+            UpdatePanelSkillsTextColor();
+        }
+
+        private void UpdatePanelSkillsTextColor()
+        {
+           
+            if (panelSkills.BackColor == Color.FromArgb(3, 0, 10))
+            {
+                lblSkills.ForeColor = Color.White;
+            }
+            else
+            {
+                lblSkills.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnDarkMode_Click(object sender, EventArgs e)
+        {
+            var key = "UIMode";
+            var uiMode = ConfigurationManager.AppSettings[key];
+
+            if (uiMode == "light")
+            {
+                ConfigurationManager.AppSettings[key] = "dark";
+                SaveConfiguration(key, "dark");
+                ApplyDarkMode();
+            }
+            else
+            {
+                ConfigurationManager.AppSettings[key] = "light";
+                SaveConfiguration(key, "light");
+                ApplyLightMode();
+            }
+        }
+
+        private void SaveConfiguration(string key, string value)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            if (config.AppSettings.Settings[key] != null)
+            {
+                config.AppSettings.Settings[key].Value = value;
+            }
+            else
+            {
+                config.AppSettings.Settings.Add(key, value);
+            }
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
         }
 
         private void Close_Click(object sender, EventArgs e)
