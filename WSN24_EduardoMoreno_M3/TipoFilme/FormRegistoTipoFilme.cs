@@ -21,15 +21,12 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         private void FormRegistoTipoFilme_Load(object sender, EventArgs e)
         {
             GenerateNewID();
-
             LoadTiposFilme();
-
             cbTiposFilme.SelectedIndexChanged += new EventHandler(cbTiposFilme_SelectedIndexChanged);
         }
 
         private void cbTiposFilme_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (cbTiposFilme.SelectedIndex >= 0)
             {
                 string selectedTipoFilme = cbTiposFilme.Text;
@@ -85,15 +82,45 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
         }
 
+        private bool TipoFilmeExists(string descricao)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    string query = "SELECT COUNT(*) FROM TipoFilme WHERE descricao = @descricao";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@descricao", descricao);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar Tipo de Filme: " + ex.Message);
+                return false;
+            }
+        }
+
         #endregion
 
         #region UI
 
         private void btnSaveType_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTypeName.Text))
+            string typeName = txtTypeName.Text;
+
+            if (string.IsNullOrWhiteSpace(typeName))
             {
-                MessageBox.Show("O nome do Tipo de Filme não pode estar vazio, cuidado!");
+                MessageBox.Show("O nome do Tipo de Filme não pode estar vazio.");
+                return;
+            }
+
+            if (TipoFilmeExists(typeName))
+            {
+                MessageBox.Show("Esse Tipo de Filme já existe.");
                 return;
             }
 
@@ -104,7 +131,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("INSERT INTO TipoFilme (descricao) VALUES (@descricao); SELECT SCOPE_IDENTITY();", con);
-                    cmd.Parameters.AddWithValue("@descricao", txtTypeName.Text);
+                    cmd.Parameters.AddWithValue("@descricao", typeName);
 
                     int newID = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -117,7 +144,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Existe um erro durante o registo do Tipo de Filme: " + ex.Message);
+                MessageBox.Show("Erro ao registar Tipo de Filme: " + ex.Message);
             }
         }
 
@@ -127,6 +154,5 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         }
 
         #endregion
-
     }
 }

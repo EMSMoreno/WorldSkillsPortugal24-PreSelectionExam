@@ -116,7 +116,7 @@
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(699, 255);
+            this.btnCancelar.Location = new System.Drawing.Point(739, 249);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(157, 30);
             this.btnCancelar.TabIndex = 87;
@@ -130,7 +130,7 @@
             this.btnUpdateMovie.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.btnUpdateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdateMovie.Location = new System.Drawing.Point(699, 218);
+            this.btnUpdateMovie.Location = new System.Drawing.Point(739, 212);
             this.btnUpdateMovie.Name = "btnUpdateMovie";
             this.btnUpdateMovie.Size = new System.Drawing.Size(157, 30);
             this.btnUpdateMovie.TabIndex = 84;
@@ -143,7 +143,7 @@
             this.dgViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewSessions.Location = new System.Drawing.Point(168, 289);
             this.dgViewSessions.Name = "dgViewSessions";
-            this.dgViewSessions.Size = new System.Drawing.Size(688, 201);
+            this.dgViewSessions.Size = new System.Drawing.Size(728, 201);
             this.dgViewSessions.TabIndex = 83;
             this.dgViewSessions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewSessions_CellContentClick);
             // 
@@ -171,7 +171,7 @@
             // 
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(781, 12);
+            this.Close.Location = new System.Drawing.Point(819, 12);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 80;
@@ -586,7 +586,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(155, 503);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(713, 34);
+            this.panel2.Size = new System.Drawing.Size(741, 34);
             this.panel2.TabIndex = 101;
             // 
             // label7
@@ -603,7 +603,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 537);
+            this.ClientSize = new System.Drawing.Size(906, 537);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cbSala);
             this.Controls.Add(this.lblCodigoSala);
