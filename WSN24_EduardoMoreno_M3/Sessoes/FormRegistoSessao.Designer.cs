@@ -483,7 +483,7 @@
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1029, 12);
+            this.btnClose.Location = new System.Drawing.Point(1111, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 47);
             this.btnClose.TabIndex = 69;
@@ -506,7 +506,7 @@
             this.dgViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewSessions.Location = new System.Drawing.Point(550, 184);
             this.dgViewSessions.Name = "dgViewSessions";
-            this.dgViewSessions.Size = new System.Drawing.Size(554, 150);
+            this.dgViewSessions.Size = new System.Drawing.Size(636, 195);
             this.dgViewSessions.TabIndex = 72;
             // 
             // panel2
@@ -515,14 +515,14 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(153, 416);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(961, 34);
+            this.panel2.Size = new System.Drawing.Size(1044, 34);
             this.panel2.TabIndex = 73;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(273, 10);
+            this.label6.Location = new System.Drawing.Point(301, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(458, 15);
             this.label6.TabIndex = 3;
@@ -584,7 +584,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 450);
+            this.ClientSize = new System.Drawing.Size(1198, 450);
             this.Controls.Add(this.cbFilme);
             this.Controls.Add(this.lblIDFilme);
             this.Controls.Add(this.chkActive);

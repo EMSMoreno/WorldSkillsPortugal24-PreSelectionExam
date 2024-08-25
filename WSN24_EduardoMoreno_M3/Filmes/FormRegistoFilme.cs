@@ -37,13 +37,13 @@ namespace WSN24_EduardoMoreno_M3
                 {
                     con.Open();
                     string query = @"
-                    SELECT f.codigo_filme, 
-                           f.nome, 
-                           f.descricao, 
-                           FORMAT(f.ano, 'yyyy') AS Ano,  -- Formata a data para mostrar apenas o ano
-                           f.id_tipo, 
-                           t.descricao AS TipoFilme
-                    FROM filme f
+                    SELECT f.codigo_filme AS 'Código Filme', 
+                           f.nome AS 'Nome', 
+                           f.descricao AS 'Descrição', 
+                           FORMAT(f.ano, 'yyyy') AS 'Ano',
+                           f.id_tipo AS 'ID Tipo', 
+                           t.descricao AS 'TipoFilme'
+                    FROM Filme f
                     JOIN TipoFilme t ON f.id_tipo = t.id_tipo";
 
                     adapter = new SqlDataAdapter(query, con);
@@ -71,17 +71,17 @@ namespace WSN24_EduardoMoreno_M3
                     DataGridViewRow row = dgViewMovies.Rows[e.RowIndex];
 
                     txtName.Text = row.Cells["Nome"].Value.ToString();
-                    txtDescription.Text = row.Cells["Descricao"].Value.ToString();
+                    txtDescription.Text = row.Cells["Descrição"].Value.ToString();
                     txtYear.Text = row.Cells["Ano"].Value.ToString();
-                    txtID_filme.Text = row.Cells["Codigo_Filme"].Value.ToString();
+                    txtID_filme.Text = row.Cells["Código Filme"].Value.ToString();
 
-                    if (dt.Columns.Contains("id_tipo"))
+                    if (dt.Columns.Contains("ID Tipo"))
                     {
-                        cbTipoFilme.SelectedValue = row.Cells["id_tipo"].Value;
+                        cbTipoFilme.SelectedValue = row.Cells["ID Tipo"].Value;
                     }
                     else
                     {
-                        MessageBox.Show("A coluna 'id_tipo' não foi encontrada.");
+                        MessageBox.Show("A coluna 'ID Tipo' não foi encontrada.");
                     }
                 }
                 catch (Exception ex)
@@ -115,6 +115,29 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
+        private bool FilmeExists(string nome, int idTipo)
+        {
+            try
+            {
+                using (con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    string query = "SELECT COUNT(*) FROM Filme WHERE nome = @nome AND id_tipo = @id_tipo";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@id_tipo", idTipo);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar existência do filme: " + ex.Message);
+                return false;
+            }
+        }
+
         private void ClearAllData()
         {
             txtID_filme.Clear();
@@ -130,9 +153,20 @@ namespace WSN24_EduardoMoreno_M3
 
         private void btnCreateMovie_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtYear.Text) || string.IsNullOrWhiteSpace(txtDescription.Text) || cbTipoFilme.SelectedValue == null)
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtYear.Text) ||
+                string.IsNullOrWhiteSpace(txtDescription.Text) ||
+                cbTipoFilme.SelectedValue == null)
             {
                 MessageBox.Show("Preencha todos os campos antes de criar um filme.");
+                return;
+            }
+
+            int idTipo = (int)cbTipoFilme.SelectedValue;
+
+            if (FilmeExists(txtName.Text, idTipo))
+            {
+                MessageBox.Show("Esse Filme já existe.");
                 return;
             }
 
@@ -141,12 +175,12 @@ namespace WSN24_EduardoMoreno_M3
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    cmd = new SqlCommand("INSERT INTO filme (nome, descricao, ano, id_tipo) VALUES (@nome, @descricao, @ano, @id_tipo)", con);
+                    cmd = new SqlCommand("INSERT INTO Filme (nome, descricao, ano, id_tipo) VALUES (@nome, @descricao, @ano, @id_tipo)", con);
 
                     cmd.Parameters.AddWithValue("@nome", txtName.Text);
                     cmd.Parameters.AddWithValue("@descricao", txtDescription.Text);
                     cmd.Parameters.AddWithValue("@ano", new DateTime(int.Parse(txtYear.Text), 1, 1));
-                    cmd.Parameters.AddWithValue("@id_tipo", cbTipoFilme.SelectedValue);
+                    cmd.Parameters.AddWithValue("@id_tipo", idTipo);
 
                     cmd.ExecuteNonQuery();
 
@@ -158,7 +192,7 @@ namespace WSN24_EduardoMoreno_M3
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro durante o registo do Tipo de Filme: " + ex.Message);
+                MessageBox.Show("Ocorreu um erro durante o registo do Filme: " + ex.Message);
             }
         }
 

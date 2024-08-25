@@ -20,15 +20,15 @@ namespace WSN24_EduardoMoreno_M3
             InitializeForm();
         }
 
-        #region Metódos
+        #region Métodos
 
         private void InitializeForm()
         {
-            GenerateNewID();
             LoadSalas();
             LoadFilmes();
             LoadCinemas();
             ShowDataOnGridView();
+            GenerateNewID();
         }
 
         private void GenerateNewID()
@@ -127,16 +127,19 @@ namespace WSN24_EduardoMoreno_M3
             {
                 using (con = new SqlConnection(cs))
                 {
+                    con.Open();
                     string query = @"
-                        SELECT s.id_sessao AS 'ID Sessão',
-                               sa.descricao AS 'Sala',
-                               f.nome AS 'Filme',
-                               s.data AS 'Data',
-                               s.hora AS 'Hora',
-                               s.ativa AS 'Ativa'
-                        FROM Sessao s
-                        JOIN Sala sa ON s.codigo_sala = sa.codigo_sala
-                        JOIN Filme f ON s.codigo_filme = f.codigo_filme";
+                SELECT s.id_sessao AS 'ID Sessão',
+                       sa.descricao AS 'Sala',
+                       f.nome AS 'Filme',
+                       c.nome AS 'Cinema',  -- Inclui o nome do cinema
+                       s.data AS 'Data',
+                       s.hora AS 'Hora',
+                       s.ativa AS 'Ativa'
+                FROM Sessao s
+                JOIN Sala sa ON s.codigo_sala = sa.codigo_sala
+                JOIN Filme f ON s.codigo_filme = f.codigo_filme
+                JOIN Cinema c ON s.id_cinema = c.id_cinema";  // Adiciona o join para Cinema
 
                     adapter = new SqlDataAdapter(query, con);
                     dt = new DataTable();
@@ -151,6 +154,38 @@ namespace WSN24_EduardoMoreno_M3
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar sessões: " + ex.Message);
+            }
+        }
+
+        private bool IsSessionDuplicate()
+        {
+            try
+            {
+                using (con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    string query = @"
+                        SELECT COUNT(*) 
+                        FROM Sessao 
+                        WHERE codigo_sala = @codigo_sala 
+                          AND codigo_filme = @codigo_filme 
+                          AND data = @data 
+                          AND hora = @hora";
+
+                    cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@codigo_sala", cbSala.SelectedValue);
+                    cmd.Parameters.AddWithValue("@codigo_filme", cbFilme.SelectedValue);
+                    cmd.Parameters.AddWithValue("@data", dtpData.Value.Date);
+                    cmd.Parameters.AddWithValue("@hora", txtHour.Text);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar duplicatas: " + ex.Message);
+                return false;
             }
         }
 
@@ -170,9 +205,13 @@ namespace WSN24_EduardoMoreno_M3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtIDSessao.Text) || cbSala.SelectedValue == null || cbFilme.SelectedValue == null || string.IsNullOrWhiteSpace(txtHour.Text))
+            if (string.IsNullOrWhiteSpace(txtIDSessao.Text) ||
+                cbSala.SelectedValue == null ||
+                cbFilme.SelectedValue == null ||
+                cbCinema.SelectedValue == null ||  // Certifique-se de que o id_cinema não é nulo
+                string.IsNullOrWhiteSpace(txtHour.Text))
             {
-                MessageBox.Show("Preenche todos os campos antes de salvar.");
+                MessageBox.Show("Preencha todos os campos antes de salvar.");
                 return;
             }
 
@@ -189,18 +228,19 @@ namespace WSN24_EduardoMoreno_M3
                 {
                     con.Open();
                     cmd = new SqlCommand(@"
-                        INSERT INTO Sessao (id_sessao, codigo_sala, codigo_filme, data, hora, ativa) 
-                        VALUES (@id_sessao, @codigo_sala, @codigo_filme, @data, @hora, @ativa)", con);
+                INSERT INTO Sessao (id_sessao, codigo_sala, codigo_filme, id_cinema, data, hora, ativa) 
+                VALUES (@id_sessao, @codigo_sala, @codigo_filme, @id_cinema, @data, @hora, @ativa)", con);
 
                     cmd.Parameters.AddWithValue("@id_sessao", txtIDSessao.Text);
                     cmd.Parameters.AddWithValue("@codigo_sala", cbSala.SelectedValue);
                     cmd.Parameters.AddWithValue("@codigo_filme", cbFilme.SelectedValue);
+                    cmd.Parameters.AddWithValue("@id_cinema", cbCinema.SelectedValue ?? (object)DBNull.Value);
                     cmd.Parameters.AddWithValue("@data", dtpData.Value.Date);
                     cmd.Parameters.AddWithValue("@hora", txtHour.Text);
                     cmd.Parameters.AddWithValue("@ativa", chkActive.Checked);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Sessão registada com sucesso!");
+                    MessageBox.Show("Sessão registrada com sucesso!");
 
                     LoadSalas();
                     LoadFilmes();
@@ -212,7 +252,7 @@ namespace WSN24_EduardoMoreno_M3
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao registar a sessão: " + ex.Message);
+                MessageBox.Show("Erro ao registrar a sessão: " + ex.Message);
             }
         }
 

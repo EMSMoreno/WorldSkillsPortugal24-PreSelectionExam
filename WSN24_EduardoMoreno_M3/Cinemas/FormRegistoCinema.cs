@@ -18,7 +18,6 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         {
             InitializeComponent();
             LoadLocals();
-            GenerateNewID();
             LoadCinemas();
         }
 
@@ -27,7 +26,6 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         private void FormRegistoCinema_Load(object sender, EventArgs e)
         {
             LoadLocals();
-            GenerateNewID();
             LoadCinemas();
         }
 
@@ -54,32 +52,6 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             }
         }
 
-        private void GenerateNewID()
-        {
-            try
-            {
-                using (con = new SqlConnection(cs))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(id_cinema), 0) + 1 FROM Cinema", con);
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        txtIDCinema.Text = result.ToString();
-                    }
-                    else
-                    {
-                        txtIDCinema.Text = "1";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao gerar novo ID para o Cinema: " + ex.Message);
-            }
-        }
-
         private void LoadCinemas()
         {
             try
@@ -87,7 +59,7 @@ namespace WSN24_EduardoMoreno_M3.Cinema
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT id_cinema, nome, id_local FROM Cinema", con);
+                    SqlCommand cmd = new SqlCommand("SELECT id_cinema, nome, l.descricao AS Local FROM Cinema c JOIN Local l ON c.id_local = l.id_local", con);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
@@ -98,6 +70,29 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar Cinemas: " + ex.Message);
+            }
+        }
+
+        private bool CinemaExists(string nome, int idLocal)
+        {
+            try
+            {
+                using (con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    string query = "SELECT COUNT(*) FROM Cinema WHERE nome = @nome AND id_local = @id_local";
+                    cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@id_local", idLocal);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar existência do cinema: " + ex.Message);
+                return false;
             }
         }
 
@@ -113,9 +108,15 @@ namespace WSN24_EduardoMoreno_M3.Cinema
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtIDCinema.Text) || string.IsNullOrWhiteSpace(txtName.Text) || cbLocal.SelectedValue == null)
+            if (string.IsNullOrWhiteSpace(txtName.Text) || cbLocal.SelectedValue == null)
             {
                 MessageBox.Show("Preencha todos os campos antes de salvar.");
+                return;
+            }
+
+            if (CinemaExists(txtName.Text, (int)cbLocal.SelectedValue))
+            {
+                MessageBox.Show("Esse cinema já está registrado no local selecionado.");
                 return;
             }
 
@@ -124,23 +125,21 @@ namespace WSN24_EduardoMoreno_M3.Cinema
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    cmd = new SqlCommand("INSERT INTO Cinema (id_cinema, nome, id_local) VALUES (@id_cinema, @nome, @id_local)", con);
+                    cmd = new SqlCommand("INSERT INTO Cinema (nome, id_local) VALUES (@nome, @id_local)", con);
 
-                    cmd.Parameters.AddWithValue("@id_cinema", txtIDCinema.Text);
                     cmd.Parameters.AddWithValue("@nome", txtName.Text);
                     cmd.Parameters.AddWithValue("@id_local", cbLocal.SelectedValue);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Cinema registado com sucesso!");
+                    MessageBox.Show("Cinema registrado com sucesso!");
 
                     ClearAllData();
-                    GenerateNewID(); // Opcional: Gerar um novo ID após salvar
                     LoadCinemas(); // Atualiza o DataGridView com os novos dados
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao registar o Cinema: " + ex.Message);
+                MessageBox.Show("Erro ao registrar o Cinema: " + ex.Message);
             }
         }
 

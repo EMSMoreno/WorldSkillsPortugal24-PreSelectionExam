@@ -123,10 +123,9 @@ namespace WSN24_EduardoMoreno_M3
                     cmd.Parameters.AddWithValue("@nome", txtName.Text);
                     cmd.Parameters.AddWithValue("@descricao", txtDescription.Text);
 
-                    // Converte o ano para uma data completa (exemplo: 1 de janeiro do ano fornecido)
                     if (int.TryParse(txtYear.Text, out int ano))
                     {
-                        DateTime dataAno = new DateTime(ano, 1, 1); // 1 de janeiro do ano especificado
+                        DateTime dataAno = new DateTime(ano, 1, 1);
                         cmd.Parameters.AddWithValue("@ano", dataAno);
                     }
                     else

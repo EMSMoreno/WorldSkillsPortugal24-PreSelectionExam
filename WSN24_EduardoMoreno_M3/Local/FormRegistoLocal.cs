@@ -39,21 +39,21 @@ namespace WSN24_EduardoMoreno_M3
                     string query = "SELECT ISNULL(MAX(id_local), 0) + 1 FROM Local";
                     cmd = new SqlCommand(query, con);
 
-                    // Debug: Verificar o resultado da consulta
                     object result = cmd.ExecuteScalar();
-                    if (result != null && int.TryParse(result.ToString(), out int newId))
+
+                    if (result != null)
                     {
-                        txtIDLocal.Text = newId.ToString();
+                        txtIDLocal.Text = result.ToString();
                     }
                     else
                     {
-                        MessageBox.Show("Erro ao gerar novo ID. Verifique a tabela Local.");
+                        txtIDLocal.Text = "1"; // Se não houver registros, começa em 1
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao gerar novo ID de Local: " + ex.Message);
+                MessageBox.Show("Erro ao gerar novo ID para o Local: " + ex.Message);
             }
         }
 
@@ -63,6 +63,7 @@ namespace WSN24_EduardoMoreno_M3
             {
                 using (con = new SqlConnection(cs))
                 {
+                    con.Open();
                     string query = @"
                     SELECT id_local AS 'ID Local',
                            descricao AS 'Descrição'
@@ -84,6 +85,28 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
+        private bool LocalExists(string descricao)
+        {
+            try
+            {
+                using (con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    string query = "SELECT COUNT(*) FROM Local WHERE descricao = @descricao";
+                    cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@descricao", descricao);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar existência do local: " + ex.Message);
+                return false;
+            }
+        }
+
         private void ClearAllData()
         {
             txtDescription.Clear();
@@ -99,6 +122,12 @@ namespace WSN24_EduardoMoreno_M3
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
                 MessageBox.Show("Preencha a descrição antes de salvar.");
+                return;
+            }
+
+            if (LocalExists(txtDescription.Text))
+            {
+                MessageBox.Show("Esse local já existe.");
                 return;
             }
 
