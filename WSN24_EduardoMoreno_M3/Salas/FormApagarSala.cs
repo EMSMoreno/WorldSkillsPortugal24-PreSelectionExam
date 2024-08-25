@@ -18,6 +18,8 @@ namespace WSN24_EduardoMoreno_M3.Sala
             LoadSalas();
         }
 
+        #region Métodos
+
         private void LoadSalas()
         {
             try
@@ -41,6 +43,10 @@ namespace WSN24_EduardoMoreno_M3.Sala
                 MessageBox.Show("Erro ao carregar salas: " + ex.Message);
             }
         }
+
+        #endregion
+
+        #region UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -78,5 +84,7 @@ namespace WSN24_EduardoMoreno_M3.Sala
         {
             Close();
         }
+
+        #endregion
     }
 }

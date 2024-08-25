@@ -22,6 +22,8 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             LoadCinemas();
         }
 
+        #region Métodos
+
         private void FormRegistoCinema_Load(object sender, EventArgs e)
         {
             LoadLocals();
@@ -105,6 +107,10 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             cbLocal.SelectedIndex = -1;
         }
 
+        #endregion
+
+        #region UI
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtIDCinema.Text) || string.IsNullOrWhiteSpace(txtName.Text) || cbLocal.SelectedValue == null)
@@ -147,5 +153,7 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         {
             Close();
         }
+
+        #endregion
     }
 }

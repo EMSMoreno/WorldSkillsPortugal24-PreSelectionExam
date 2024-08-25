@@ -20,6 +20,8 @@ namespace WSN24_EduardoMoreno_M3
             ShowDataOnGridView();
         }
 
+        #region Métodos
+
         private void FormEditarSessao_Load(object sender, EventArgs e)
         {
             ShowDataOnGridView();
@@ -167,11 +169,15 @@ namespace WSN24_EduardoMoreno_M3
             chkActive.Checked = false;
         }
 
+        #endregion
+
+        #region UI
+
         private void btnUpdateSessao_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtIDSessao.Text) || cbSala.SelectedValue == null || cbFilme.SelectedValue == null || string.IsNullOrWhiteSpace(txtHour.Text))
+            if (string.IsNullOrWhiteSpace(txtHour.Text) || string.IsNullOrWhiteSpace(txtIDSessao.Text))
             {
-                MessageBox.Show("Preencha todos os campos antes de atualizar a sessão.");
+                MessageBox.Show("Preencha todos os campos obrigatórios antes de atualizar a sessão.");
                 return;
             }
 
@@ -188,19 +194,15 @@ namespace WSN24_EduardoMoreno_M3
                 {
                     con.Open();
                     cmd = new SqlCommand(@"
-                        UPDATE Sessao 
-                        SET codigo_sala = @codigo_sala,
-                            codigo_filme = @codigo_filme,
-                            data = @data,
-                            hora = @hora,
-                            ativa = @ativa
-                        WHERE id_sessao = @id_sessao", con);
+                UPDATE Sessao 
+                SET data = @data,
+                    hora = @hora,
+                    ativa = @ativa
+                WHERE id_sessao = @id_sessao", con);
 
                     cmd.Parameters.AddWithValue("@id_sessao", txtIDSessao.Text);
-                    cmd.Parameters.AddWithValue("@codigo_sala", cbSala.SelectedValue);
-                    cmd.Parameters.AddWithValue("@codigo_filme", cbFilme.SelectedValue);
                     cmd.Parameters.AddWithValue("@data", dtpData.Value.Date);
-                    cmd.Parameters.AddWithValue("@hora", txtHour.Text);
+                    cmd.Parameters.AddWithValue("@hora", hora);
                     cmd.Parameters.AddWithValue("@ativa", chkActive.Checked);
 
                     cmd.ExecuteNonQuery();
@@ -225,5 +227,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             Close();
         }
+
+        #endregion
     }
 }

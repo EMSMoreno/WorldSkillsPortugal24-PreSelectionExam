@@ -16,7 +16,7 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             LoadCinemas();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormApagarCinema_Load(object sender, EventArgs e)
         {

@@ -21,7 +21,7 @@ namespace WSN24_EduardoMoreno_M3
             ShowDataOnGridView();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormRegistoFilme_Load(object sender, EventArgs e)
         {
@@ -145,7 +145,7 @@ namespace WSN24_EduardoMoreno_M3
 
                     cmd.Parameters.AddWithValue("@nome", txtName.Text);
                     cmd.Parameters.AddWithValue("@descricao", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@ano", int.Parse(txtYear.Text));
+                    cmd.Parameters.AddWithValue("@ano", new DateTime(int.Parse(txtYear.Text), 1, 1));
                     cmd.Parameters.AddWithValue("@id_tipo", cbTipoFilme.SelectedValue);
 
                     cmd.ExecuteNonQuery();

@@ -21,7 +21,7 @@ namespace WSN24_EduardoMoreno_M3
             GenerateNewLocalID();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormRegistoLocal_Load(object sender, EventArgs e)
         {

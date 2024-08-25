@@ -16,7 +16,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             LoadTiposFilme();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormRegistoTipoFilme_Load(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         {
             if (string.IsNullOrWhiteSpace(txtTypeName.Text))
             {
-                MessageBox.Show("O nome do Tipo de Filme não pode estar vazio.");
+                MessageBox.Show("O nome do Tipo de Filme não pode estar vazio, cuidado!");
                 return;
             }
 
@@ -106,22 +106,18 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                     SqlCommand cmd = new SqlCommand("INSERT INTO TipoFilme (descricao) VALUES (@descricao); SELECT SCOPE_IDENTITY();", con);
                     cmd.Parameters.AddWithValue("@descricao", txtTypeName.Text);
 
-                    // Executa a query e obtém o ID gerado
                     int newID = Convert.ToInt32(cmd.ExecuteScalar());
 
                     MessageBox.Show("Tipo de Filme registado com sucesso!");
 
-                    // Atualiza o ID e limpa o campo de nome
                     txtID_tipofilme.Text = newID.ToString();
                     txtTypeName.Clear();
-
-                    // Recarrega os tipos de filmes na ComboBox
                     LoadTiposFilme();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro durante o registo do Tipo de Filme: " + ex.Message);
+                MessageBox.Show("Existe um erro durante o registo do Tipo de Filme: " + ex.Message);
             }
         }
 

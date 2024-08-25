@@ -16,7 +16,7 @@ namespace WSN24_EduardoMoreno_M3.Local
             LoadLocals();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormApagarLocal_Load(object sender, EventArgs e)
         {

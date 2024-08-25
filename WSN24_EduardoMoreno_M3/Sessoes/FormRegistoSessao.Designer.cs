@@ -396,15 +396,15 @@
             // txtIDSessao
             // 
             this.txtIDSessao.Enabled = false;
-            this.txtIDSessao.Location = new System.Drawing.Point(239, 187);
+            this.txtIDSessao.Location = new System.Drawing.Point(228, 184);
             this.txtIDSessao.Name = "txtIDSessao";
-            this.txtIDSessao.Size = new System.Drawing.Size(45, 20);
+            this.txtIDSessao.Size = new System.Drawing.Size(29, 20);
             this.txtIDSessao.TabIndex = 56;
             // 
             // lblMID
             // 
             this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(174, 187);
+            this.lblMID.Location = new System.Drawing.Point(163, 187);
             this.lblMID.Name = "lblMID";
             this.lblMID.Size = new System.Drawing.Size(59, 13);
             this.lblMID.TabIndex = 55;
@@ -413,7 +413,7 @@
             // lblCodigoSala
             // 
             this.lblCodigoSala.AutoSize = true;
-            this.lblCodigoSala.Location = new System.Drawing.Point(334, 187);
+            this.lblCodigoSala.Location = new System.Drawing.Point(356, 219);
             this.lblCodigoSala.Name = "lblCodigoSala";
             this.lblCodigoSala.Size = new System.Drawing.Size(81, 13);
             this.lblCodigoSala.TabIndex = 57;
@@ -422,7 +422,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(356, 219);
+            this.label4.Location = new System.Drawing.Point(275, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 59;
@@ -538,17 +538,17 @@
             // cbSala
             // 
             this.cbSala.FormattingEnabled = true;
-            this.cbSala.Location = new System.Drawing.Point(421, 184);
+            this.cbSala.Location = new System.Drawing.Point(441, 216);
             this.cbSala.Name = "cbSala";
-            this.cbSala.Size = new System.Drawing.Size(103, 21);
+            this.cbSala.Size = new System.Drawing.Size(91, 21);
             this.cbSala.TabIndex = 75;
             // 
             // cbCinema
             // 
             this.cbCinema.FormattingEnabled = true;
-            this.cbCinema.Location = new System.Drawing.Point(421, 216);
+            this.cbCinema.Location = new System.Drawing.Point(340, 184);
             this.cbCinema.Name = "cbCinema";
-            this.cbCinema.Size = new System.Drawing.Size(103, 21);
+            this.cbCinema.Size = new System.Drawing.Size(192, 21);
             this.cbCinema.TabIndex = 76;
             // 
             // chkActive
@@ -566,7 +566,7 @@
             // cbFilme
             // 
             this.cbFilme.FormattingEnabled = true;
-            this.cbFilme.Location = new System.Drawing.Point(227, 213);
+            this.cbFilme.Location = new System.Drawing.Point(227, 216);
             this.cbFilme.Name = "cbFilme";
             this.cbFilme.Size = new System.Drawing.Size(123, 21);
             this.cbFilme.TabIndex = 79;
@@ -574,7 +574,7 @@
             // lblIDFilme
             // 
             this.lblIDFilme.AutoSize = true;
-            this.lblIDFilme.Location = new System.Drawing.Point(174, 216);
+            this.lblIDFilme.Location = new System.Drawing.Point(174, 219);
             this.lblIDFilme.Name = "lblIDFilme";
             this.lblIDFilme.Size = new System.Drawing.Size(48, 13);
             this.lblIDFilme.TabIndex = 78;

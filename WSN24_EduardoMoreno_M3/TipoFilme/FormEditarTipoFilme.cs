@@ -22,7 +22,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             LoadTiposFilme();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormEditarTipoFilme_Load(object sender, EventArgs e)
         {
@@ -71,13 +71,13 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         {
             if (cbTiposFilme.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, selecione um Tipo de Filme para editar.");
+                MessageBox.Show("Seleciona um Tipo de Filme para editar.");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txtEditarTipoFilme.Text))
             {
-                MessageBox.Show("O nome do Tipo de Filme não pode estar vazio.");
+                MessageBox.Show("O nome do Tipo de Filme não pode estar vazio, cuidado!");
                 return;
             }
 
@@ -109,7 +109,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro ao tentar atualizar o Tipo de Filme: " + ex.Message);
+                MessageBox.Show("Existe um erro ao tentar atualizar o Tipo de Filme: " + ex.Message);
             }
         }
 

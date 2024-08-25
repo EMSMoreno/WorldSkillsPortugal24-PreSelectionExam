@@ -75,7 +75,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cbTiposFilme = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -471,14 +470,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.Location = new System.Drawing.Point(165, 299);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(481, 10);
-            this.panel2.TabIndex = 55;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -504,7 +495,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 458);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cbTiposFilme);
             this.Controls.Add(this.txtID_tipofilme);
@@ -579,7 +569,6 @@
         private System.Windows.Forms.ToolStripMenuItem tiposDeFilmeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem4;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;

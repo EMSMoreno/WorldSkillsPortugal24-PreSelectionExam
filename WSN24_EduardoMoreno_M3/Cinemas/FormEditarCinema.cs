@@ -20,6 +20,8 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             LoadCinemas();
         }
 
+        #region Métodos
+
         private void FormEditarCinema_Load(object sender, EventArgs e)
         {
             LoadCinemas();
@@ -67,6 +69,16 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             }
         }
 
+        private void ClearAllData()
+        {
+            txtIDCinema.Clear();
+            txtName.Clear();
+        }
+
+        #endregion
+
+        #region UI
+
         private void btnUpdateCinema_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtIDCinema.Text) || string.IsNullOrWhiteSpace(txtName.Text))
@@ -98,15 +110,11 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             }
         }
 
-        private void ClearAllData()
-        {
-            txtIDCinema.Clear();
-            txtName.Clear();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        #endregion
     }
 }

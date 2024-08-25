@@ -20,6 +20,8 @@ namespace WSN24_EduardoMoreno_M3.Sala
             ShowDataOnGridView();
         }
 
+        #region Métodos
+
         private void FormEditarSala_Load(object sender, EventArgs e)
         {
             ShowDataOnGridView();
@@ -69,6 +71,10 @@ namespace WSN24_EduardoMoreno_M3.Sala
             txtDescription.Clear();
         }
 
+        #endregion
+
+        #region UI
+
         private void btnUpdateSala_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtDescription.Text) || string.IsNullOrWhiteSpace(txtIDSala.Text))
@@ -112,5 +118,7 @@ namespace WSN24_EduardoMoreno_M3.Sala
         {
             Close();
         }
+
+        #endregion
     }
 }

@@ -20,7 +20,7 @@ namespace WSN24_EduardoMoreno_M3
             ShowDataOnGridView();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormEditarLocal_Load(object sender, EventArgs e)
         {

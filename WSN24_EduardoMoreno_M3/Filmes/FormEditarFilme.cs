@@ -20,11 +20,11 @@ namespace WSN24_EduardoMoreno_M3
             ShowDataOnGridView();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormEditaFilme_Load(object sender, EventArgs e)
         {
-            LoadTiposFilme();
+            LoadTypesMovies();
             ShowDataOnGridView();
         }
 
@@ -38,7 +38,7 @@ namespace WSN24_EduardoMoreno_M3
                     SELECT f.codigo_filme AS 'Código Filme', 
                            f.nome AS 'Nome', 
                            f.descricao AS 'Descrição', 
-                           FORMAT(f.ano, 'yyyy') AS 'Ano',  -- Formata a data para mostrar apenas o ano
+                           FORMAT(f.ano, 'yyyy') AS 'Ano',
                            f.id_tipo AS 'ID Tipo', 
                            t.descricao AS 'Tipo de Filme'
                     FROM filme f
@@ -73,7 +73,7 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
-        private void LoadTiposFilme()
+        private void LoadTypesMovies()
         {
             try
             {
@@ -118,10 +118,23 @@ namespace WSN24_EduardoMoreno_M3
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    cmd = new SqlCommand("UPDATE filme SET nome = @nome, descricao = @descricao, ano = @ano WHERE codigo_filme = @codigo_filme", con);
+                    string query = "UPDATE filme SET nome = @nome, descricao = @descricao, ano = @ano WHERE codigo_filme = @codigo_filme";
+                    cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@nome", txtName.Text);
                     cmd.Parameters.AddWithValue("@descricao", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@ano", int.Parse(txtYear.Text));
+
+                    // Converte o ano para uma data completa (exemplo: 1 de janeiro do ano fornecido)
+                    if (int.TryParse(txtYear.Text, out int ano))
+                    {
+                        DateTime dataAno = new DateTime(ano, 1, 1); // 1 de janeiro do ano especificado
+                        cmd.Parameters.AddWithValue("@ano", dataAno);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ano inválido. Certifique-se de que o campo 'Ano' contém um número válido.");
+                        return;
+                    }
+
                     cmd.Parameters.AddWithValue("@codigo_filme", txtID.Text);
 
                     cmd.ExecuteNonQuery();

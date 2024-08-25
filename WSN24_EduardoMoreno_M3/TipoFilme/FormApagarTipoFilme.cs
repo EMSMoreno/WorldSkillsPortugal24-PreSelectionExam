@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WSN24_EduardoMoreno_M3.TipoFilme
@@ -22,7 +16,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             CarregarTiposFilme();
         }
 
-        #region Methods
+        #region Métodos
 
         private void FormApagarTipoFilme_Load(object sender, EventArgs e)
         {
@@ -94,7 +88,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro ao tentar apagar o Tipo de Filme: " + ex.Message);
+                MessageBox.Show("Existe um erro ao tentar apagar o Tipo de Filme: " + ex.Message);
             }
         }
 

@@ -86,10 +86,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbSala = new System.Windows.Forms.ComboBox();
             this.lblCodigoSala = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSessions)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblID
@@ -113,7 +116,7 @@
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(589, 253);
+            this.btnCancelar.Location = new System.Drawing.Point(699, 255);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(157, 30);
             this.btnCancelar.TabIndex = 87;
@@ -127,7 +130,7 @@
             this.btnUpdateMovie.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.btnUpdateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdateMovie.Location = new System.Drawing.Point(589, 216);
+            this.btnUpdateMovie.Location = new System.Drawing.Point(699, 218);
             this.btnUpdateMovie.Name = "btnUpdateMovie";
             this.btnUpdateMovie.Size = new System.Drawing.Size(157, 30);
             this.btnUpdateMovie.TabIndex = 84;
@@ -140,7 +143,7 @@
             this.dgViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewSessions.Location = new System.Drawing.Point(168, 289);
             this.dgViewSessions.Name = "dgViewSessions";
-            this.dgViewSessions.Size = new System.Drawing.Size(578, 201);
+            this.dgViewSessions.Size = new System.Drawing.Size(688, 201);
             this.dgViewSessions.TabIndex = 83;
             this.dgViewSessions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewSessions_CellContentClick);
             // 
@@ -168,7 +171,7 @@
             // 
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(713, 12);
+            this.Close.Location = new System.Drawing.Point(781, 12);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 80;
@@ -485,7 +488,7 @@
             this.cbFilme.FormattingEnabled = true;
             this.cbFilme.Location = new System.Drawing.Point(244, 233);
             this.cbFilme.Name = "cbFilme";
-            this.cbFilme.Size = new System.Drawing.Size(123, 21);
+            this.cbFilme.Size = new System.Drawing.Size(205, 21);
             this.cbFilme.TabIndex = 98;
             // 
             // lblIDFilme
@@ -502,7 +505,7 @@
             this.chkActive.AutoSize = true;
             this.chkActive.BackColor = System.Drawing.SystemColors.ControlLight;
             this.chkActive.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.chkActive.Location = new System.Drawing.Point(509, 263);
+            this.chkActive.Location = new System.Drawing.Point(498, 265);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(66, 17);
             this.chkActive.TabIndex = 96;
@@ -515,19 +518,19 @@
             this.cbCinema.FormattingEnabled = true;
             this.cbCinema.Location = new System.Drawing.Point(244, 262);
             this.cbCinema.Name = "cbCinema";
-            this.cbCinema.Size = new System.Drawing.Size(123, 21);
+            this.cbCinema.Size = new System.Drawing.Size(205, 21);
             this.cbCinema.TabIndex = 95;
             // 
             // dtpData
             // 
-            this.dtpData.Location = new System.Drawing.Point(417, 230);
+            this.dtpData.Location = new System.Drawing.Point(498, 206);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(158, 20);
             this.dtpData.TabIndex = 94;
             // 
             // txtHour
             // 
-            this.txtHour.Location = new System.Drawing.Point(417, 260);
+            this.txtHour.Location = new System.Drawing.Point(498, 236);
             this.txtHour.Name = "txtHour";
             this.txtHour.Size = new System.Drawing.Size(66, 20);
             this.txtHour.TabIndex = 93;
@@ -535,7 +538,7 @@
             // lblHora
             // 
             this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(378, 263);
+            this.lblHora.Location = new System.Drawing.Point(459, 239);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(33, 13);
             this.lblHora.TabIndex = 92;
@@ -544,7 +547,7 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(378, 236);
+            this.lblData.Location = new System.Drawing.Point(459, 212);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(33, 13);
             this.lblData.TabIndex = 91;
@@ -563,25 +566,45 @@
             // 
             this.cbSala.Enabled = false;
             this.cbSala.FormattingEnabled = true;
-            this.cbSala.Location = new System.Drawing.Point(417, 204);
+            this.cbSala.Location = new System.Drawing.Point(383, 207);
             this.cbSala.Name = "cbSala";
-            this.cbSala.Size = new System.Drawing.Size(158, 21);
+            this.cbSala.Size = new System.Drawing.Size(66, 21);
             this.cbSala.TabIndex = 100;
             // 
             // lblCodigoSala
             // 
             this.lblCodigoSala.AutoSize = true;
-            this.lblCodigoSala.Location = new System.Drawing.Point(330, 207);
+            this.lblCodigoSala.Location = new System.Drawing.Point(296, 210);
             this.lblCodigoSala.Name = "lblCodigoSala";
             this.lblCodigoSala.Size = new System.Drawing.Size(81, 13);
             this.lblCodigoSala.TabIndex = 99;
             this.lblCodigoSala.Text = "ID Código Sala:";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(155, 503);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(713, 34);
+            this.panel2.TabIndex = 101;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(117, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(458, 15);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
+            // 
             // FormEditarSessao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 537);
+            this.ClientSize = new System.Drawing.Size(868, 537);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.cbSala);
             this.Controls.Add(this.lblCodigoSala);
             this.Controls.Add(this.cbFilme);
@@ -612,6 +635,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,5 +701,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbSala;
         private System.Windows.Forms.Label lblCodigoSala;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
     }
 }

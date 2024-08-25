@@ -20,6 +20,8 @@ namespace WSN24_EduardoMoreno_M3
             LoadSessions();
         }
 
+        #region Métodos
+
         private void LoadSessions()
         {
             try
@@ -42,6 +44,10 @@ namespace WSN24_EduardoMoreno_M3
                 MessageBox.Show("Erro ao carregar sessões: " + ex.Message);
             }
         }
+
+        #endregion
+
+        #region UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -81,5 +87,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             Close();
         }
+
+        #endregion
     }
 }

@@ -20,6 +20,8 @@ namespace WSN24_EduardoMoreno_M3
             InitializeForm();
         }
 
+        #region Metódos
+
         private void InitializeForm()
         {
             GenerateNewID();
@@ -54,9 +56,7 @@ namespace WSN24_EduardoMoreno_M3
                 using (con = new SqlConnection(cs))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand(@"
-                    SELECT codigo_sala, descricao
-                    FROM Sala", con);
+                    SqlCommand cmd = new SqlCommand("SELECT codigo_sala, descricao FROM Sala", con);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     DataTable dt = new DataTable();
@@ -164,11 +164,15 @@ namespace WSN24_EduardoMoreno_M3
             chkActive.Checked = false;
         }
 
+        #endregion
+
+        #region UI
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtIDSessao.Text) || cbSala.SelectedValue == null || cbFilme.SelectedValue == null || string.IsNullOrWhiteSpace(txtHour.Text))
             {
-                MessageBox.Show("Preencha todos os campos antes de salvar.");
+                MessageBox.Show("Preenche todos os campos antes de salvar.");
                 return;
             }
 
@@ -198,6 +202,9 @@ namespace WSN24_EduardoMoreno_M3
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Sessão registada com sucesso!");
 
+                    LoadSalas();
+                    LoadFilmes();
+                    LoadCinemas();
                     ShowDataOnGridView();
                     ClearAllData();
                     GenerateNewID();
@@ -218,5 +225,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             Close();
         }
+
+        #endregion
     }
 }
