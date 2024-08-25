@@ -1,4 +1,4 @@
-# WorldSkills Pre-Selection Test: Skillian Cinemas 🥇 **1º Place on Pre-Selection Exam**
+# WorldSkills Pre-Selection Test: Skillian Cinemas
 
 This repository contains the official project developed for the WorldSkills Pre-Selection Exam, focusing on **Skillian Cinemas**.
 Developed the app covering three fundamental modules:
