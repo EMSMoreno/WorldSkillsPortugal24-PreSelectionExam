@@ -37,7 +37,7 @@ The main technologies and tools used in the development of this project are:
 
 ## Features
 
-- **Login System and DarkMode**
+- **Login System and Dark Mode**
 - **Movie Registration**
 - **Types of Movies Associated w/ Movies**
 - **Session Management**
