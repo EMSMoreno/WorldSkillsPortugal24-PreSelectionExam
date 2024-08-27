@@ -1,5 +1,7 @@
 # WorldSkills Pre-Selection Test: Skillian Cinemas
 
+![alt text](https://worldskillsportugal.iefp.pt/wp-content/uploads/2024/04/SP2024_1920x1080-1.jpg)
+
 This repository contains the official project developed for the WorldSkills Pre-Selection Exam, focusing on **Skillian Cinemas**.
 Developed the app covering three fundamental modules:
 
@@ -54,5 +56,3 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 # Contact Me
 For more information, please contact me via email: emsmoreno@gmail.com
-
-![alt text](https://worldskillsportugal.iefp.pt/wp-content/uploads/2024/04/SP2024_1920x1080-1.jpg)
