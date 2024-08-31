@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using WSN24_EduardoMoreno_M3.Cinema;
@@ -11,11 +12,20 @@ namespace WSN24_EduardoMoreno_M3
 {
     public partial class FormPrincipal : Form
     {
+        private string lastSelectedSala;
+        private string lastSelectedCinema;
+        private string lastSelectedSessao;
+        private string lastSelectedFilme;
+        private string lastSelectedTipoFilme;
+        private string lastSelectedLocal;
+
         public FormPrincipal()
         {
             InitializeComponent();
             InitializeUI("UIMode"); // Dark Mode
         }
+
+        #region Dark Mode
 
         private void InitializeUI(string key)
         {
@@ -54,8 +64,7 @@ namespace WSN24_EduardoMoreno_M3
         }
 
         private void UpdatePanelSkillsTextColor()
-        {
-           
+        { 
             if (panelSkills.BackColor == Color.FromArgb(3, 0, 10))
             {
                 lblSkills.ForeColor = Color.White;
@@ -85,6 +94,15 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
+        #endregion
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        #region Log Out & Guardar Dados do Utilizador na Sessão
+
         private void SaveConfiguration(string key, string value)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
@@ -100,10 +118,56 @@ namespace WSN24_EduardoMoreno_M3
             ConfigurationManager.RefreshSection("appSettings");
         }
 
-        private void Close_Click(object sender, EventArgs e)
+        private void SaveUserPreferences()
         {
-            Close();
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            AppSettingsSection appSettings = (AppSettingsSection)config.GetSection("appSettings");
+
+            // Atualizar as configurações
+            appSettings.Settings["LastSelectedSala"].Value = lastSelectedSala ?? string.Empty;
+            appSettings.Settings["LastSelectedCinema"].Value = lastSelectedCinema ?? string.Empty;
+            appSettings.Settings["LastSelectedSessao"].Value = lastSelectedSessao ?? string.Empty;
+            appSettings.Settings["LastSelectedFilme"].Value = lastSelectedFilme ?? string.Empty;
+            appSettings.Settings["LastSelectedTipoFilme"].Value = lastSelectedTipoFilme ?? string.Empty;
+            appSettings.Settings["LastSelectedLocal"].Value = lastSelectedLocal ?? string.Empty;
+
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
         }
+
+        private void LoadUserPreferences()
+        {
+            lastSelectedSala = ConfigurationManager.AppSettings["LastSelectedSala"];
+            lastSelectedCinema = ConfigurationManager.AppSettings["LastSelectedCinema"];
+            lastSelectedSessao = ConfigurationManager.AppSettings["LastSelectedSessao"];
+            lastSelectedFilme = ConfigurationManager.AppSettings["LastSelectedFilme"];
+            lastSelectedTipoFilme = ConfigurationManager.AppSettings["LastSelectedTipoFilme"];
+            lastSelectedLocal = ConfigurationManager.AppSettings["LastSelectedLocal"];
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Tens a certeza que queres sair da tua sessão dos Cinemas Skillianos?",
+                "Confirmar Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            // Se "Sim"
+            if (result == DialogResult.Yes)
+            {
+                UserSession.Logout();
+
+                Form loginForm = new FormLogin();
+                loginForm.Show();
+
+                this.Close();
+            }
+        }
+
+        #endregion
+
 
         #region MenuStrip - Local
 
@@ -248,6 +312,5 @@ namespace WSN24_EduardoMoreno_M3
         #endregion
 
         // ✅
-
     }
 }

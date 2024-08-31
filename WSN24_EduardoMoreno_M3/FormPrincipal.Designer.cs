@@ -75,6 +75,7 @@ namespace WSN24_EduardoMoreno_M3
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDarkMode = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -463,7 +464,7 @@ namespace WSN24_EduardoMoreno_M3
             this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDarkMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDarkMode.ForeColor = System.Drawing.Color.White;
-            this.btnDarkMode.Location = new System.Drawing.Point(650, 12);
+            this.btnDarkMode.Location = new System.Drawing.Point(479, 12);
             this.btnDarkMode.Name = "btnDarkMode";
             this.btnDarkMode.Size = new System.Drawing.Size(130, 47);
             this.btnDarkMode.TabIndex = 6;
@@ -471,11 +472,25 @@ namespace WSN24_EduardoMoreno_M3
             this.btnDarkMode.UseVisualStyleBackColor = false;
             this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderColor = System.Drawing.Color.SlateBlue;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(675, 12);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(75, 47);
+            this.btnLogOut.TabIndex = 7;
+            this.btnLogOut.Text = "LogOut";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 549);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnDarkMode);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
@@ -547,6 +562,7 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
         private System.Windows.Forms.Button btnDarkMode;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
 
