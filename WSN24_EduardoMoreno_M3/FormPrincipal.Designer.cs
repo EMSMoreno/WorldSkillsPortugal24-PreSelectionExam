@@ -195,21 +195,21 @@ namespace WSN24_EduardoMoreno_M3
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem11.Text = "Registar";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem12.Text = "Editar";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             this.toolStripMenuItem13.Click += new System.EventHandler(this.toolStripMenuItem13_Click);
             // 

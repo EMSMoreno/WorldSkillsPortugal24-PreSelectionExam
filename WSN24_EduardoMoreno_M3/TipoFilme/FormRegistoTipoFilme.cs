@@ -13,7 +13,6 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         public FormRegistoTipoFilme()
         {
             InitializeComponent();
-            LoadTiposFilme();
         }
 
         #region Métodos
@@ -22,18 +21,6 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         {
             GenerateNewID();
             LoadTiposFilme();
-            cbTiposFilme.SelectedIndexChanged += new EventHandler(cbTiposFilme_SelectedIndexChanged);
-        }
-
-        private void cbTiposFilme_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbTiposFilme.SelectedIndex >= 0)
-            {
-                string selectedTipoFilme = cbTiposFilme.Text;
-                int selectedTipoFilmeID = (int)cbTiposFilme.SelectedValue;
-
-                MessageBox.Show($"Tipo de Filme selecionado: {selectedTipoFilme}\nID: {selectedTipoFilmeID}");
-            }
         }
 
         private void GenerateNewID()
@@ -120,7 +107,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
 
             if (TipoFilmeExists(typeName))
             {
-                MessageBox.Show("Esse Tipo de Filme já existe.");
+                MessageBox.Show("Esse Tipo de Filme já existe!");
                 return;
             }
 
@@ -130,14 +117,13 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                 {
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO TipoFilme (descricao) VALUES (@descricao); SELECT SCOPE_IDENTITY();", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO TipoFilme (descricao) VALUES (@descricao)", con);
                     cmd.Parameters.AddWithValue("@descricao", typeName);
 
-                    int newID = Convert.ToInt32(cmd.ExecuteScalar());
-
+                    cmd.ExecuteNonQuery();
                     MessageBox.Show("Tipo de Filme registado com sucesso!");
 
-                    txtID_tipofilme.Text = newID.ToString();
+                    GenerateNewID();
                     txtTypeName.Clear();
                     LoadTiposFilme();
                 }

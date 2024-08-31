@@ -86,11 +86,13 @@
             this.chkActive = new System.Windows.Forms.CheckBox();
             this.cbFilme = new System.Windows.Forms.ComboBox();
             this.lblIDFilme = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSessions)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -169,7 +171,7 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 547);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
@@ -387,7 +389,7 @@
             // 
             this.lblRegistoTipoFilme.AutoSize = true;
             this.lblRegistoTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(242, 134);
+            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(247, 157);
             this.lblRegistoTipoFilme.Name = "lblRegistoTipoFilme";
             this.lblRegistoTipoFilme.Size = new System.Drawing.Size(184, 24);
             this.lblRegistoTipoFilme.TabIndex = 10;
@@ -396,15 +398,16 @@
             // txtIDSessao
             // 
             this.txtIDSessao.Enabled = false;
-            this.txtIDSessao.Location = new System.Drawing.Point(228, 184);
+            this.txtIDSessao.Location = new System.Drawing.Point(187, 272);
             this.txtIDSessao.Name = "txtIDSessao";
-            this.txtIDSessao.Size = new System.Drawing.Size(29, 20);
+            this.txtIDSessao.Size = new System.Drawing.Size(133, 20);
             this.txtIDSessao.TabIndex = 56;
+            this.txtIDSessao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblMID
             // 
             this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(163, 187);
+            this.lblMID.Location = new System.Drawing.Point(213, 256);
             this.lblMID.Name = "lblMID";
             this.lblMID.Size = new System.Drawing.Size(59, 13);
             this.lblMID.TabIndex = 55;
@@ -413,7 +416,7 @@
             // lblCodigoSala
             // 
             this.lblCodigoSala.AutoSize = true;
-            this.lblCodigoSala.Location = new System.Drawing.Point(356, 219);
+            this.lblCodigoSala.Location = new System.Drawing.Point(212, 303);
             this.lblCodigoSala.Name = "lblCodigoSala";
             this.lblCodigoSala.Size = new System.Drawing.Size(81, 13);
             this.lblCodigoSala.TabIndex = 57;
@@ -422,7 +425,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(275, 187);
+            this.label4.Location = new System.Drawing.Point(312, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 59;
@@ -431,36 +434,37 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(185, 260);
+            this.lblData.Location = new System.Drawing.Point(395, 303);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(33, 13);
+            this.lblData.Size = new System.Drawing.Size(71, 13);
             this.lblData.TabIndex = 61;
-            this.lblData.Text = "Data:";
+            this.lblData.Text = "Data Sessão:";
             // 
             // txtHour
             // 
-            this.txtHour.Location = new System.Drawing.Point(224, 289);
+            this.txtHour.Location = new System.Drawing.Point(187, 365);
             this.txtHour.Name = "txtHour";
-            this.txtHour.Size = new System.Drawing.Size(123, 20);
+            this.txtHour.Size = new System.Drawing.Size(133, 20);
             this.txtHour.TabIndex = 64;
+            this.txtHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(185, 292);
+            this.lblHora.Location = new System.Drawing.Point(213, 349);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(33, 13);
+            this.lblHora.Size = new System.Drawing.Size(71, 13);
             this.lblHora.TabIndex = 63;
-            this.lblHora.Text = "Hora:";
+            this.lblHora.Text = "Hora Sessão:";
             // 
             // btnRegistoTipoFilme
             // 
             this.btnRegistoTipoFilme.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnRegistoTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegistoTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(199, 344);
+            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(166, 410);
             this.btnRegistoTipoFilme.Name = "btnRegistoTipoFilme";
-            this.btnRegistoTipoFilme.Size = new System.Drawing.Size(148, 35);
+            this.btnRegistoTipoFilme.Size = new System.Drawing.Size(353, 35);
             this.btnRegistoTipoFilme.TabIndex = 67;
             this.btnRegistoTipoFilme.Text = "Registar Sala";
             this.btnRegistoTipoFilme.UseVisualStyleBackColor = false;
@@ -471,9 +475,9 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(353, 344);
+            this.button1.Location = new System.Drawing.Point(166, 451);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 35);
+            this.button1.Size = new System.Drawing.Size(353, 35);
             this.button1.TabIndex = 68;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
@@ -483,7 +487,7 @@
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1111, 12);
+            this.btnClose.Location = new System.Drawing.Point(1112, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 47);
             this.btnClose.TabIndex = 69;
@@ -495,27 +499,27 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(546, 134);
+            this.label5.Location = new System.Drawing.Point(657, 157);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 24);
+            this.label5.Size = new System.Drawing.Size(241, 24);
             this.label5.TabIndex = 71;
-            this.label5.Text = "Ver Sessões";
+            this.label5.Text = "Ver Sessões Disponíveis";
             // 
             // dgViewSessions
             // 
             this.dgViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgViewSessions.Location = new System.Drawing.Point(550, 184);
+            this.dgViewSessions.Location = new System.Drawing.Point(538, 184);
             this.dgViewSessions.Name = "dgViewSessions";
-            this.dgViewSessions.Size = new System.Drawing.Size(636, 195);
+            this.dgViewSessions.Size = new System.Drawing.Size(648, 302);
             this.dgViewSessions.TabIndex = 72;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(153, 416);
+            this.panel2.Location = new System.Drawing.Point(153, 513);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 34);
+            this.panel2.Size = new System.Drawing.Size(1047, 34);
             this.panel2.TabIndex = 73;
             // 
             // label6
@@ -530,25 +534,25 @@
             // 
             // dtpData
             // 
-            this.dtpData.Location = new System.Drawing.Point(224, 254);
+            this.dtpData.Location = new System.Drawing.Point(353, 319);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(207, 20);
+            this.dtpData.Size = new System.Drawing.Size(164, 20);
             this.dtpData.TabIndex = 74;
             // 
             // cbSala
             // 
             this.cbSala.FormattingEnabled = true;
-            this.cbSala.Location = new System.Drawing.Point(441, 216);
+            this.cbSala.Location = new System.Drawing.Point(186, 318);
             this.cbSala.Name = "cbSala";
-            this.cbSala.Size = new System.Drawing.Size(91, 21);
+            this.cbSala.Size = new System.Drawing.Size(133, 21);
             this.cbSala.TabIndex = 75;
             // 
             // cbCinema
             // 
             this.cbCinema.FormattingEnabled = true;
-            this.cbCinema.Location = new System.Drawing.Point(340, 184);
+            this.cbCinema.Location = new System.Drawing.Point(187, 216);
             this.cbCinema.Name = "cbCinema";
-            this.cbCinema.Size = new System.Drawing.Size(192, 21);
+            this.cbCinema.Size = new System.Drawing.Size(332, 21);
             this.cbCinema.TabIndex = 76;
             // 
             // chkActive
@@ -556,35 +560,46 @@
             this.chkActive.AutoSize = true;
             this.chkActive.BackColor = System.Drawing.SystemColors.ControlLight;
             this.chkActive.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.chkActive.Location = new System.Drawing.Point(365, 291);
+            this.chkActive.Location = new System.Drawing.Point(379, 367);
             this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(66, 17);
+            this.chkActive.Size = new System.Drawing.Size(114, 17);
             this.chkActive.TabIndex = 77;
-            this.chkActive.Text = "É Ativa?";
+            this.chkActive.Text = "A Sessão É Ativa?";
             this.chkActive.UseVisualStyleBackColor = false;
             // 
             // cbFilme
             // 
             this.cbFilme.FormattingEnabled = true;
-            this.cbFilme.Location = new System.Drawing.Point(227, 216);
+            this.cbFilme.Location = new System.Drawing.Point(354, 272);
             this.cbFilme.Name = "cbFilme";
-            this.cbFilme.Size = new System.Drawing.Size(123, 21);
+            this.cbFilme.Size = new System.Drawing.Size(165, 21);
             this.cbFilme.TabIndex = 79;
             // 
             // lblIDFilme
             // 
             this.lblIDFilme.AutoSize = true;
-            this.lblIDFilme.Location = new System.Drawing.Point(174, 219);
+            this.lblIDFilme.Location = new System.Drawing.Point(405, 256);
             this.lblIDFilme.Name = "lblIDFilme";
             this.lblIDFilme.Size = new System.Drawing.Size(48, 13);
             this.lblIDFilme.TabIndex = 78;
             this.lblIDFilme.Text = "ID Filme:";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(661, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(237, 122);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormRegistoSessao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 450);
+            this.ClientSize = new System.Drawing.Size(1199, 547);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cbFilme);
             this.Controls.Add(this.lblIDFilme);
             this.Controls.Add(this.chkActive);
@@ -619,6 +634,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSessions)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -683,5 +699,6 @@
         private System.Windows.Forms.CheckBox chkActive;
         private System.Windows.Forms.ComboBox cbFilme;
         private System.Windows.Forms.Label lblIDFilme;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

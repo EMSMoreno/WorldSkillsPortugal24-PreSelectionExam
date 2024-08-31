@@ -82,11 +82,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbLocal = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewCinemas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -165,7 +167,7 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 547);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
@@ -396,16 +398,16 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(155, 416);
+            this.panel2.Location = new System.Drawing.Point(155, 513);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(731, 34);
+            this.panel2.Size = new System.Drawing.Size(883, 34);
             this.panel2.TabIndex = 63;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(141, 10);
+            this.label4.Location = new System.Drawing.Point(234, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(458, 15);
             this.label4.TabIndex = 4;
@@ -415,7 +417,7 @@
             // 
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(800, 12);
+            this.Close.Location = new System.Drawing.Point(950, 12);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 64;
@@ -427,7 +429,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(505, 158);
+            this.label7.Location = new System.Drawing.Point(611, 171);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(236, 24);
             this.label7.TabIndex = 74;
@@ -438,16 +440,16 @@
             this.dgViewCinemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewCinemas.Location = new System.Drawing.Point(509, 201);
             this.dgViewCinemas.Name = "dgViewCinemas";
-            this.dgViewCinemas.Size = new System.Drawing.Size(366, 180);
+            this.dgViewCinemas.Size = new System.Drawing.Size(516, 281);
             this.dgViewCinemas.TabIndex = 73;
             // 
             // btnCancelarOperacao
             // 
             this.btnCancelarOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelarOperacao.Location = new System.Drawing.Point(333, 347);
+            this.btnCancelarOperacao.Location = new System.Drawing.Point(168, 448);
             this.btnCancelarOperacao.Name = "btnCancelarOperacao";
-            this.btnCancelarOperacao.Size = new System.Drawing.Size(160, 34);
+            this.btnCancelarOperacao.Size = new System.Drawing.Size(331, 34);
             this.btnCancelarOperacao.TabIndex = 72;
             this.btnCancelarOperacao.Text = "Cancelar Operação";
             this.btnCancelarOperacao.UseVisualStyleBackColor = true;
@@ -459,9 +461,9 @@
             this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCreateMovie.Location = new System.Drawing.Point(168, 347);
+            this.btnCreateMovie.Location = new System.Drawing.Point(168, 412);
             this.btnCreateMovie.Name = "btnCreateMovie";
-            this.btnCreateMovie.Size = new System.Drawing.Size(159, 34);
+            this.btnCreateMovie.Size = new System.Drawing.Size(331, 34);
             this.btnCreateMovie.TabIndex = 71;
             this.btnCreateMovie.Text = "Adicionar Cinema";
             this.btnCreateMovie.UseVisualStyleBackColor = false;
@@ -470,15 +472,16 @@
             // txtIDCinema
             // 
             this.txtIDCinema.Enabled = false;
-            this.txtIDCinema.Location = new System.Drawing.Point(244, 201);
+            this.txtIDCinema.Location = new System.Drawing.Point(290, 249);
             this.txtIDCinema.Name = "txtIDCinema";
-            this.txtIDCinema.Size = new System.Drawing.Size(41, 20);
+            this.txtIDCinema.Size = new System.Drawing.Size(56, 20);
             this.txtIDCinema.TabIndex = 70;
+            this.txtIDCinema.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblMID
             // 
             this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(180, 204);
+            this.lblMID.Location = new System.Drawing.Point(287, 233);
             this.lblMID.Name = "lblMID";
             this.lblMID.Size = new System.Drawing.Size(59, 13);
             this.lblMID.TabIndex = 69;
@@ -487,24 +490,25 @@
             // lblNomeCinema
             // 
             this.lblNomeCinema.AutoSize = true;
-            this.lblNomeCinema.Location = new System.Drawing.Point(200, 240);
+            this.lblNomeCinema.Location = new System.Drawing.Point(281, 281);
             this.lblNomeCinema.Name = "lblNomeCinema";
-            this.lblNomeCinema.Size = new System.Drawing.Size(38, 13);
+            this.lblNomeCinema.Size = new System.Drawing.Size(76, 13);
             this.lblNomeCinema.TabIndex = 68;
-            this.lblNomeCinema.Text = "Nome:";
+            this.lblNomeCinema.Text = "Nome Cinema:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(244, 237);
+            this.txtName.Location = new System.Drawing.Point(187, 297);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(160, 20);
+            this.txtName.Size = new System.Drawing.Size(265, 20);
             this.txtName.TabIndex = 67;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(179, 158);
+            this.label6.Location = new System.Drawing.Point(193, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(256, 24);
             this.label6.TabIndex = 66;
@@ -523,25 +527,36 @@
             // cbLocal
             // 
             this.cbLocal.FormattingEnabled = true;
-            this.cbLocal.Location = new System.Drawing.Point(244, 277);
+            this.cbLocal.Location = new System.Drawing.Point(187, 348);
             this.cbLocal.Name = "cbLocal";
-            this.cbLocal.Size = new System.Drawing.Size(160, 21);
+            this.cbLocal.Size = new System.Drawing.Size(265, 21);
             this.cbLocal.TabIndex = 75;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(200, 280);
+            this.label8.Location = new System.Drawing.Point(283, 332);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
+            this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 76;
-            this.label8.Text = "Local:";
+            this.label8.Text = "Local Cinema:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(615, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(232, 118);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 77;
+            this.pictureBox2.TabStop = false;
             // 
             // FormRegistoCinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 450);
+            this.ClientSize = new System.Drawing.Size(1037, 547);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbLocal);
             this.Controls.Add(this.label7);
@@ -569,6 +584,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewCinemas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,5 +645,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbLocal;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

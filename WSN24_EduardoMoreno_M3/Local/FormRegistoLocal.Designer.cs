@@ -80,11 +80,13 @@
             this.dgViewLocals = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewLocals)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -163,7 +165,7 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 547);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
@@ -404,7 +406,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(179, 158);
+            this.label6.Location = new System.Drawing.Point(214, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(235, 24);
             this.label6.TabIndex = 8;
@@ -413,15 +415,16 @@
             // txtIDLocal
             // 
             this.txtIDLocal.Enabled = false;
-            this.txtIDLocal.Location = new System.Drawing.Point(269, 201);
+            this.txtIDLocal.Location = new System.Drawing.Point(301, 235);
             this.txtIDLocal.Name = "txtIDLocal";
-            this.txtIDLocal.Size = new System.Drawing.Size(41, 20);
+            this.txtIDLocal.Size = new System.Drawing.Size(56, 20);
             this.txtIDLocal.TabIndex = 56;
+            this.txtIDLocal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblMID
             // 
             this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(218, 204);
+            this.lblMID.Location = new System.Drawing.Point(307, 219);
             this.lblMID.Name = "lblMID";
             this.lblMID.Size = new System.Drawing.Size(50, 13);
             this.lblMID.TabIndex = 55;
@@ -430,27 +433,28 @@
             // lblDescricaoFilme
             // 
             this.lblDescricaoFilme.AutoSize = true;
-            this.lblDescricaoFilme.Location = new System.Drawing.Point(205, 244);
+            this.lblDescricaoFilme.Location = new System.Drawing.Point(279, 278);
             this.lblDescricaoFilme.Name = "lblDescricaoFilme";
-            this.lblDescricaoFilme.Size = new System.Drawing.Size(58, 13);
+            this.lblDescricaoFilme.Size = new System.Drawing.Size(87, 13);
             this.lblDescricaoFilme.TabIndex = 53;
-            this.lblDescricaoFilme.Text = "Descrição:";
+            this.lblDescricaoFilme.Text = "Descrição Local:";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(269, 241);
+            this.txtDescription.Location = new System.Drawing.Point(198, 294);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(224, 67);
+            this.txtDescription.Size = new System.Drawing.Size(274, 67);
             this.txtDescription.TabIndex = 50;
+            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCancelarOperacao
             // 
             this.btnCancelarOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelarOperacao.Location = new System.Drawing.Point(333, 347);
+            this.btnCancelarOperacao.Location = new System.Drawing.Point(168, 430);
             this.btnCancelarOperacao.Name = "btnCancelarOperacao";
-            this.btnCancelarOperacao.Size = new System.Drawing.Size(160, 34);
+            this.btnCancelarOperacao.Size = new System.Drawing.Size(336, 34);
             this.btnCancelarOperacao.TabIndex = 58;
             this.btnCancelarOperacao.Text = "Cancelar Operação";
             this.btnCancelarOperacao.UseVisualStyleBackColor = true;
@@ -462,9 +466,9 @@
             this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCreateMovie.Location = new System.Drawing.Point(168, 347);
+            this.btnCreateMovie.Location = new System.Drawing.Point(168, 390);
             this.btnCreateMovie.Name = "btnCreateMovie";
-            this.btnCreateMovie.Size = new System.Drawing.Size(159, 34);
+            this.btnCreateMovie.Size = new System.Drawing.Size(336, 34);
             this.btnCreateMovie.TabIndex = 57;
             this.btnCreateMovie.Text = "Adicionar Local";
             this.btnCreateMovie.UseVisualStyleBackColor = false;
@@ -474,7 +478,7 @@
             // 
             this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(713, 12);
+            this.Close.Location = new System.Drawing.Point(950, 12);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 59;
@@ -486,7 +490,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(505, 158);
+            this.label7.Location = new System.Drawing.Point(622, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(215, 24);
             this.label7.TabIndex = 61;
@@ -495,18 +499,18 @@
             // dgViewLocals
             // 
             this.dgViewLocals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgViewLocals.Location = new System.Drawing.Point(509, 201);
+            this.dgViewLocals.Location = new System.Drawing.Point(510, 188);
             this.dgViewLocals.Name = "dgViewLocals";
-            this.dgViewLocals.Size = new System.Drawing.Size(279, 180);
+            this.dgViewLocals.Size = new System.Drawing.Size(515, 276);
             this.dgViewLocals.TabIndex = 60;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(155, 416);
+            this.panel2.Location = new System.Drawing.Point(155, 513);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(650, 34);
+            this.panel2.Size = new System.Drawing.Size(881, 34);
             this.panel2.TabIndex = 62;
             // 
             // label4
@@ -519,11 +523,22 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(626, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(211, 119);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 78;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormRegistoLocal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1037, 547);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgViewLocals);
@@ -549,6 +564,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgViewLocals)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,5 +623,6 @@
         private System.Windows.Forms.DataGridView dgViewLocals;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
