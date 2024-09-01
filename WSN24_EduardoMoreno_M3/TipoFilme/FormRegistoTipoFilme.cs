@@ -134,11 +134,19 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtID_tipofilme.Text = string.Empty;
+            txtTypeName.Text = string.Empty;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         #endregion
+
+       
     }
 }

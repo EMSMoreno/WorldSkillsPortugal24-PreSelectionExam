@@ -165,16 +165,18 @@ namespace WSN24_EduardoMoreno_M3
                 {
                     con.Open();
                     string query = @"
-                        SELECT COUNT(*) 
-                        FROM Sessao 
-                        WHERE codigo_sala = @codigo_sala 
-                          AND codigo_filme = @codigo_filme 
-                          AND data = @data 
-                          AND hora = @hora";
+                SELECT COUNT(*) 
+                FROM Sessao 
+                WHERE codigo_sala = @codigo_sala 
+                  AND codigo_filme = @codigo_filme 
+                  AND id_cinema = @id_cinema 
+                  AND data = @data 
+                  AND hora = @hora";
 
                     cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@codigo_sala", cbSala.SelectedValue);
                     cmd.Parameters.AddWithValue("@codigo_filme", cbFilme.SelectedValue);
+                    cmd.Parameters.AddWithValue("@id_cinema", cbCinema.SelectedValue);
                     cmd.Parameters.AddWithValue("@data", dtpData.Value.Date);
                     cmd.Parameters.AddWithValue("@hora", txtHour.Text);
 
@@ -184,7 +186,7 @@ namespace WSN24_EduardoMoreno_M3
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao verificar duplicatas: " + ex.Message);
+                MessageBox.Show("Erro ao verificar duplicação de sessões com os mesmos dados: " + ex.Message);
                 return false;
             }
         }
@@ -208,10 +210,10 @@ namespace WSN24_EduardoMoreno_M3
             if (string.IsNullOrWhiteSpace(txtIDSessao.Text) ||
                 cbSala.SelectedValue == null ||
                 cbFilme.SelectedValue == null ||
-                cbCinema.SelectedValue == null ||  // Certifique-se de que o id_cinema não é nulo
+                cbCinema.SelectedValue == null ||
                 string.IsNullOrWhiteSpace(txtHour.Text))
             {
-                MessageBox.Show("Preencha todos os campos antes de salvar.");
+                MessageBox.Show("Preenche todos os campos antes de adicionar uma nova sessão!");
                 return;
             }
 
@@ -219,6 +221,13 @@ namespace WSN24_EduardoMoreno_M3
             if (!TimeSpan.TryParse(txtHour.Text, out hora))
             {
                 MessageBox.Show("O formato da hora deve ser hh:mm.");
+                return;
+            }
+
+            // Vai ver se sessão é duplicada
+            if (IsSessionDuplicate())
+            {
+                MessageBox.Show("Já existe uma sessão com esse filme na mesma sala, cinema, data e hora, cuidado com isso!");
                 return;
             }
 

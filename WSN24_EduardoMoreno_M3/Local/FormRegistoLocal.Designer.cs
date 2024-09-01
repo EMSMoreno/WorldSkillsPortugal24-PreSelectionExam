@@ -74,7 +74,7 @@
             this.lblDescricaoFilme = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnCancelarOperacao = new System.Windows.Forms.Button();
-            this.btnCreateMovie = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dgViewLocals = new System.Windows.Forms.DataGridView();
@@ -202,19 +202,19 @@
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem5
@@ -460,19 +460,19 @@
             this.btnCancelarOperacao.UseVisualStyleBackColor = true;
             this.btnCancelarOperacao.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnCreateMovie
+            // btnSave
             // 
-            this.btnCreateMovie.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCreateMovie.Location = new System.Drawing.Point(168, 390);
-            this.btnCreateMovie.Name = "btnCreateMovie";
-            this.btnCreateMovie.Size = new System.Drawing.Size(336, 34);
-            this.btnCreateMovie.TabIndex = 57;
-            this.btnCreateMovie.Text = "Adicionar Local";
-            this.btnCreateMovie.UseVisualStyleBackColor = false;
-            this.btnCreateMovie.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSave.Location = new System.Drawing.Point(168, 390);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(336, 34);
+            this.btnSave.TabIndex = 57;
+            this.btnSave.Text = "Adicionar Local";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Close
             // 
@@ -499,9 +499,9 @@
             // dgViewLocals
             // 
             this.dgViewLocals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgViewLocals.Location = new System.Drawing.Point(510, 188);
+            this.dgViewLocals.Location = new System.Drawing.Point(533, 188);
             this.dgViewLocals.Name = "dgViewLocals";
-            this.dgViewLocals.Size = new System.Drawing.Size(515, 276);
+            this.dgViewLocals.Size = new System.Drawing.Size(492, 276);
             this.dgViewLocals.TabIndex = 60;
             // 
             // panel2
@@ -544,7 +544,7 @@
             this.Controls.Add(this.dgViewLocals);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.btnCancelarOperacao);
-            this.Controls.Add(this.btnCreateMovie);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtIDLocal);
             this.Controls.Add(this.lblMID);
             this.Controls.Add(this.lblDescricaoFilme);
@@ -556,6 +556,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegistoLocal";
             this.Text = "FormRegistoLocal";
+            this.Load += new System.EventHandler(this.FormRegistoLocal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -617,7 +618,7 @@
         private System.Windows.Forms.Label lblDescricaoFilme;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnCancelarOperacao;
-        private System.Windows.Forms.Button btnCreateMovie;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button Close;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgViewLocals;

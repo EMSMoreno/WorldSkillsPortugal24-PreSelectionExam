@@ -92,6 +92,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
                     {
                         MessageBox.Show("Tipo de Filme atualizado com sucesso!");
                         LoadTiposFilme();
+                        txtEditarTipoFilme.Text = string.Empty;
                     }
                     else
                     {

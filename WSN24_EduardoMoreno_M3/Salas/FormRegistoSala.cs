@@ -77,6 +77,11 @@ namespace WSN24_EduardoMoreno_M3
             LoadSalas();
         }
 
+        private void cbSalas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSalas();
+        }
+
         private void ClearAllData()
         {
             txtDescricao.Clear();
@@ -90,7 +95,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             if (string.IsNullOrWhiteSpace(txtDescricao.Text))
             {
-                MessageBox.Show("Preencha a descrição antes de salvar.");
+                MessageBox.Show("Preenche a descrição antes de guardar!");
                 return;
             }
 
@@ -103,13 +108,14 @@ namespace WSN24_EduardoMoreno_M3
                     cmd.Parameters.AddWithValue("@codigo_sala", txtIDSala.Text);
                     cmd.Parameters.AddWithValue("@descricao", txtDescricao.Text);
 
-                    // Create a default ID value for id_cinema because FK
                     int defaultCinemaId = 1;
                     cmd.Parameters.AddWithValue("@id_cinema", defaultCinemaId);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Sala registrada com sucesso!");
-
+                    MessageBox.Show("Sala registrada com sucesso!");                   
+                    LoadSalas();
+                    ClearAllData();
+                    GenerateNewID();
                 }
             }
             catch (Exception ex)
@@ -129,5 +135,7 @@ namespace WSN24_EduardoMoreno_M3
         }
 
         #endregion
+
+        
     }
 }

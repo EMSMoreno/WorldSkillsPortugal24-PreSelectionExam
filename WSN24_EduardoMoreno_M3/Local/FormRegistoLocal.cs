@@ -107,6 +107,18 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
+        private bool IsValidDescription(string description)
+        {
+            foreach (char c in description)
+            {
+                if (!char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void ClearAllData()
         {
             txtDescription.Clear();
@@ -122,6 +134,12 @@ namespace WSN24_EduardoMoreno_M3
             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
                 MessageBox.Show("Preencha a descrição antes de salvar.");
+                return;
+            }
+
+            if (!IsValidDescription(txtDescription.Text))
+            {
+                MessageBox.Show("A descrição contém caracteres inválidos. Use apenas letras e números.");
                 return;
             }
 
