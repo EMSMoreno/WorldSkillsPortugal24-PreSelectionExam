@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using WSN24_EduardoMoreno_M3.Cinema;
@@ -64,7 +63,7 @@ namespace WSN24_EduardoMoreno_M3
         }
 
         private void UpdatePanelSkillsTextColor()
-        { 
+        {
             if (panelSkills.BackColor == Color.FromArgb(3, 0, 10))
             {
                 lblSkills.ForeColor = Color.White;
@@ -96,10 +95,6 @@ namespace WSN24_EduardoMoreno_M3
 
         #endregion
 
-        private void Close_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         #region Log Out & Guardar Dados do Utilizador na Sessão
 
@@ -171,19 +166,19 @@ namespace WSN24_EduardoMoreno_M3
 
         #region MenuStrip - Local
 
-        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        private void registarToolStripMenuItem11_Click(object sender, EventArgs e)
         {
             using (var formRegistoLocal = new FormRegistoLocal())
             { formRegistoLocal.ShowDialog(); }
         }
 
-        private void toolStripMenuItem12_Click(object sender, EventArgs e)
+        private void editarToolStripMenuItem12_Click(object sender, EventArgs e)
         {
             using (var formEditarLocal = new FormEditarLocal())
             { formEditarLocal.ShowDialog(); }
         }
 
-        private void toolStripMenuItem13_Click(object sender, EventArgs e)
+        private void apagarToolStripMenuItem13_Click(object sender, EventArgs e)
         {
             using (var formApagarLocal = new FormApagarLocal())
             { formApagarLocal.ShowDialog(); }
@@ -207,7 +202,7 @@ namespace WSN24_EduardoMoreno_M3
             { formEditarCinema.ShowDialog(); }
         }
 
-        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void apagarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var formApagarCinema = new FormApagarCinema())
             { formApagarCinema.ShowDialog(); }
@@ -231,7 +226,7 @@ namespace WSN24_EduardoMoreno_M3
             { formEditarSala.ShowDialog(); }
         }
 
-        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void apagarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             using (var formApagarSala = new FormApagarSala())
             { formApagarSala.ShowDialog(); }
@@ -255,7 +250,7 @@ namespace WSN24_EduardoMoreno_M3
             { formEditarSessao.ShowDialog(); }
         }
 
-        private void listarToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void apagarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             using (var formApagarSessao = new FormApagarSessao())
             { formApagarSessao.ShowDialog(); }
@@ -279,10 +274,10 @@ namespace WSN24_EduardoMoreno_M3
             { formEditarFilme.ShowDialog(); }
         }
 
-        private void listarToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void apagarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            using (var formListarFilme = new FormApagarFilme())
-            { formListarFilme.ShowDialog(); }
+            using (var formApagarFilme = new FormApagarFilme())
+            { formApagarFilme.ShowDialog(); }
         }
 
         #endregion 
@@ -297,16 +292,16 @@ namespace WSN24_EduardoMoreno_M3
             { formListarTipoFilme.ShowDialog(); }
         }
 
-        private void apagarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var formApagarTipoFilme = new FormApagarTipoFilme())
-            { formApagarTipoFilme.ShowDialog(); }
-        }
-
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var formEditarTipoFilme = new FormEditarTipoFilme())
             { formEditarTipoFilme.ShowDialog(); }
+        }
+
+        private void apagarToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            using (var formApagarTipoFilme = new FormApagarTipoFilme())
+            { formApagarTipoFilme.ShowDialog(); }
         }
 
         #endregion

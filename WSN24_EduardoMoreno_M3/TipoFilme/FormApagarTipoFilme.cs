@@ -92,6 +92,11 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cbTiposFilme.Text = string.Empty;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();

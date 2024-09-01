@@ -53,7 +53,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             if (cbSession.SelectedValue == null)
             {
-                MessageBox.Show("Por favor, selecione uma sessão.");
+                MessageBox.Show("Seleciona uma sessão para apagar.");
                 return;
             }
 
@@ -69,11 +69,11 @@ namespace WSN24_EduardoMoreno_M3
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Sessão apagada com sucesso!");
-                        LoadSessions(); // Recarregar as sessões após exclusão
+                        LoadSessions();
                     }
                     else
                     {
-                        MessageBox.Show("Nenhuma sessão encontrada com o ID fornecido.");
+                        MessageBox.Show("Nenhuma sessão foi encontrada com o ID fornecido.");
                     }
                 }
             }
@@ -81,6 +81,11 @@ namespace WSN24_EduardoMoreno_M3
             {
                 MessageBox.Show("Erro ao apagar a sessão: " + ex.Message);
             }
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            cbSession.Text = string.Empty;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistoCinema));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -199,24 +200,24 @@
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 25);
-            this.toolStripMenuItem10.Text = "Local";
+            this.toolStripMenuItem10.Text = "Locais";
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem5
@@ -421,7 +422,7 @@
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 64;
-            this.Close.Text = "Fechar Programa";
+            this.Close.Text = "Fechar Janela";
             this.Close.UseVisualStyleBackColor = true;
             this.Close.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -437,6 +438,14 @@
             // 
             // dgViewCinemas
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgViewCinemas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgViewCinemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewCinemas.Location = new System.Drawing.Point(509, 201);
             this.dgViewCinemas.Name = "dgViewCinemas";
@@ -472,7 +481,7 @@
             // txtIDCinema
             // 
             this.txtIDCinema.Enabled = false;
-            this.txtIDCinema.Location = new System.Drawing.Point(290, 249);
+            this.txtIDCinema.Location = new System.Drawing.Point(301, 249);
             this.txtIDCinema.Name = "txtIDCinema";
             this.txtIDCinema.Size = new System.Drawing.Size(56, 20);
             this.txtIDCinema.TabIndex = 70;
@@ -481,7 +490,7 @@
             // lblMID
             // 
             this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(287, 233);
+            this.lblMID.Location = new System.Drawing.Point(298, 233);
             this.lblMID.Name = "lblMID";
             this.lblMID.Size = new System.Drawing.Size(59, 13);
             this.lblMID.TabIndex = 69;
@@ -490,7 +499,7 @@
             // lblNomeCinema
             // 
             this.lblNomeCinema.AutoSize = true;
-            this.lblNomeCinema.Location = new System.Drawing.Point(281, 281);
+            this.lblNomeCinema.Location = new System.Drawing.Point(296, 281);
             this.lblNomeCinema.Name = "lblNomeCinema";
             this.lblNomeCinema.Size = new System.Drawing.Size(76, 13);
             this.lblNomeCinema.TabIndex = 68;
@@ -500,7 +509,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(187, 297);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(265, 20);
+            this.txtName.Size = new System.Drawing.Size(288, 20);
             this.txtName.TabIndex = 67;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -529,13 +538,13 @@
             this.cbLocal.FormattingEnabled = true;
             this.cbLocal.Location = new System.Drawing.Point(187, 348);
             this.cbLocal.Name = "cbLocal";
-            this.cbLocal.Size = new System.Drawing.Size(265, 21);
+            this.cbLocal.Size = new System.Drawing.Size(288, 21);
             this.cbLocal.TabIndex = 75;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(283, 332);
+            this.label8.Location = new System.Drawing.Point(296, 332);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 76;

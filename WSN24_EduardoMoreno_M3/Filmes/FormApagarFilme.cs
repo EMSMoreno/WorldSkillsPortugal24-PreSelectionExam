@@ -126,12 +126,20 @@ namespace WSN24_EduardoMoreno_M3
                 return;
             }
 
-            DialogResult result = MessageBox.Show($"Tens a certeza que queres apagar o filme  {txtName.Text}?", "Confirmar Eliminação", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($"Tens a certeza que queres apagar o filme {txtName.Text}?", "Confirmar Eliminação", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
                 DeleteMovie(txtID.Text);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtID.Text = string.Empty;
+            txtName.Text = string.Empty;
+            txtDescription.Text = string.Empty;
+            txtYear.Text = string.Empty;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

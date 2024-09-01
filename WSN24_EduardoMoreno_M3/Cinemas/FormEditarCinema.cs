@@ -110,6 +110,12 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtIDCinema.Text = string.Empty;
+            txtName.Text = string.Empty;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();

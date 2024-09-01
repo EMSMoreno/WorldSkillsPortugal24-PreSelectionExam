@@ -70,17 +70,23 @@ namespace WSN24_EduardoMoreno_M3
             this.apagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSkills = new System.Windows.Forms.Panel();
             this.lblSkills = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDarkMode = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.lblSponsors = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblDesignDev = new System.Windows.Forms.Label();
+            this.lblMyName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,9 +128,9 @@ namespace WSN24_EduardoMoreno_M3
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(71, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 24);
+            this.label1.Size = new System.Drawing.Size(213, 24);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Cinemas Skillianos";
+            this.label1.Text = "Cinemas Skillianos 🎦";
             // 
             // pictureBox1
             // 
@@ -198,21 +204,21 @@ namespace WSN24_EduardoMoreno_M3
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
             this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem11.Text = "Registar";
-            this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
+            this.toolStripMenuItem11.Click += new System.EventHandler(this.registarToolStripMenuItem11_Click);
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
             this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem12.Text = "Editar";
-            this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
+            this.toolStripMenuItem12.Click += new System.EventHandler(this.editarToolStripMenuItem12_Click);
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
             this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem13.Text = "Apagar";
-            this.toolStripMenuItem13.Click += new System.EventHandler(this.toolStripMenuItem13_Click);
+            this.toolStripMenuItem13.Click += new System.EventHandler(this.apagarToolStripMenuItem13_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -250,7 +256,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
             this.listarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem.Text = "Apagar";
-            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
+            this.listarToolStripMenuItem.Click += new System.EventHandler(this.apagarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -288,7 +294,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             this.listarToolStripMenuItem1.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem1.Text = "Apagar";
-            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
+            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.apagarToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem7
             // 
@@ -326,7 +332,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
             this.listarToolStripMenuItem2.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem2.Text = "Apagar";
-            this.listarToolStripMenuItem2.Click += new System.EventHandler(this.listarToolStripMenuItem2_Click);
+            this.listarToolStripMenuItem2.Click += new System.EventHandler(this.apagarToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -364,7 +370,7 @@ namespace WSN24_EduardoMoreno_M3
             this.listarToolStripMenuItem3.Name = "listarToolStripMenuItem3";
             this.listarToolStripMenuItem3.Size = new System.Drawing.Size(142, 26);
             this.listarToolStripMenuItem3.Text = "Apagar";
-            this.listarToolStripMenuItem3.Click += new System.EventHandler(this.listarToolStripMenuItem3_Click);
+            this.listarToolStripMenuItem3.Click += new System.EventHandler(this.apagarToolStripMenuItem3_Click);
             // 
             // toolStripMenuItem9
             // 
@@ -402,7 +408,7 @@ namespace WSN24_EduardoMoreno_M3
             this.apagarToolStripMenuItem.Name = "apagarToolStripMenuItem";
             this.apagarToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.apagarToolStripMenuItem.Text = "Apagar";
-            this.apagarToolStripMenuItem.Click += new System.EventHandler(this.apagarToolStripMenuItem_Click);
+            this.apagarToolStripMenuItem.Click += new System.EventHandler(this.apagarToolStripMenuItem5_Click);
             // 
             // panelSkills
             // 
@@ -417,23 +423,11 @@ namespace WSN24_EduardoMoreno_M3
             // 
             this.lblSkills.AutoSize = true;
             this.lblSkills.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkills.Location = new System.Drawing.Point(167, 10);
+            this.lblSkills.Location = new System.Drawing.Point(149, 10);
             this.lblSkills.Name = "lblSkills";
             this.lblSkills.Size = new System.Drawing.Size(458, 15);
             this.lblSkills.TabIndex = 3;
             this.lblSkills.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(823, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 47);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Fechar Programa";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.Close_Click);
             // 
             // label5
             // 
@@ -450,9 +444,9 @@ namespace WSN24_EduardoMoreno_M3
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(286, 204);
+            this.pictureBox2.Location = new System.Drawing.Point(325, 200);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(464, 274);
+            this.pictureBox2.Size = new System.Drawing.Size(376, 218);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -464,11 +458,11 @@ namespace WSN24_EduardoMoreno_M3
             this.btnDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDarkMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDarkMode.ForeColor = System.Drawing.Color.White;
-            this.btnDarkMode.Location = new System.Drawing.Point(479, 12);
+            this.btnDarkMode.Location = new System.Drawing.Point(615, 12);
             this.btnDarkMode.Name = "btnDarkMode";
-            this.btnDarkMode.Size = new System.Drawing.Size(130, 47);
+            this.btnDarkMode.Size = new System.Drawing.Size(147, 47);
             this.btnDarkMode.TabIndex = 6;
-            this.btnDarkMode.Text = "Enable Dark Mode";
+            this.btnDarkMode.Text = "🌙 Enable Dark Mode";
             this.btnDarkMode.UseVisualStyleBackColor = false;
             this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
             // 
@@ -477,24 +471,76 @@ namespace WSN24_EduardoMoreno_M3
             this.btnLogOut.FlatAppearance.BorderColor = System.Drawing.Color.SlateBlue;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(675, 12);
+            this.btnLogOut.Location = new System.Drawing.Point(768, 12);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(75, 47);
+            this.btnLogOut.Size = new System.Drawing.Size(130, 47);
             this.btnLogOut.TabIndex = 7;
-            this.btnLogOut.Text = "LogOut";
+            this.btnLogOut.Text = "🚪 LogOut";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // lblSponsors
+            // 
+            this.lblSponsors.AutoSize = true;
+            this.lblSponsors.Location = new System.Drawing.Point(665, 475);
+            this.lblSponsors.Name = "lblSponsors";
+            this.lblSponsors.Size = new System.Drawing.Size(75, 13);
+            this.lblSponsors.TabIndex = 20;
+            this.lblSponsors.Text = "Sponsored by:";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(753, 451);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(81, 58);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 19;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(840, 451);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(63, 58);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lblDesignDev
+            // 
+            this.lblDesignDev.AutoSize = true;
+            this.lblDesignDev.Location = new System.Drawing.Point(159, 496);
+            this.lblDesignDev.Name = "lblDesignDev";
+            this.lblDesignDev.Size = new System.Drawing.Size(145, 13);
+            this.lblDesignDev.TabIndex = 21;
+            this.lblDesignDev.Text = "Designed and Developed by:";
+            // 
+            // lblMyName
+            // 
+            this.lblMyName.AutoSize = true;
+            this.lblMyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMyName.Location = new System.Drawing.Point(310, 496);
+            this.lblMyName.Name = "lblMyName";
+            this.lblMyName.Size = new System.Drawing.Size(68, 13);
+            this.lblMyName.TabIndex = 22;
+            this.lblMyName.Text = "Eduardo M";
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 549);
+            this.Controls.Add(this.lblMyName);
+            this.Controls.Add(this.lblDesignDev);
+            this.Controls.Add(this.lblSponsors);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnDarkMode);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panelSkills);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -510,6 +556,8 @@ namespace WSN24_EduardoMoreno_M3
             this.panelSkills.ResumeLayout(false);
             this.panelSkills.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,7 +596,6 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelSkills;
         private System.Windows.Forms.Label lblSkills;
-        private System.Windows.Forms.Button btnClose;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -563,6 +610,11 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
         private System.Windows.Forms.Button btnDarkMode;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Label lblSponsors;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblDesignDev;
+        private System.Windows.Forms.Label lblMyName;
     }
 }
 

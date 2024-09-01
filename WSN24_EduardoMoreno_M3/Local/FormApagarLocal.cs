@@ -57,7 +57,7 @@ namespace WSN24_EduardoMoreno_M3.Local
         {
             if (cbLocals.SelectedIndex == -1 || cbLocals.SelectedValue == null)
             {
-                MessageBox.Show("Selecione um Local para apagar.");
+                MessageBox.Show("Seleciona um Local para apagar.");
                 return;
             }
 
@@ -76,7 +76,7 @@ namespace WSN24_EduardoMoreno_M3.Local
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Local apagado com sucesso!");
-                        LoadLocals();  // Recarrega os dados da ComboBox
+                        LoadLocals();
                     }
                     else
                     {
@@ -90,6 +90,11 @@ namespace WSN24_EduardoMoreno_M3.Local
             {
                 MessageBox.Show("Ocorreu um erro ao tentar apagar o Local: " + ex.Message);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cbLocals.Text = string.Empty;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

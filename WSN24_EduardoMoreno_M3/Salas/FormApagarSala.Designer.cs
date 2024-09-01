@@ -75,6 +75,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,7 +85,7 @@
             // lblApagarTipoFilme
             // 
             this.lblApagarTipoFilme.AutoSize = true;
-            this.lblApagarTipoFilme.Location = new System.Drawing.Point(298, 241);
+            this.lblApagarTipoFilme.Location = new System.Drawing.Point(386, 214);
             this.lblApagarTipoFilme.Name = "lblApagarTipoFilme";
             this.lblApagarTipoFilme.Size = new System.Drawing.Size(127, 13);
             this.lblApagarTipoFilme.TabIndex = 84;
@@ -94,10 +95,10 @@
             // 
             this.cbSalas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSalas.FormattingEnabled = true;
-            this.cbSalas.Location = new System.Drawing.Point(266, 269);
+            this.cbSalas.Location = new System.Drawing.Point(332, 230);
             this.cbSalas.Name = "cbSalas";
             this.cbSalas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbSalas.Size = new System.Drawing.Size(209, 21);
+            this.cbSalas.Size = new System.Drawing.Size(231, 21);
             this.cbSalas.TabIndex = 83;
             // 
             // btnApagarSala
@@ -106,9 +107,9 @@
             this.btnApagarSala.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnApagarSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnApagarSala.Location = new System.Drawing.Point(282, 324);
+            this.btnApagarSala.Location = new System.Drawing.Point(332, 283);
             this.btnApagarSala.Name = "btnApagarSala";
-            this.btnApagarSala.Size = new System.Drawing.Size(167, 34);
+            this.btnApagarSala.Size = new System.Drawing.Size(231, 34);
             this.btnApagarSala.TabIndex = 82;
             this.btnApagarSala.Text = "Eliminar Sala";
             this.btnApagarSala.UseVisualStyleBackColor = false;
@@ -118,7 +119,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(240, 154);
+            this.label6.Location = new System.Drawing.Point(217, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 24);
             this.label6.TabIndex = 81;
@@ -138,11 +139,11 @@
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(560, 12);
+            this.btnClose.Location = new System.Drawing.Point(653, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 47);
             this.btnClose.TabIndex = 79;
-            this.btnClose.Text = "Fechar Programa";
+            this.btnClose.Text = "Fechar Janela";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -152,14 +153,14 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(155, 417);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 34);
+            this.panel2.Size = new System.Drawing.Size(585, 34);
             this.panel2.TabIndex = 78;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 10);
+            this.label4.Location = new System.Drawing.Point(54, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(458, 15);
             this.label4.TabIndex = 4;
@@ -220,24 +221,24 @@
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 25);
-            this.toolStripMenuItem10.Text = "Local";
+            this.toolStripMenuItem10.Text = "Locais";
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem5
@@ -468,11 +469,26 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(332, 323);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(231, 34);
+            this.btnCancel.TabIndex = 85;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FormApagarSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 450);
+            this.ClientSize = new System.Drawing.Size(740, 450);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblApagarTipoFilme);
             this.Controls.Add(this.cbSalas);
             this.Controls.Add(this.btnApagarSala);
@@ -545,5 +561,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

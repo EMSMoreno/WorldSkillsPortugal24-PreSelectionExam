@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WSN24_EduardoMoreno_M3
+﻿namespace WSN24_EduardoMoreno_M3
 {
     public class UserSession
     {
-         public static User CurrentUser { get; set; }
+        public static User CurrentUser { get; set; }
 
-         public static void Logout()
-         {
+        public static void Logout()
+        {
             CurrentUser = null;
-         }
+        }
 
         public class User
         {

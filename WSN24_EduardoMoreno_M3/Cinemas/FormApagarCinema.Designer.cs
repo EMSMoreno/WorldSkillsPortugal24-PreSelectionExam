@@ -75,6 +75,7 @@
             this.btnCreateMovie = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -189,24 +190,24 @@
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 25);
-            this.toolStripMenuItem10.Text = "Local";
+            this.toolStripMenuItem10.Text = "Locais";
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem1
@@ -390,14 +391,14 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(155, 416);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(549, 34);
+            this.panel2.Size = new System.Drawing.Size(585, 34);
             this.panel2.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 10);
+            this.label4.Location = new System.Drawing.Point(56, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(458, 15);
             this.label4.TabIndex = 3;
@@ -407,18 +408,18 @@
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(618, 12);
+            this.btnClose.Location = new System.Drawing.Point(653, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 47);
             this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Fechar Programa";
+            this.btnClose.Text = "Fechar Janela";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblApagarTipoFilme
             // 
             this.lblApagarTipoFilme.AutoSize = true;
-            this.lblApagarTipoFilme.Location = new System.Drawing.Point(319, 242);
+            this.lblApagarTipoFilme.Location = new System.Drawing.Point(373, 221);
             this.lblApagarTipoFilme.Name = "lblApagarTipoFilme";
             this.lblApagarTipoFilme.Size = new System.Drawing.Size(141, 13);
             this.lblApagarTipoFilme.TabIndex = 80;
@@ -428,10 +429,10 @@
             // 
             this.cbCinemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCinemas.FormattingEnabled = true;
-            this.cbCinemas.Location = new System.Drawing.Point(287, 270);
+            this.cbCinemas.Location = new System.Drawing.Point(329, 237);
             this.cbCinemas.Name = "cbCinemas";
             this.cbCinemas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbCinemas.Size = new System.Drawing.Size(209, 21);
+            this.cbCinemas.Size = new System.Drawing.Size(231, 21);
             this.cbCinemas.TabIndex = 79;
             // 
             // btnCreateMovie
@@ -440,9 +441,9 @@
             this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCreateMovie.Location = new System.Drawing.Point(303, 325);
+            this.btnCreateMovie.Location = new System.Drawing.Point(329, 286);
             this.btnCreateMovie.Name = "btnCreateMovie";
-            this.btnCreateMovie.Size = new System.Drawing.Size(167, 34);
+            this.btnCreateMovie.Size = new System.Drawing.Size(231, 34);
             this.btnCreateMovie.TabIndex = 78;
             this.btnCreateMovie.Text = "Eliminar Cinema";
             this.btnCreateMovie.UseVisualStyleBackColor = false;
@@ -452,7 +453,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(261, 155);
+            this.label6.Location = new System.Drawing.Point(217, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 24);
             this.label6.TabIndex = 77;
@@ -468,11 +469,26 @@
             this.label5.TabIndex = 76;
             this.label5.Text = "Cinemas";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(329, 326);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(231, 34);
+            this.btnCancel.TabIndex = 81;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // FormApagarCinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 450);
+            this.ClientSize = new System.Drawing.Size(740, 450);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblApagarTipoFilme);
             this.Controls.Add(this.cbCinemas);
             this.Controls.Add(this.btnCreateMovie);
@@ -545,5 +561,6 @@
         private System.Windows.Forms.Button btnCreateMovie;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

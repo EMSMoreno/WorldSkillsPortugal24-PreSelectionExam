@@ -159,24 +159,24 @@ namespace WSN24_EduardoMoreno_M3
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 25);
-            this.toolStripMenuItem10.Text = "Local";
+            this.toolStripMenuItem10.Text = "Locais";
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem1
@@ -434,7 +434,7 @@ namespace WSN24_EduardoMoreno_M3
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 5;
-            this.Close.Text = "Fechar Programa";
+            this.Close.Text = "Fechar Janela";
             this.Close.UseVisualStyleBackColor = true;
             this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
@@ -453,9 +453,9 @@ namespace WSN24_EduardoMoreno_M3
             this.dgViewMovies.AutoGenerateColumns = false;
             this.dgViewMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewMovies.DataSource = this.bdCineSkillsEduardoMorenoN24DataSetBindingSource;
-            this.dgViewMovies.Location = new System.Drawing.Point(509, 201);
+            this.dgViewMovies.Location = new System.Drawing.Point(484, 201);
             this.dgViewMovies.Name = "dgViewMovies";
-            this.dgViewMovies.Size = new System.Drawing.Size(516, 295);
+            this.dgViewMovies.Size = new System.Drawing.Size(541, 295);
             this.dgViewMovies.TabIndex = 14;
             this.dgViewMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewMovies_CellContentClick);
             // 
@@ -475,9 +475,9 @@ namespace WSN24_EduardoMoreno_M3
             this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCreateMovie.Location = new System.Drawing.Point(178, 462);
+            this.btnCreateMovie.Location = new System.Drawing.Point(183, 422);
             this.btnCreateMovie.Name = "btnCreateMovie";
-            this.btnCreateMovie.Size = new System.Drawing.Size(140, 34);
+            this.btnCreateMovie.Size = new System.Drawing.Size(278, 34);
             this.btnCreateMovie.TabIndex = 15;
             this.btnCreateMovie.Text = "Adicionar Filme";
             this.btnCreateMovie.UseVisualStyleBackColor = false;
@@ -486,16 +486,16 @@ namespace WSN24_EduardoMoreno_M3
             // lblAnoFilme
             // 
             this.lblAnoFilme.AutoSize = true;
-            this.lblAnoFilme.Location = new System.Drawing.Point(235, 409);
+            this.lblAnoFilme.Location = new System.Drawing.Point(204, 366);
             this.lblAnoFilme.Name = "lblAnoFilme";
-            this.lblAnoFilme.Size = new System.Drawing.Size(29, 13);
+            this.lblAnoFilme.Size = new System.Drawing.Size(56, 13);
             this.lblAnoFilme.TabIndex = 41;
-            this.lblAnoFilme.Text = "Ano:";
+            this.lblAnoFilme.Text = "Ano Filme:";
             // 
             // lblDescricaoFilme
             // 
             this.lblDescricaoFilme.AutoSize = true;
-            this.lblDescricaoFilme.Location = new System.Drawing.Point(272, 304);
+            this.lblDescricaoFilme.Location = new System.Drawing.Point(272, 267);
             this.lblDescricaoFilme.Name = "lblDescricaoFilme";
             this.lblDescricaoFilme.Size = new System.Drawing.Size(85, 13);
             this.lblDescricaoFilme.TabIndex = 40;
@@ -504,7 +504,7 @@ namespace WSN24_EduardoMoreno_M3
             // lblNomeFilme
             // 
             this.lblNomeFilme.AutoSize = true;
-            this.lblNomeFilme.Location = new System.Drawing.Point(287, 265);
+            this.lblNomeFilme.Location = new System.Drawing.Point(335, 217);
             this.lblNomeFilme.Name = "lblNomeFilme";
             this.lblNomeFilme.Size = new System.Drawing.Size(65, 13);
             this.lblNomeFilme.TabIndex = 39;
@@ -512,15 +512,15 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(206, 425);
+            this.txtYear.Location = new System.Drawing.Point(198, 382);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(81, 20);
+            this.txtYear.Size = new System.Drawing.Size(66, 20);
             this.txtYear.TabIndex = 38;
             this.txtYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(183, 320);
+            this.txtDescription.Location = new System.Drawing.Point(183, 283);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(278, 74);
@@ -529,16 +529,16 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(183, 281);
+            this.txtName.Location = new System.Drawing.Point(275, 233);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(278, 20);
+            this.txtName.Size = new System.Drawing.Size(186, 20);
             this.txtName.TabIndex = 36;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblMID
             // 
             this.lblMID.AutoSize = true;
-            this.lblMID.Location = new System.Drawing.Point(287, 216);
+            this.lblMID.Location = new System.Drawing.Point(204, 217);
             this.lblMID.Name = "lblMID";
             this.lblMID.Size = new System.Drawing.Size(48, 13);
             this.lblMID.TabIndex = 42;
@@ -548,9 +548,9 @@ namespace WSN24_EduardoMoreno_M3
             // 
             this.btnCancelarOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelarOperacao.Location = new System.Drawing.Point(324, 462);
+            this.btnCancelarOperacao.Location = new System.Drawing.Point(183, 462);
             this.btnCancelarOperacao.Name = "btnCancelarOperacao";
-            this.btnCancelarOperacao.Size = new System.Drawing.Size(155, 34);
+            this.btnCancelarOperacao.Size = new System.Drawing.Size(278, 34);
             this.btnCancelarOperacao.TabIndex = 44;
             this.btnCancelarOperacao.Text = "Cancelar Operação";
             this.btnCancelarOperacao.UseVisualStyleBackColor = true;
@@ -559,7 +559,7 @@ namespace WSN24_EduardoMoreno_M3
             // txtID_filme
             // 
             this.txtID_filme.Enabled = false;
-            this.txtID_filme.Location = new System.Drawing.Point(281, 232);
+            this.txtID_filme.Location = new System.Drawing.Point(198, 233);
             this.txtID_filme.Name = "txtID_filme";
             this.txtID_filme.Size = new System.Drawing.Size(66, 20);
             this.txtID_filme.TabIndex = 45;
@@ -588,7 +588,7 @@ namespace WSN24_EduardoMoreno_M3
             // lblTipoFilme
             // 
             this.lblTipoFilme.AutoSize = true;
-            this.lblTipoFilme.Location = new System.Drawing.Point(335, 409);
+            this.lblTipoFilme.Location = new System.Drawing.Point(345, 365);
             this.lblTipoFilme.Name = "lblTipoFilme";
             this.lblTipoFilme.Size = new System.Drawing.Size(73, 13);
             this.lblTipoFilme.TabIndex = 47;
@@ -597,7 +597,7 @@ namespace WSN24_EduardoMoreno_M3
             // cbTipoFilme
             // 
             this.cbTipoFilme.FormattingEnabled = true;
-            this.cbTipoFilme.Location = new System.Drawing.Point(314, 424);
+            this.cbTipoFilme.Location = new System.Drawing.Point(324, 381);
             this.cbTipoFilme.Name = "cbTipoFilme";
             this.cbTipoFilme.Size = new System.Drawing.Size(125, 21);
             this.cbTipoFilme.TabIndex = 48;

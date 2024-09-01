@@ -93,5 +93,10 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         }
 
         #endregion
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cbCinemas.Text = string.Empty;
+        }
     }
 }

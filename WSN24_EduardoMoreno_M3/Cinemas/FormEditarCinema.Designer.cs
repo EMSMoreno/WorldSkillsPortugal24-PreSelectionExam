@@ -72,7 +72,7 @@
             this.Close = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
             this.txtIDCinema = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnUpdateMovie = new System.Windows.Forms.Button();
@@ -194,24 +194,24 @@
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 25);
-            this.toolStripMenuItem10.Text = "Local";
+            this.toolStripMenuItem10.Text = "Locais";
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem5
@@ -416,14 +416,14 @@
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 65;
-            this.Close.Text = "Fechar Programa";
+            this.Close.Text = "Fechar Janela";
             this.Close.UseVisualStyleBackColor = true;
             this.Close.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(190, 229);
+            this.lblID.Location = new System.Drawing.Point(209, 234);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(59, 13);
             this.lblID.TabIndex = 86;
@@ -432,36 +432,37 @@
             // txtIDCinema
             // 
             this.txtIDCinema.Enabled = false;
-            this.txtIDCinema.Location = new System.Drawing.Point(255, 226);
+            this.txtIDCinema.Location = new System.Drawing.Point(274, 231);
             this.txtIDCinema.Name = "txtIDCinema";
             this.txtIDCinema.Size = new System.Drawing.Size(41, 20);
             this.txtIDCinema.TabIndex = 85;
             // 
-            // btnCancelar
+            // btnCancel
             // 
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(601, 254);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(157, 30);
-            this.btnCancelar.TabIndex = 84;
-            this.btnCancelar.Text = "Cancelar Operação";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(543, 254);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(226, 30);
+            this.btnCancel.TabIndex = 84;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(319, 229);
+            this.label9.Location = new System.Drawing.Point(192, 267);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 83;
-            this.label9.Text = "Nome:";
+            this.label9.Text = "Nome Cinema:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(363, 226);
+            this.txtName.Location = new System.Drawing.Point(274, 264);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(175, 20);
+            this.txtName.Size = new System.Drawing.Size(235, 20);
             this.txtName.TabIndex = 82;
             // 
             // btnUpdateMovie
@@ -470,9 +471,9 @@
             this.btnUpdateMovie.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.btnUpdateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdateMovie.Location = new System.Drawing.Point(601, 217);
+            this.btnUpdateMovie.Location = new System.Drawing.Point(543, 217);
             this.btnUpdateMovie.Name = "btnUpdateMovie";
-            this.btnUpdateMovie.Size = new System.Drawing.Size(157, 30);
+            this.btnUpdateMovie.Size = new System.Drawing.Size(226, 30);
             this.btnUpdateMovie.TabIndex = 81;
             this.btnUpdateMovie.Text = "Editar Cinema";
             this.btnUpdateMovie.UseVisualStyleBackColor = false;
@@ -483,7 +484,7 @@
             this.dgViewCinemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewCinemas.Location = new System.Drawing.Point(180, 290);
             this.dgViewCinemas.Name = "dgViewCinemas";
-            this.dgViewCinemas.Size = new System.Drawing.Size(578, 201);
+            this.dgViewCinemas.Size = new System.Drawing.Size(589, 220);
             this.dgViewCinemas.TabIndex = 80;
             this.dgViewCinemas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewCinemas_CellContentClick);
             // 
@@ -514,7 +515,7 @@
             this.ClientSize = new System.Drawing.Size(781, 564);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtIDCinema);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnUpdateMovie);
@@ -586,7 +587,7 @@
         private System.Windows.Forms.Button Close;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtIDCinema;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnUpdateMovie;

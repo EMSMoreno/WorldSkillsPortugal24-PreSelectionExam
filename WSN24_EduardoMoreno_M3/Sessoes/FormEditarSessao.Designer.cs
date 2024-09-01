@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarSessao));
             this.lblID = new System.Windows.Forms.Label();
             this.txtIDSessao = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdateMovie = new System.Windows.Forms.Button();
             this.dgViewSessions = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
@@ -112,17 +112,17 @@
             this.txtIDSessao.Size = new System.Drawing.Size(41, 20);
             this.txtIDSessao.TabIndex = 88;
             // 
-            // btnCancelar
+            // btnCancel
             // 
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(739, 249);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(157, 30);
-            this.btnCancelar.TabIndex = 87;
-            this.btnCancelar.Text = "Cancelar Operação";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(704, 249);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(192, 30);
+            this.btnCancel.TabIndex = 87;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdateMovie
             // 
@@ -130,9 +130,9 @@
             this.btnUpdateMovie.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
             this.btnUpdateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdateMovie.Location = new System.Drawing.Point(739, 212);
+            this.btnUpdateMovie.Location = new System.Drawing.Point(704, 212);
             this.btnUpdateMovie.Name = "btnUpdateMovie";
-            this.btnUpdateMovie.Size = new System.Drawing.Size(157, 30);
+            this.btnUpdateMovie.Size = new System.Drawing.Size(192, 30);
             this.btnUpdateMovie.TabIndex = 84;
             this.btnUpdateMovie.Text = "Editar Sessão";
             this.btnUpdateMovie.UseVisualStyleBackColor = false;
@@ -175,7 +175,7 @@
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 47);
             this.Close.TabIndex = 80;
-            this.Close.Text = "Fechar Programa";
+            this.Close.Text = "Fechar Janela";
             this.Close.UseVisualStyleBackColor = true;
             this.Close.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -234,24 +234,24 @@
             this.toolStripMenuItem10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(152, 25);
-            this.toolStripMenuItem10.Text = "Local";
+            this.toolStripMenuItem10.Text = "Locais";
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem5
@@ -505,11 +505,11 @@
             this.chkActive.AutoSize = true;
             this.chkActive.BackColor = System.Drawing.SystemColors.ControlLight;
             this.chkActive.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.chkActive.Location = new System.Drawing.Point(498, 265);
+            this.chkActive.Location = new System.Drawing.Point(570, 238);
             this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(66, 17);
+            this.chkActive.Size = new System.Drawing.Size(104, 17);
             this.chkActive.TabIndex = 96;
-            this.chkActive.Text = "É Ativa?";
+            this.chkActive.Text = "Sessão É Ativa?";
             this.chkActive.UseVisualStyleBackColor = false;
             // 
             // cbCinema
@@ -618,7 +618,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtIDSessao);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdateMovie);
             this.Controls.Add(this.dgViewSessions);
             this.Controls.Add(this.label6);
@@ -646,7 +646,7 @@
 
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtIDSessao;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdateMovie;
         private System.Windows.Forms.DataGridView dgViewSessions;
         private System.Windows.Forms.Label label6;
