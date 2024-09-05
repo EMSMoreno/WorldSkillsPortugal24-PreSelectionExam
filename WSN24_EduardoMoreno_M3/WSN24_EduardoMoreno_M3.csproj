@@ -82,11 +82,11 @@
     <Compile Include="Filmes\FormApagarFilme.Designer.cs">
       <DependentUpon>FormApagarFilme.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="FormCreateUserOrLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="FormCreateUserOrLogin.Designer.cs">
+      <DependentUpon>FormCreateUserOrLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Local\FormApagarLocal.cs">
       <SubType>Form</SubType>
@@ -106,6 +106,7 @@
     <Compile Include="Local\FormRegistoLocal.Designer.cs">
       <DependentUpon>FormRegistoLocal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordHasher.cs" />
     <Compile Include="Salas\FormApagarSala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,8 +191,8 @@
     <EmbeddedResource Include="Filmes\FormApagarFilme.resx">
       <DependentUpon>FormApagarFilme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <EmbeddedResource Include="FormCreateUserOrLogin.resx">
+      <DependentUpon>FormCreateUserOrLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

@@ -154,7 +154,7 @@ namespace WSN24_EduardoMoreno_M3
             {
                 UserSession.Logout();
 
-                Form loginForm = new FormLogin();
+                Form loginForm = new FormCreateUserOrLogin();
                 loginForm.Show();
 
                 this.Close();

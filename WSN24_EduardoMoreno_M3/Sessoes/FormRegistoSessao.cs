@@ -227,7 +227,7 @@ namespace WSN24_EduardoMoreno_M3
             // Vai ver se sessão é duplicada
             if (IsSessionDuplicate())
             {
-                MessageBox.Show("Já existe uma sessão com esse filme na mesma sala, cinema, data e hora, cuidado com isso!");
+                MessageBox.Show("Já existe uma sessão com esse filme na mesma sala, cinema, data ou hora, cuidado com isso!");
                 return;
             }
 
@@ -249,7 +249,7 @@ namespace WSN24_EduardoMoreno_M3
                     cmd.Parameters.AddWithValue("@ativa", chkActive.Checked);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Sessão registrada com sucesso!");
+                    MessageBox.Show("Sessão registada com sucesso!");
 
                     LoadSalas();
                     LoadFilmes();
@@ -261,7 +261,7 @@ namespace WSN24_EduardoMoreno_M3
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao registrar a sessão: " + ex.Message);
+                MessageBox.Show("Existe um erro ao registar a tua sessão: " + ex.Message);
             }
         }
 
