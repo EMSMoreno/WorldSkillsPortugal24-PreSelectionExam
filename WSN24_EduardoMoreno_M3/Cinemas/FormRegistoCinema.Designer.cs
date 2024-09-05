@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistoCinema));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,12 +84,17 @@
             this.cbLocal = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridViewCinema = new System.Windows.Forms.DataGridView();
+            this.btnSearchLocal = new System.Windows.Forms.Button();
+            this.txtSearchCinema = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewCinemas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCinema)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -168,7 +173,7 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 547);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 656);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
@@ -205,19 +210,19 @@
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem11.Text = "Registar";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem12.Text = "Editar";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(142, 26);
             this.toolStripMenuItem13.Text = "Apagar";
             // 
             // toolStripMenuItem5
@@ -399,7 +404,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(155, 513);
+            this.panel2.Location = new System.Drawing.Point(155, 622);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(883, 34);
             this.panel2.TabIndex = 63;
@@ -438,14 +443,14 @@
             // 
             // dgViewCinemas
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgViewCinemas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgViewCinemas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgViewCinemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewCinemas.Location = new System.Drawing.Point(509, 201);
             this.dgViewCinemas.Name = "dgViewCinemas";
@@ -560,11 +565,54 @@
             this.pictureBox2.TabIndex = 77;
             this.pictureBox2.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(228, 511);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(177, 24);
+            this.label9.TabIndex = 95;
+            this.label9.Text = "Procurar Cinemas";
+            // 
+            // dataGridViewCinema
+            // 
+            this.dataGridViewCinema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCinema.Location = new System.Drawing.Point(509, 511);
+            this.dataGridViewCinema.Name = "dataGridViewCinema";
+            this.dataGridViewCinema.Size = new System.Drawing.Size(516, 105);
+            this.dataGridViewCinema.TabIndex = 94;
+            // 
+            // btnSearchLocal
+            // 
+            this.btnSearchLocal.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnSearchLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchLocal.Location = new System.Drawing.Point(403, 552);
+            this.btnSearchLocal.Name = "btnSearchLocal";
+            this.btnSearchLocal.Size = new System.Drawing.Size(96, 47);
+            this.btnSearchLocal.TabIndex = 93;
+            this.btnSearchLocal.Text = "Procurar Cinema";
+            this.btnSearchLocal.UseVisualStyleBackColor = true;
+            this.btnSearchLocal.Click += new System.EventHandler(this.btnSearchLocal_Click);
+            // 
+            // txtSearchCinema
+            // 
+            this.txtSearchCinema.Location = new System.Drawing.Point(213, 566);
+            this.txtSearchCinema.Name = "txtSearchCinema";
+            this.txtSearchCinema.Size = new System.Drawing.Size(184, 20);
+            this.txtSearchCinema.TabIndex = 92;
+            this.txtSearchCinema.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FormRegistoCinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 547);
+            this.ClientSize = new System.Drawing.Size(1037, 656);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dataGridViewCinema);
+            this.Controls.Add(this.btnSearchLocal);
+            this.Controls.Add(this.txtSearchCinema);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbLocal);
@@ -594,6 +642,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewCinemas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCinema)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -655,5 +704,9 @@
         private System.Windows.Forms.ComboBox cbLocal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridViewCinema;
+        private System.Windows.Forms.Button btnSearchLocal;
+        private System.Windows.Forms.TextBox txtSearchCinema;
     }
 }

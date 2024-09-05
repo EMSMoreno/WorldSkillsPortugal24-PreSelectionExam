@@ -132,14 +132,14 @@ namespace WSN24_EduardoMoreno_M3
                 SELECT s.id_sessao AS 'ID Sessão',
                        sa.descricao AS 'Sala',
                        f.nome AS 'Filme',
-                       c.nome AS 'Cinema',  -- Inclui o nome do cinema
+                       c.nome AS 'Cinema',
                        s.data AS 'Data',
                        s.hora AS 'Hora',
                        s.ativa AS 'Ativa'
                 FROM Sessao s
                 JOIN Sala sa ON s.codigo_sala = sa.codigo_sala
                 JOIN Filme f ON s.codigo_filme = f.codigo_filme
-                JOIN Cinema c ON s.id_cinema = c.id_cinema";  // Adiciona o join para Cinema
+                JOIN Cinema c ON s.id_cinema = c.id_cinema";
 
                     adapter = new SqlDataAdapter(query, con);
                     dt = new DataTable();
@@ -199,6 +199,54 @@ namespace WSN24_EduardoMoreno_M3
             dtpData.Value = DateTime.Now;
             txtHour.Clear();
             chkActive.Checked = false;
+        }
+
+        private void SearchSessoes(string searchTerm)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    
+                    SqlCommand cmd = new SqlCommand(@"
+                    SELECT s.id_sessao AS 'ID Sessão',
+                           sa.descricao AS 'Sala',
+                           f.nome AS 'Filme',
+                           c.nome AS 'Cinema',
+                           CONVERT(VARCHAR, s.data, 105) AS 'Data',
+                           s.hora AS 'Hora',
+                           s.ativa AS 'Ativa'
+                    FROM Sessao s
+                    JOIN Sala sa ON s.codigo_sala = sa.codigo_sala
+                    JOIN Filme f ON s.codigo_filme = f.codigo_filme
+                    JOIN Cinema c ON s.id_cinema = c.id_cinema
+                    WHERE sa.descricao LIKE @searchTerm 
+                       OR f.nome LIKE @searchTerm 
+                       OR c.nome LIKE @searchTerm 
+                       OR CONVERT(VARCHAR, s.data, 105) LIKE @searchTerm 
+                       OR s.hora LIKE @searchTerm", con);
+
+                    cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridViewSearchSessões.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma Sessão encontrada, com base naquilo que pesquisaste.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar Sessões: " + ex.Message);
+            }
         }
 
         #endregion
@@ -270,11 +318,28 @@ namespace WSN24_EduardoMoreno_M3
             ClearAllData();
         }
 
+        private void btnSearchSessões_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchSessões.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Escreve a Sessão que procuras.");
+                txtSearchSessões.Text = "";
+                return;
+            }
+
+            SearchSessoes(searchTerm);
+            txtSearchSessões.Text = "";
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         #endregion
+
+        
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistoSessao));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,12 +91,17 @@
             this.cbFilme = new System.Windows.Forms.ComboBox();
             this.lblIDFilme = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridViewSearchSessões = new System.Windows.Forms.DataGridView();
+            this.btnSearchSessões = new System.Windows.Forms.Button();
+            this.txtSearchSessões = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSessions)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchSessões)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -175,7 +180,7 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 547);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 666);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
@@ -526,7 +531,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(657, 157);
+            this.label5.Location = new System.Drawing.Point(682, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(241, 24);
             this.label5.TabIndex = 71;
@@ -535,14 +540,14 @@
             // dgViewSessions
             // 
             this.dgViewSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgViewSessions.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgViewSessions.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgViewSessions.Location = new System.Drawing.Point(538, 184);
             this.dgViewSessions.Name = "dgViewSessions";
             this.dgViewSessions.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -553,9 +558,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(153, 513);
+            this.panel2.Location = new System.Drawing.Point(155, 632);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1047, 34);
+            this.panel2.Size = new System.Drawing.Size(1041, 34);
             this.panel2.TabIndex = 73;
             // 
             // label6
@@ -623,18 +628,61 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(661, 23);
+            this.pictureBox2.Location = new System.Drawing.Point(686, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(237, 122);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 80;
             this.pictureBox2.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(247, 513);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(175, 24);
+            this.label7.TabIndex = 87;
+            this.label7.Text = "Procurar Sessões";
+            // 
+            // dataGridViewSearchSessões
+            // 
+            this.dataGridViewSearchSessões.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSearchSessões.Location = new System.Drawing.Point(539, 513);
+            this.dataGridViewSearchSessões.Name = "dataGridViewSearchSessões";
+            this.dataGridViewSearchSessões.Size = new System.Drawing.Size(647, 113);
+            this.dataGridViewSearchSessões.TabIndex = 86;
+            // 
+            // btnSearchSessões
+            // 
+            this.btnSearchSessões.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnSearchSessões.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchSessões.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchSessões.Location = new System.Drawing.Point(379, 557);
+            this.btnSearchSessões.Name = "btnSearchSessões";
+            this.btnSearchSessões.Size = new System.Drawing.Size(140, 47);
+            this.btnSearchSessões.TabIndex = 85;
+            this.btnSearchSessões.Text = "Procurar Sessões";
+            this.btnSearchSessões.UseVisualStyleBackColor = true;
+            this.btnSearchSessões.Click += new System.EventHandler(this.btnSearchSessões_Click);
+            // 
+            // txtSearchSessões
+            // 
+            this.txtSearchSessões.Location = new System.Drawing.Point(166, 571);
+            this.txtSearchSessões.Name = "txtSearchSessões";
+            this.txtSearchSessões.Size = new System.Drawing.Size(207, 20);
+            this.txtSearchSessões.TabIndex = 84;
+            this.txtSearchSessões.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FormRegistoSessao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 547);
+            this.ClientSize = new System.Drawing.Size(1199, 666);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dataGridViewSearchSessões);
+            this.Controls.Add(this.btnSearchSessões);
+            this.Controls.Add(this.txtSearchSessões);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cbFilme);
             this.Controls.Add(this.lblIDFilme);
@@ -671,6 +719,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchSessões)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -739,5 +788,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataGridViewSearchSessões;
+        private System.Windows.Forms.Button btnSearchSessões;
+        private System.Windows.Forms.TextBox txtSearchSessões;
     }
 }

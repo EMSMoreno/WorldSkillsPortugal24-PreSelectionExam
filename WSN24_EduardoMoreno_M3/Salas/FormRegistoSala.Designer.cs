@@ -82,11 +82,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridViewSala = new System.Windows.Forms.DataGridView();
+            this.btnSearchSala = new System.Windows.Forms.Button();
+            this.txtSearchSala = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSala)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -429,19 +434,19 @@
             this.lblTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoFilme.Location = new System.Drawing.Point(172, 93);
             this.lblTipoFilme.Name = "lblTipoFilme";
-            this.lblTipoFilme.Size = new System.Drawing.Size(61, 29);
+            this.lblTipoFilme.Size = new System.Drawing.Size(196, 29);
             this.lblTipoFilme.TabIndex = 8;
-            this.lblTipoFilme.Text = "Sala";
+            this.lblTipoFilme.Text = "Salas de Cinema";
             // 
             // lblRegistoTipoFilme
             // 
             this.lblRegistoTipoFilme.AutoSize = true;
             this.lblRegistoTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(255, 158);
+            this.lblRegistoTipoFilme.Location = new System.Drawing.Point(193, 158);
             this.lblRegistoTipoFilme.Name = "lblRegistoTipoFilme";
-            this.lblRegistoTipoFilme.Size = new System.Drawing.Size(156, 24);
+            this.lblRegistoTipoFilme.Size = new System.Drawing.Size(263, 24);
             this.lblRegistoTipoFilme.TabIndex = 9;
-            this.lblRegistoTipoFilme.Text = "Registo de Sala";
+            this.lblRegistoTipoFilme.Text = "Registo de Sala de Cinema";
             // 
             // txtIDSala
             // 
@@ -538,18 +543,61 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(579, 281);
+            this.pictureBox2.Location = new System.Drawing.Point(600, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(292, 153);
+            this.pictureBox2.Size = new System.Drawing.Size(219, 122);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 79;
             this.pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(596, 267);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(253, 24);
+            this.label5.TabIndex = 87;
+            this.label5.Text = "Procurar Salas de Cinema";
+            // 
+            // dataGridViewSala
+            // 
+            this.dataGridViewSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSala.Location = new System.Drawing.Point(600, 375);
+            this.dataGridViewSala.Name = "dataGridViewSala";
+            this.dataGridViewSala.Size = new System.Drawing.Size(273, 83);
+            this.dataGridViewSala.TabIndex = 86;
+            // 
+            // btnSearchSala
+            // 
+            this.btnSearchSala.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnSearchSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchSala.Location = new System.Drawing.Point(777, 309);
+            this.btnSearchSala.Name = "btnSearchSala";
+            this.btnSearchSala.Size = new System.Drawing.Size(96, 47);
+            this.btnSearchSala.TabIndex = 85;
+            this.btnSearchSala.Text = "Procurar Sala";
+            this.btnSearchSala.UseVisualStyleBackColor = true;
+            this.btnSearchSala.Click += new System.EventHandler(this.btnSearchSala_Click);
+            // 
+            // txtSearchSala
+            // 
+            this.txtSearchSala.Location = new System.Drawing.Point(599, 323);
+            this.txtSearchSala.Name = "txtSearchSala";
+            this.txtSearchSala.Size = new System.Drawing.Size(172, 20);
+            this.txtSearchSala.TabIndex = 84;
+            this.txtSearchSala.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormRegistoSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 547);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dataGridViewSala);
+            this.Controls.Add(this.btnSearchSala);
+            this.Controls.Add(this.txtSearchSala);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbSalas);
@@ -577,6 +625,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSala)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -637,5 +686,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridViewSala;
+        private System.Windows.Forms.Button btnSearchSala;
+        private System.Windows.Forms.TextBox txtSearchSala;
     }
 }

@@ -125,6 +125,40 @@ namespace WSN24_EduardoMoreno_M3
             GenerateNewLocalID();
         }
 
+        private void SearchLocais(string searchTerm)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(@"
+                        SELECT id_local AS 'ID Local', descricao AS 'Descrição'
+                        FROM Local
+                        WHERE descricao LIKE @searchTerm", con);
+
+                    cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridViewLocal.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum Local encontrado, com base naquilo que pesquisaste.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar Locais: " + ex.Message);
+            }
+        }
+
         #endregion
 
         #region UI
@@ -176,11 +210,28 @@ namespace WSN24_EduardoMoreno_M3
             ClearAllData();
         }
 
+        private void btnSearchLocal_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchLocal.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Escreve o Local que procuras.");
+                txtSearchLocal.Text = "";
+                return;
+            }
+
+            SearchLocais(searchTerm);
+            txtSearchLocal.Text = "";
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         #endregion
+
+        
     }
 }

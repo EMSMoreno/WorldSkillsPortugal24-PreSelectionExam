@@ -147,6 +147,40 @@ namespace WSN24_EduardoMoreno_M3
             cbTipoFilme.SelectedIndex = -1;
         }
 
+        private void SearchFilmes(string searchTerm)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(@"
+                        SELECT codigo_filme AS 'Código Filme', nome AS 'Nome'
+                        FROM Filme
+                        WHERE nome LIKE @searchTerm", con);
+
+                    cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridViewFilme.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum Filme encontrado, com base naquilo que pesquisaste.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar Filmes: " + ex.Message);
+            }
+        }
+
         #endregion
 
         #region UI
@@ -201,11 +235,27 @@ namespace WSN24_EduardoMoreno_M3
             Close();
         }
 
+        private void btnSearchLocal_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchFilme.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Escreve o Filme que procuras.");
+                txtSearchFilme.Text = "";
+                return;
+            }
+
+            SearchFilmes(searchTerm);
+            txtSearchFilme.Text = "";
+        }
+
         private void btnCancelarOperacao_Click(object sender, EventArgs e)
         {
             ClearAllData();
         }
 
         #endregion
+
     }
 }

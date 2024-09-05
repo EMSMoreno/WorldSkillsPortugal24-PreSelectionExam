@@ -81,12 +81,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridViewLocal = new System.Windows.Forms.DataGridView();
+            this.btnSearchLocal = new System.Windows.Forms.Button();
+            this.txtSearchLocal = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewLocals)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocal)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -165,7 +170,7 @@
             this.tiposDeFilmeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(156, 547);
+            this.menuStrip1.Size = new System.Drawing.Size(156, 630);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
@@ -508,16 +513,16 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(155, 513);
+            this.panel2.Location = new System.Drawing.Point(155, 596);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(881, 34);
+            this.panel2.Size = new System.Drawing.Size(885, 34);
             this.panel2.TabIndex = 62;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(74, 10);
+            this.label4.Location = new System.Drawing.Point(224, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(458, 15);
             this.label4.TabIndex = 4;
@@ -533,11 +538,54 @@
             this.pictureBox2.TabIndex = 78;
             this.pictureBox2.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(255, 485);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 24);
+            this.label8.TabIndex = 87;
+            this.label8.Text = "Procurar Locais";
+            // 
+            // dataGridViewLocal
+            // 
+            this.dataGridViewLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLocal.Location = new System.Drawing.Point(533, 485);
+            this.dataGridViewLocal.Name = "dataGridViewLocal";
+            this.dataGridViewLocal.Size = new System.Drawing.Size(492, 105);
+            this.dataGridViewLocal.TabIndex = 86;
+            // 
+            // btnSearchLocal
+            // 
+            this.btnSearchLocal.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnSearchLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchLocal.Location = new System.Drawing.Point(408, 521);
+            this.btnSearchLocal.Name = "btnSearchLocal";
+            this.btnSearchLocal.Size = new System.Drawing.Size(96, 47);
+            this.btnSearchLocal.TabIndex = 85;
+            this.btnSearchLocal.Text = "Procurar Local";
+            this.btnSearchLocal.UseVisualStyleBackColor = true;
+            this.btnSearchLocal.Click += new System.EventHandler(this.btnSearchLocal_Click);
+            // 
+            // txtSearchLocal
+            // 
+            this.txtSearchLocal.Location = new System.Drawing.Point(218, 535);
+            this.txtSearchLocal.Name = "txtSearchLocal";
+            this.txtSearchLocal.Size = new System.Drawing.Size(184, 20);
+            this.txtSearchLocal.TabIndex = 84;
+            this.txtSearchLocal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FormRegistoLocal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 547);
+            this.ClientSize = new System.Drawing.Size(1037, 630);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dataGridViewLocal);
+            this.Controls.Add(this.btnSearchLocal);
+            this.Controls.Add(this.txtSearchLocal);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
@@ -566,6 +614,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,5 +674,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridViewLocal;
+        private System.Windows.Forms.Button btnSearchLocal;
+        private System.Windows.Forms.TextBox txtSearchLocal;
     }
 }

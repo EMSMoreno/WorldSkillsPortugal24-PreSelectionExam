@@ -102,6 +102,40 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             cbLocal.SelectedIndex = -1;
         }
 
+        private void SearchCinemas(string searchTerm)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(@"
+                        SELECT id_cinema AS 'ID Cinema', nome AS 'Nome'
+                        FROM Cinema
+                        WHERE nome LIKE @searchTerm", con);
+
+                    cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridViewCinema.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum Cinema encontrado, com base naquilo que pesquisaste.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar Cinemas: " + ex.Message);
+            }
+        }
+
         #endregion
 
         #region UI
@@ -151,6 +185,21 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSearchLocal_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchCinema.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Escreve o Cinema que procuras.");
+                txtSearchCinema.Text = "";
+                return;
+            }
+
+            SearchCinemas(searchTerm);
+            txtSearchCinema.Text = "";
         }
 
         #endregion

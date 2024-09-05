@@ -91,6 +91,38 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
         }
 
+        private void SearchTiposFilme(string searchTerm)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT id_tipo, descricao FROM TipoFilme WHERE descricao LIKE @searchTerm", con);
+                    cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridViewTipoFilme.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhum Tipo de Filme encontrado, com base naquilo que procuras.");
+                    }
+
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar Tipos de Filme: " + ex.Message);
+            }
+        }
+
         #endregion
 
         #region UI
@@ -140,6 +172,19 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             txtTypeName.Text = string.Empty;
         }
 
+        private void btnSearchTipoFilme_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchTipoFilme.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Escreve o Tipo de Filme que procuras.");
+                return;
+            }
+
+            SearchTiposFilme(searchTerm);
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -147,6 +192,6 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
 
         #endregion
 
-       
+      
     }
 }

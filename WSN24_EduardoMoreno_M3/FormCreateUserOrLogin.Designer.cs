@@ -147,7 +147,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.Black;
             this.btnLogin.Location = new System.Drawing.Point(269, 286);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(139, 37);
+            this.btnLogin.Size = new System.Drawing.Size(150, 37);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -179,9 +179,9 @@
             this.btnLimparForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimparForm.ForeColor = System.Drawing.Color.Black;
-            this.btnLimparForm.Location = new System.Drawing.Point(77, 352);
+            this.btnLimparForm.Location = new System.Drawing.Point(67, 352);
             this.btnLimparForm.Name = "btnLimparForm";
-            this.btnLimparForm.Size = new System.Drawing.Size(331, 37);
+            this.btnLimparForm.Size = new System.Drawing.Size(352, 37);
             this.btnLimparForm.TabIndex = 9;
             this.btnLimparForm.Text = "Limpar Form";
             this.btnLimparForm.UseVisualStyleBackColor = false;
@@ -191,7 +191,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(269, 180);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(139, 20);
+            this.txtUsername.Size = new System.Drawing.Size(150, 20);
             this.txtUsername.TabIndex = 10;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -200,7 +200,7 @@
             this.txtPassword.Location = new System.Drawing.Point(269, 236);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(139, 20);
+            this.txtPassword.Size = new System.Drawing.Size(150, 20);
             this.txtPassword.TabIndex = 11;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -226,11 +226,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(309, 116);
+            this.label4.Location = new System.Drawing.Point(265, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 24);
+            this.label4.Size = new System.Drawing.Size(154, 24);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Login";
+            this.label4.Text = "Login Utilizador";
             // 
             // pictureBox3
             // 
@@ -268,9 +268,9 @@
             this.btnCreateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateUser.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateUser.Location = new System.Drawing.Point(77, 286);
+            this.btnCreateUser.Location = new System.Drawing.Point(67, 286);
             this.btnCreateUser.Name = "btnCreateUser";
-            this.btnCreateUser.Size = new System.Drawing.Size(139, 37);
+            this.btnCreateUser.Size = new System.Drawing.Size(149, 37);
             this.btnCreateUser.TabIndex = 18;
             this.btnCreateUser.Text = "Create New User";
             this.btnCreateUser.UseVisualStyleBackColor = false;
@@ -280,48 +280,48 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(85, 116);
+            this.label6.Location = new System.Drawing.Point(73, 116);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 24);
+            this.label6.Size = new System.Drawing.Size(146, 24);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Create User";
+            this.label6.Text = "Criar Utilizador";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(116, 220);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Password:";
+            this.label7.Text = "Password";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(116, 164);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 21;
-            this.label8.Text = "Username:";
+            this.label8.Text = "Username";
             // 
             // txtPasswordNew
             // 
-            this.txtPasswordNew.Location = new System.Drawing.Point(77, 236);
+            this.txtPasswordNew.Location = new System.Drawing.Point(67, 236);
             this.txtPasswordNew.Name = "txtPasswordNew";
             this.txtPasswordNew.PasswordChar = '*';
-            this.txtPasswordNew.Size = new System.Drawing.Size(139, 20);
+            this.txtPasswordNew.Size = new System.Drawing.Size(149, 20);
             this.txtPasswordNew.TabIndex = 20;
             this.txtPasswordNew.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtUsernameNew
             // 
-            this.txtUsernameNew.Location = new System.Drawing.Point(77, 180);
+            this.txtUsernameNew.Location = new System.Drawing.Point(67, 180);
             this.txtUsernameNew.Name = "txtUsernameNew";
-            this.txtUsernameNew.Size = new System.Drawing.Size(139, 20);
+            this.txtUsernameNew.Size = new System.Drawing.Size(149, 20);
             this.txtUsernameNew.TabIndex = 19;
             this.txtUsernameNew.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // FormLogin
+            // FormCreateUserOrLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -346,7 +346,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormLogin";
+            this.Name = "FormCreateUserOrLogin";
             this.Text = "FormLogin";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

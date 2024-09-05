@@ -82,11 +82,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtSearchTipoFilme = new System.Windows.Forms.TextBox();
+            this.btnSearchTipoFilme = new System.Windows.Forms.Button();
+            this.dataGridViewTipoFilme = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTipoFilme)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTypeName
@@ -444,7 +449,7 @@
             this.btnRegistoTipoFilme.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnRegistoTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegistoTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(196, 342);
+            this.btnRegistoTipoFilme.Location = new System.Drawing.Point(196, 349);
             this.btnRegistoTipoFilme.Name = "btnRegistoTipoFilme";
             this.btnRegistoTipoFilme.Size = new System.Drawing.Size(289, 35);
             this.btnRegistoTipoFilme.TabIndex = 10;
@@ -525,7 +530,7 @@
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(196, 383);
+            this.btnCancel.Location = new System.Drawing.Point(196, 390);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(289, 35);
             this.btnCancel.TabIndex = 57;
@@ -536,18 +541,61 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(579, 281);
+            this.pictureBox2.Location = new System.Drawing.Point(631, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(288, 166);
+            this.pictureBox2.Size = new System.Drawing.Size(185, 110);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 79;
             this.pictureBox2.TabStop = false;
+            // 
+            // txtSearchTipoFilme
+            // 
+            this.txtSearchTipoFilme.Location = new System.Drawing.Point(593, 320);
+            this.txtSearchTipoFilme.Name = "txtSearchTipoFilme";
+            this.txtSearchTipoFilme.Size = new System.Drawing.Size(172, 20);
+            this.txtSearchTipoFilme.TabIndex = 80;
+            this.txtSearchTipoFilme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnSearchTipoFilme
+            // 
+            this.btnSearchTipoFilme.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnSearchTipoFilme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchTipoFilme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchTipoFilme.Location = new System.Drawing.Point(771, 306);
+            this.btnSearchTipoFilme.Name = "btnSearchTipoFilme";
+            this.btnSearchTipoFilme.Size = new System.Drawing.Size(96, 47);
+            this.btnSearchTipoFilme.TabIndex = 81;
+            this.btnSearchTipoFilme.Text = "Procurar \r\nTipo Filme";
+            this.btnSearchTipoFilme.UseVisualStyleBackColor = true;
+            this.btnSearchTipoFilme.Click += new System.EventHandler(this.btnSearchTipoFilme_Click);
+            // 
+            // dataGridViewTipoFilme
+            // 
+            this.dataGridViewTipoFilme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTipoFilme.Location = new System.Drawing.Point(594, 372);
+            this.dataGridViewTipoFilme.Name = "dataGridViewTipoFilme";
+            this.dataGridViewTipoFilme.Size = new System.Drawing.Size(273, 83);
+            this.dataGridViewTipoFilme.TabIndex = 82;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(607, 264);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(236, 24);
+            this.label7.TabIndex = 83;
+            this.label7.Text = "Procurar Tipos de Filme";
             // 
             // FormRegistoTipoFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 547);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dataGridViewTipoFilme);
+            this.Controls.Add(this.btnSearchTipoFilme);
+            this.Controls.Add(this.txtSearchTipoFilme);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel3);
@@ -576,6 +624,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTipoFilme)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,5 +685,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+        private System.Windows.Forms.TextBox txtSearchTipoFilme;
+        private System.Windows.Forms.Button btnSearchTipoFilme;
+        private System.Windows.Forms.DataGridView dataGridViewTipoFilme;
+        private System.Windows.Forms.Label label7;
     }
 }

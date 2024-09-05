@@ -87,6 +87,40 @@ namespace WSN24_EduardoMoreno_M3
             txtDescricao.Clear();
         }
 
+        private void SearchSalas(string searchTerm)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(@"
+                        SELECT codigo_sala AS 'Código Sala', descricao AS 'Descrição'
+                        FROM Sala
+                        WHERE descricao LIKE @searchTerm", con);
+
+                    cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridViewSala.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nenhuma Sala encontrada, com base naquilo que pesquisaste.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar Salas: " + ex.Message);
+            }
+        }
+
         #endregion
 
         #region UI
@@ -129,13 +163,26 @@ namespace WSN24_EduardoMoreno_M3
             ClearAllData();
         }
 
+        private void btnSearchSala_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearchSala.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Escreve a Sala que procuras.");
+                return;
+            }
+
+            SearchSalas(searchTerm);
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+
         #endregion
 
-        
     }
 }
