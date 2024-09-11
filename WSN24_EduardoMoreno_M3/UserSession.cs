@@ -4,6 +4,8 @@
     {
         public static User CurrentUser { get; set; }
 
+        public static string Role { get; set; }
+
         public static void Logout()
         {
             CurrentUser = null;

@@ -23,7 +23,7 @@ namespace WSN24_EduardoMoreno_M3
             using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
-                string query = "SELECT Pass, Salt FROM Users WHERE Nome = @Nome";
+                string query = "SELECT Pass, Role, Salt FROM Users WHERE Nome = @Nome";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Nome", username);
@@ -33,27 +33,39 @@ namespace WSN24_EduardoMoreno_M3
                         if (reader.Read())
                         {
                             string storedHash = reader["Pass"].ToString();
-                            string storedSalt = reader["Salt"].ToString();
+                            string role = reader["Role"].ToString();
+                            string salt = reader["Salt"].ToString();
 
-                            // Verifica a senha com o salt armazenado
-                            string hashedPassword = PasswordHasher.HashPasswordWithSalt(password, storedSalt);
-
-                            return hashedPassword == storedHash;
-                        }
-                        else
-                        {
-                            return false; // Usuário não encontrado
+                            if (IsPasswordHashed(storedHash))
+                            {
+                                string hashedPassword = PasswordHasher.HashPasswordWithSalt(password, salt);
+                                if (hashedPassword == storedHash)
+                                {
+                                    // Armazena o privilégio do utilizador na sessão
+                                    UserSession.Role = role;
+                                    return true;
+                                }
+                            }
+                            else
+                            {
+                                if (storedHash == password)
+                                {
+                                    // Armazena o privilégio do utilizador na sessão
+                                    UserSession.Role = role;
+                                    return true;
+                                }
+                            }
                         }
                     }
                 }
             }
+            return false;
         }
 
         public static class PasswordHasher
         {
             public static string HashPassword(string password, out string salt)
             {
-                // Gerar o salt
                 byte[] saltBytes = new byte[16];
                 using (var rng = new RNGCryptoServiceProvider())
                 {
@@ -61,7 +73,6 @@ namespace WSN24_EduardoMoreno_M3
                 }
                 salt = Convert.ToBase64String(saltBytes);
 
-                // Combina a senha com o salt e gera o hash
                 return HashPasswordWithSalt(password, salt);
             }
 
@@ -69,7 +80,6 @@ namespace WSN24_EduardoMoreno_M3
             {
                 using (SHA256 sha256Hash = SHA256.Create())
                 {
-                    // Combina a senha com o salt e gera o hash
                     byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password + salt));
                     StringBuilder builder = new StringBuilder();
                     foreach (byte b in bytes)
@@ -77,6 +87,77 @@ namespace WSN24_EduardoMoreno_M3
                         builder.Append(b.ToString("x2"));
                     }
                     return builder.ToString();
+                }
+            }
+        }
+
+        private bool IsPasswordHashed(string password)
+        {
+            return password.Length >= 64;
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            string role = UserSession.Role;
+
+            if (role == "admin")
+            {
+                // Admin pode ver tudo
+                ShowAllControls();
+            }
+            else if (role == "coordenador")
+            {
+                // Coordenador pode ver tudo, mas não alterar
+                ShowAllControls();
+            }
+            else if (role == "espetador")
+            {
+                // Espetador só pode visualizar dados
+                ShowViewOnlyControls();
+            }
+        }
+
+        private void ShowAllControls()
+        {
+            // Mostra todos os controles
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = true;
+                control.Enabled = true;
+            }
+        }
+
+        private void DisableEditingControls()
+        {
+            // Desabilita controles de edição, mas mantém visíveis
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox || control is ComboBox || control is Button)
+                {
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowViewOnlyControls()
+        {
+            // Mostra apenas DataGridViews
+            foreach (Control control in this.Controls)
+            {
+                if (control is DataGridView)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is TextBox || control is ComboBox || control is Button)
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
+                }
+                else
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
                 }
             }
         }
@@ -121,7 +202,6 @@ namespace WSN24_EduardoMoreno_M3
                 return;
             }
 
-            // Gerar o salt e o hash da senha
             string salt;
             string hashedPassword = PasswordHasher.HashPassword(password, out salt);
 
@@ -130,12 +210,13 @@ namespace WSN24_EduardoMoreno_M3
                 using (SqlConnection con = new SqlConnection(cs))
                 {
                     con.Open();
-                    string query = "INSERT INTO Users (Nome, Pass, Salt) VALUES (@Nome, @Pass, @Salt)";
+                    string query = "INSERT INTO Users (Nome, Pass, Salt, Role) VALUES (@Nome, @Pass, @Salt, @Role)";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Nome", username);
                         cmd.Parameters.AddWithValue("@Pass", hashedPassword);
-                        cmd.Parameters.AddWithValue("@Salt", salt); // Salvando o salt corretamente
+                        cmd.Parameters.AddWithValue("@Salt", salt);
+                        cmd.Parameters.AddWithValue("@Role", "espetador"); // privilégio default
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -168,6 +249,7 @@ namespace WSN24_EduardoMoreno_M3
         {
             Close();
         }
+
+        #endregion
     }
-        #endregion   
 }
