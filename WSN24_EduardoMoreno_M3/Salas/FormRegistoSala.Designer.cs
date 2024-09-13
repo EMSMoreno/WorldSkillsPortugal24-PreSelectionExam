@@ -80,7 +80,7 @@
             this.cbSalas = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewSala = new System.Windows.Forms.DataGridView();
@@ -527,18 +527,18 @@
             this.label9.TabIndex = 59;
             this.label9.Text = "Salas de Cinema:";
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(187, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 35);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "Cancelar Operação";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(187, 399);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(302, 35);
+            this.btnCancel.TabIndex = 64;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pictureBox2
             // 
@@ -599,7 +599,7 @@
             this.Controls.Add(this.btnSearchSala);
             this.Controls.Add(this.txtSearchSala);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbSalas);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
@@ -617,6 +617,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegistoSala";
             this.Text = "FormRegistoSala";
+            this.Load += new System.EventHandler(this.FormRegistoSessoes_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -680,7 +681,7 @@
         private System.Windows.Forms.ComboBox cbSalas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;

@@ -15,10 +15,37 @@ namespace WSN24_EduardoMoreno_M3.Sala
         public FormApagarSala()
         {
             InitializeComponent();
-            LoadSalas();
         }
 
         #region Métodos
+
+        private void FormApagarSala_Load(object sender, EventArgs e)
+        {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Apagar a Sala.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return;
+            }
+            else
+            {
+                LoadSalas();
+            }
+        }
 
         private void LoadSalas()
         {

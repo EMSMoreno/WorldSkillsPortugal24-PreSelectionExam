@@ -17,12 +17,149 @@ namespace WSN24_EduardoMoreno_M3
         public FormRegistoSala()
         {
             InitializeComponent();
-            InitializeForm();
-            GenerateNewID();
-            LoadSalas();
         }
 
         #region Métodos
+
+        private void FormRegistoSessoes_Load(object sender, EventArgs e)
+        {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            {
+                HideEditingControls(); // Oculta campos e mostra labels de permissão
+                ShowPermissionLabel();
+            }
+            else if (role.ToLower() == "admin")
+            {
+                ShowAllControls(); // Admin pode ver e editar tudo
+            }
+            else if (role.ToLower() == "coordenador")
+            {
+                ShowAllControls(); // Coordenador pode ver tudo mas não pode editar
+                DisableEditingControls();
+            }
+            else
+            {
+                ShowViewOnlyControls(); // Qualquer outro role só pode visualizar
+            }
+
+            LoadSalas();
+            InitializeForm();
+            GenerateNewID();
+            GenerateNewID();
+        }
+
+        private void HideEditingControls()
+        {
+            txtIDSala.Visible = false;
+            txtDescricao.Visible = false;
+            btnRegistoTipoFilme.Visible = false;
+            btnCancel.Visible = false;
+            cbSalas.Enabled = true;
+            txtSearchSala.Enabled = true;
+            btnSearchSala.Enabled = true;
+            dataGridViewSala.Visible = true;
+            btnClose.Enabled = true;
+            btnRegistoTipoFilme.Visible = false;
+            btnCancel.Visible = false;
+        }
+
+        private void ShowPermissionLabel()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label && control.ForeColor == System.Drawing.Color.Red)
+                {
+                    this.Controls.Remove(control);
+                }
+            }
+
+            Label lblPermission1 = new Label
+            {
+                Text = "Não tens permissões para veres os IDs das Salas.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(290, 211)
+            };
+            this.Controls.Add(lblPermission1);
+
+            Label lblPermission2 = new Label
+            {
+                Text = "Não tens permissões para \n " +
+                "veres as Descrições das Salas.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(290, 267)
+            };
+            this.Controls.Add(lblPermission2);
+
+        }
+
+        private void ShowAllControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = true;
+                control.Enabled = true;
+            }
+
+            txtIDSala.Visible = true;
+            txtDescricao.Visible = true;
+            btnRegistoTipoFilme.Visible = true;
+            btnCancel.Visible = true;
+            cbSalas.Enabled = true;
+            txtSearchSala.Enabled = true;
+            btnSearchSala.Enabled = true;
+            dataGridViewSala.Visible = true;
+            btnClose.Enabled = true;
+        }
+
+        private void DisableEditingControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox && control != txtSearchSala)
+                {
+                    control.Enabled = false;
+                }
+                else if (control is ComboBox || control == btnClose)
+                {
+                    control.Enabled = true;
+                }
+                else if (control is Button && control != btnSearchSala)
+                {
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowViewOnlyControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control == txtSearchSala || control == btnSearchSala || control is DataGridView)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is ComboBox)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control == btnClose)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is TextBox || control is Button)
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
+                }
+            }
+        }
 
         private void InitializeForm()
         {
@@ -70,11 +207,6 @@ namespace WSN24_EduardoMoreno_M3
             {
                 MessageBox.Show("Erro ao carregar salas: " + ex.Message);
             }
-        }
-
-        private void FormRegistoSessoes_Load(object sender, EventArgs e)
-        {
-            LoadSalas();
         }
 
         private void cbSalas_SelectedIndexChanged(object sender, EventArgs e)

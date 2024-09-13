@@ -24,7 +24,30 @@ namespace WSN24_EduardoMoreno_M3.Sala
 
         private void FormEditarSala_Load(object sender, EventArgs e)
         {
-            ShowDataOnGridView();
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Editar a Sala.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return;
+            }
+            else
+            {
+                ShowDataOnGridView();
+            }
         }
 
         private void ShowDataOnGridView()
