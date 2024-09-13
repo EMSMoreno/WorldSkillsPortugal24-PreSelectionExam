@@ -13,14 +13,36 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         public FormApagarTipoFilme()
         {
             InitializeComponent();
-            CarregarTiposFilme();
         }
 
         #region Métodos
 
         private void FormApagarTipoFilme_Load(object sender, EventArgs e)
         {
-            CarregarTiposFilme();
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Apagar o Tipo de Filme.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return; 
+            }
+            else
+            {
+                CarregarTiposFilme();
+            }
         }
 
         private void CarregarTiposFilme()

@@ -13,14 +13,41 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         public FormEditarTipoFilme()
         {
             InitializeComponent();
-            LoadTiposFilme();
         }
 
         #region Métodos
 
         private void FormEditarTipoFilme_Load(object sender, EventArgs e)
         {
-            LoadTiposFilme();
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Editar o Tipo de Filme.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // Fecha o formulário atual
+                this.Close();
+
+                // Verifica se o FormPrincipal já está aberto; se não, o abre
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                // Se o FormPrincipal não estiver aberto, cria uma nova instância e a mostra
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return; // Garante que o resto do código não será executado
+            }
+            else
+            {
+                LoadTiposFilme(); // Carrega os tipos de filme caso o role seja válido
+            }
         }
 
         private void LoadTiposFilme()
