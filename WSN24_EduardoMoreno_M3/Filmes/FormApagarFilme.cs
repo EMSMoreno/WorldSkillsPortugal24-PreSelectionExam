@@ -17,10 +17,37 @@ namespace WSN24_EduardoMoreno_M3
         public FormApagarFilme()
         {
             InitializeComponent();
-            ShowDataOnGridView();
         }
 
         #region Métodos
+
+        private void FormApagarFilme_Load(object sender, EventArgs e)
+        {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Apagar o Filme.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return;
+            }
+            else
+            {
+                ShowDataOnGridView();
+            }
+        }
 
         private void ShowDataOnGridView()
         {

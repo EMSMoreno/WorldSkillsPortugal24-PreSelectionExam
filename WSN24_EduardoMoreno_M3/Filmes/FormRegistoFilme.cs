@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace WSN24_EduardoMoreno_M3
 {
@@ -25,8 +26,172 @@ namespace WSN24_EduardoMoreno_M3
 
         private void FormRegistoFilme_Load(object sender, EventArgs e)
         {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            {
+                HideEditingControls(); // Oculta campos e mostra labels de permissão
+                ShowPermissionLabel();
+            }
+            else if (role.ToLower() == "admin")
+            {
+                ShowAllControls(); // Admin pode ver e editar tudo
+            }
+            else if (role.ToLower() == "coordenador")
+            {
+                ShowAllControls(); // Coordenador pode ver tudo mas não pode editar
+                DisableEditingControls();
+            }
+            else
+            {
+                ShowViewOnlyControls(); // Qualquer outro role só pode visualizar
+            }
+
             ShowDataOnGridView();
             LoadTiposFilme();
+            ShowDataOnGridView();
+        }
+
+        private void HideEditingControls()
+        {
+            txtID_filme.Visible = false;
+            txtName.Visible = false;
+            txtDescription.Visible = false;
+            txtYear.Visible = false;
+            cbTipoFilme.Enabled = false;
+            btnCreateMovie.Visible = false;
+            btnCancel.Visible = false;
+            cbTipoFilme.Visible = false;
+            btnClose.Visible = true;
+        }
+
+        private void ShowPermissionLabel()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label && control.ForeColor == System.Drawing.Color.Red)
+                {
+                    this.Controls.Remove(control);
+                }
+            }
+
+            Label lblPermission1 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres os IDs dos Filmes.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(198, 233)
+            };
+            this.Controls.Add(lblPermission1);
+
+            Label lblPermission2 = new Label
+            {
+                Text = "Não tens permissões para \n " +
+                "veres os Nomes dos Filmes.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(338, 233)
+            };
+            this.Controls.Add(lblPermission2);
+
+            Label lblPermission3 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres a Descrição dos Filmes.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(273, 299)
+            };
+            this.Controls.Add(lblPermission3);
+
+            Label lblPermission4 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres os Anos dos Filmes",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(198, 382)
+            };
+            this.Controls.Add(lblPermission4);
+
+            Label lblPermission5 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres os Tipos de Filme.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(348, 381)
+            };
+            this.Controls.Add(lblPermission5);
+        }
+
+        private void ShowAllControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = true;
+                control.Enabled = true;
+            }
+
+            txtID_filme.Visible = true;
+            txtName.Visible = true;
+            txtDescription.Visible = true;
+            txtYear.Visible = true;
+            cbTipoFilme.Enabled = true;
+            btnCreateMovie.Visible = true;
+            btnCancel.Visible = true;
+            dgViewMovies.Visible = true;
+            dgSearchMovie.Visible = true;
+            txtSearchMovie.Visible = true;
+            btnSearchMovie.Visible = true;
+            btnClose.Visible = true;
+        }
+
+        private void DisableEditingControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox && control != txtSearchMovie)
+                {
+                    control.Enabled = false;
+                }
+                else if (control is ComboBox || control == btnClose)
+                {
+                    control.Enabled = true;
+                }
+                else if (control is Button && control != btnSearchMovie)
+                {
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowViewOnlyControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control == txtSearchMovie || control == btnSearchMovie || control is DataGridView)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is ComboBox)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control == btnClose)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is TextBox || control is Button)
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
+                }
+            }
         }
 
         private void ShowDataOnGridView()
@@ -167,7 +332,7 @@ namespace WSN24_EduardoMoreno_M3
 
                     if (dt.Rows.Count > 0)
                     {
-                        dataGridViewFilme.DataSource = dt;
+                        dgSearchMovie.DataSource = dt;
                     }
                     else
                     {
@@ -230,24 +395,24 @@ namespace WSN24_EduardoMoreno_M3
             }
         }
 
-        private void Close_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void btnSearchLocal_Click(object sender, EventArgs e)
         {
-            string searchTerm = txtSearchFilme.Text.Trim();
+            string searchTerm = txtSearchMovie.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(searchTerm))
             {
                 MessageBox.Show("Escreve o Filme que procuras.");
-                txtSearchFilme.Text = "";
+                txtSearchMovie.Text = "";
                 return;
             }
 
             SearchFilmes(searchTerm);
-            txtSearchFilme.Text = "";
+            txtSearchMovie.Text = "";
         }
 
         private void btnCancelarOperacao_Click(object sender, EventArgs e)

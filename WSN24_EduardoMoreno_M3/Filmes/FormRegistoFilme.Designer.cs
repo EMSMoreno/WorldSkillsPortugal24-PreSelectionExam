@@ -71,7 +71,7 @@ namespace WSN24_EduardoMoreno_M3
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.Close = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgViewMovies = new System.Windows.Forms.DataGridView();
             this.bdCineSkillsEduardoMorenoN24DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -84,7 +84,7 @@ namespace WSN24_EduardoMoreno_M3
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblMID = new System.Windows.Forms.Label();
-            this.btnCancelarOperacao = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.txtID_filme = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -94,9 +94,9 @@ namespace WSN24_EduardoMoreno_M3
             this.filmeTableAdapter = new WSN24_EduardoMoreno_M3.bdCineSkills_EduardoMoreno_N24DataSetTableAdapters.filmeTableAdapter();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridViewFilme = new System.Windows.Forms.DataGridView();
-            this.btnSearchLocal = new System.Windows.Forms.Button();
-            this.txtSearchFilme = new System.Windows.Forms.TextBox();
+            this.dgSearchMovie = new System.Windows.Forms.DataGridView();
+            this.btnSearchMovie = new System.Windows.Forms.Button();
+            this.txtSearchMovie = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,7 +106,7 @@ namespace WSN24_EduardoMoreno_M3
             ((System.ComponentModel.ISupportInitialize)(this.bdCineSkills_EduardoMoreno_N24DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearchMovie)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -431,17 +431,17 @@ namespace WSN24_EduardoMoreno_M3
             this.label4.TabIndex = 4;
             this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
             // 
-            // Close
+            // btnClose
             // 
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(950, 12);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(75, 47);
-            this.Close.TabIndex = 5;
-            this.Close.Text = "Fechar Janela";
-            this.Close.UseVisualStyleBackColor = true;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(950, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 47);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Fechar Janela";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label5
             // 
@@ -525,10 +525,10 @@ namespace WSN24_EduardoMoreno_M3
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(183, 283);
+            this.txtDescription.Location = new System.Drawing.Point(198, 283);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(278, 74);
+            this.txtDescription.Size = new System.Drawing.Size(263, 74);
             this.txtDescription.TabIndex = 37;
             this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -549,17 +549,17 @@ namespace WSN24_EduardoMoreno_M3
             this.lblMID.TabIndex = 42;
             this.lblMID.Text = "ID Filme:";
             // 
-            // btnCancelarOperacao
+            // btnCancel
             // 
-            this.btnCancelarOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelarOperacao.Location = new System.Drawing.Point(183, 462);
-            this.btnCancelarOperacao.Name = "btnCancelarOperacao";
-            this.btnCancelarOperacao.Size = new System.Drawing.Size(278, 34);
-            this.btnCancelarOperacao.TabIndex = 44;
-            this.btnCancelarOperacao.Text = "Cancelar Operação";
-            this.btnCancelarOperacao.UseVisualStyleBackColor = true;
-            this.btnCancelarOperacao.Click += new System.EventHandler(this.btnCancelarOperacao_Click);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(183, 462);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(278, 34);
+            this.btnCancel.TabIndex = 44;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancelarOperacao_Click);
             // 
             // txtID_filme
             // 
@@ -593,7 +593,7 @@ namespace WSN24_EduardoMoreno_M3
             // lblTipoFilme
             // 
             this.lblTipoFilme.AutoSize = true;
-            this.lblTipoFilme.Location = new System.Drawing.Point(345, 365);
+            this.lblTipoFilme.Location = new System.Drawing.Point(362, 366);
             this.lblTipoFilme.Name = "lblTipoFilme";
             this.lblTipoFilme.Size = new System.Drawing.Size(73, 13);
             this.lblTipoFilme.TabIndex = 47;
@@ -602,9 +602,9 @@ namespace WSN24_EduardoMoreno_M3
             // cbTipoFilme
             // 
             this.cbTipoFilme.FormattingEnabled = true;
-            this.cbTipoFilme.Location = new System.Drawing.Point(324, 381);
+            this.cbTipoFilme.Location = new System.Drawing.Point(318, 381);
             this.cbTipoFilme.Name = "cbTipoFilme";
-            this.cbTipoFilme.Size = new System.Drawing.Size(125, 21);
+            this.cbTipoFilme.Size = new System.Drawing.Size(143, 21);
             this.cbTipoFilme.TabIndex = 48;
             // 
             // filmeBindingSource
@@ -636,34 +636,34 @@ namespace WSN24_EduardoMoreno_M3
             this.label8.TabIndex = 91;
             this.label8.Text = "Procurar Filmes";
             // 
-            // dataGridViewFilme
+            // dgSearchMovie
             // 
-            this.dataGridViewFilme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFilme.Location = new System.Drawing.Point(484, 528);
-            this.dataGridViewFilme.Name = "dataGridViewFilme";
-            this.dataGridViewFilme.Size = new System.Drawing.Size(541, 105);
-            this.dataGridViewFilme.TabIndex = 90;
+            this.dgSearchMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSearchMovie.Location = new System.Drawing.Point(484, 528);
+            this.dgSearchMovie.Name = "dgSearchMovie";
+            this.dgSearchMovie.Size = new System.Drawing.Size(541, 105);
+            this.dgSearchMovie.TabIndex = 90;
             // 
-            // btnSearchLocal
+            // btnSearchMovie
             // 
-            this.btnSearchLocal.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.btnSearchLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchLocal.Location = new System.Drawing.Point(365, 566);
-            this.btnSearchLocal.Name = "btnSearchLocal";
-            this.btnSearchLocal.Size = new System.Drawing.Size(96, 47);
-            this.btnSearchLocal.TabIndex = 89;
-            this.btnSearchLocal.Text = "Procurar Filme";
-            this.btnSearchLocal.UseVisualStyleBackColor = true;
-            this.btnSearchLocal.Click += new System.EventHandler(this.btnSearchLocal_Click);
+            this.btnSearchMovie.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnSearchMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMovie.Location = new System.Drawing.Point(365, 566);
+            this.btnSearchMovie.Name = "btnSearchMovie";
+            this.btnSearchMovie.Size = new System.Drawing.Size(96, 47);
+            this.btnSearchMovie.TabIndex = 89;
+            this.btnSearchMovie.Text = "Procurar Filme";
+            this.btnSearchMovie.UseVisualStyleBackColor = true;
+            this.btnSearchMovie.Click += new System.EventHandler(this.btnSearchLocal_Click);
             // 
-            // txtSearchFilme
+            // txtSearchMovie
             // 
-            this.txtSearchFilme.Location = new System.Drawing.Point(175, 580);
-            this.txtSearchFilme.Name = "txtSearchFilme";
-            this.txtSearchFilme.Size = new System.Drawing.Size(184, 20);
-            this.txtSearchFilme.TabIndex = 88;
-            this.txtSearchFilme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchMovie.Location = new System.Drawing.Point(175, 580);
+            this.txtSearchMovie.Name = "txtSearchMovie";
+            this.txtSearchMovie.Size = new System.Drawing.Size(184, 20);
+            this.txtSearchMovie.TabIndex = 88;
+            this.txtSearchMovie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormRegistoFilme
             // 
@@ -671,15 +671,15 @@ namespace WSN24_EduardoMoreno_M3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 673);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridViewFilme);
-            this.Controls.Add(this.btnSearchLocal);
-            this.Controls.Add(this.txtSearchFilme);
+            this.Controls.Add(this.dgSearchMovie);
+            this.Controls.Add(this.btnSearchMovie);
+            this.Controls.Add(this.txtSearchMovie);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cbTipoFilme);
             this.Controls.Add(this.lblTipoFilme);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtID_filme);
-            this.Controls.Add(this.btnCancelarOperacao);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblMID);
             this.Controls.Add(this.lblAnoFilme);
             this.Controls.Add(this.lblDescricaoFilme);
@@ -691,7 +691,7 @@ namespace WSN24_EduardoMoreno_M3
             this.Controls.Add(this.dgViewMovies);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Close);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -711,7 +711,7 @@ namespace WSN24_EduardoMoreno_M3
             ((System.ComponentModel.ISupportInitialize)(this.bdCineSkills_EduardoMoreno_N24DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFilme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearchMovie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -749,7 +749,7 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgViewMovies;
         private System.Windows.Forms.BindingSource bdCineSkillsEduardoMorenoN24DataSetBindingSource;
@@ -762,7 +762,7 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblMID;
-        private System.Windows.Forms.Button btnCancelarOperacao;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtID_filme;
         private System.Windows.Forms.ToolStripMenuItem tiposDeFilmeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem4;
@@ -782,8 +782,8 @@ namespace WSN24_EduardoMoreno_M3
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridViewFilme;
-        private System.Windows.Forms.Button btnSearchLocal;
-        private System.Windows.Forms.TextBox txtSearchFilme;
+        private System.Windows.Forms.DataGridView dgSearchMovie;
+        private System.Windows.Forms.Button btnSearchMovie;
+        private System.Windows.Forms.TextBox txtSearchMovie;
     }
 }

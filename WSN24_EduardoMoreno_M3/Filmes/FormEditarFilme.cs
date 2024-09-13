@@ -17,15 +17,37 @@ namespace WSN24_EduardoMoreno_M3
         public FormEditarFilme()
         {
             InitializeComponent();
-            ShowDataOnGridView();
         }
 
         #region Métodos
 
-        private void FormEditaFilme_Load(object sender, EventArgs e)
+        private void FormEditarFilme_Load(object sender, EventArgs e)
         {
-            LoadTypesMovies();
-            ShowDataOnGridView();
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Editar o Filme.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return;
+            }
+            else
+            {
+                LoadTypesMovies();
+                ShowDataOnGridView();
+            }
         }
 
         private void ShowDataOnGridView()
