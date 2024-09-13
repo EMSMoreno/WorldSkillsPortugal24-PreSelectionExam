@@ -25,8 +25,131 @@ namespace WSN24_EduardoMoreno_M3
 
         private void FormRegistoLocal_Load(object sender, EventArgs e)
         {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            {
+                HideEditingControls(); // Oculta campos e mostra labels de permissão
+                ShowPermissionLabel();
+            }
+            else if (role.ToLower() == "admin")
+            {
+                ShowAllControls(); // Admin pode ver e editar tudo
+            }
+            else if (role.ToLower() == "coordenador")
+            {
+                ShowAllControls(); // Coordenador pode ver tudo mas não pode editar
+                DisableEditingControls();
+            }
+            else
+            {
+                ShowViewOnlyControls(); // Qualquer outro role só pode visualizar
+            }
+
             ShowDataOnGridView();
             GenerateNewLocalID();
+        }
+
+        private void HideEditingControls()
+        {
+            txtIDLocal.Visible = false;
+            txtDescription.Visible = false;
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+            txtSearchLocal.Enabled = true;
+            btnSearchLocal.Enabled = true;
+        }
+
+        private void ShowPermissionLabel()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label && control.ForeColor == System.Drawing.Color.Red)
+                {
+                    this.Controls.Remove(control);
+                }
+            }
+
+            Label lblPermission1 = new Label
+            {
+                Text = "Não tens permissões para veres os IDs dos Locais.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(198, 235)
+            };
+            this.Controls.Add(lblPermission1);
+
+            Label lblPermission2 = new Label
+            {
+                Text = "Não tens permissões para veres as Descrições dos Locais.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(198, 294)
+            };
+            this.Controls.Add(lblPermission2);
+
+        }
+
+        private void ShowAllControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = true;
+                control.Enabled = true;
+            }
+
+            txtIDLocal.Visible = true;
+            txtDescription.Visible = true;
+            btnSave.Visible = true;
+            btnCancel.Visible = true;
+            txtSearchLocal.Enabled = true;
+            btnSearchLocal.Enabled = true;
+        }
+
+        private void DisableEditingControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox && control != txtSearchLocal)
+                {
+                    control.Enabled = false;
+                }
+                else if (control is ComboBox || control == btnClose)
+                {
+                    control.Enabled = true;
+                }
+                else if (control is Button && control != btnSearchLocal)
+                {
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowViewOnlyControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control == txtSearchLocal || control == btnSearchLocal || control is DataGridView)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is ComboBox)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control == btnClose)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is TextBox || control is Button)
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
+                }
+            }
         }
 
         private void GenerateNewLocalID()

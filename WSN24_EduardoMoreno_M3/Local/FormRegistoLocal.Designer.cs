@@ -73,9 +73,9 @@
             this.lblMID = new System.Windows.Forms.Label();
             this.lblDescricaoFilme = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.btnCancelarOperacao = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.Close = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dgViewLocals = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -453,17 +453,17 @@
             this.txtDescription.TabIndex = 50;
             this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnCancelarOperacao
+            // btnCancel
             // 
-            this.btnCancelarOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelarOperacao.Location = new System.Drawing.Point(168, 430);
-            this.btnCancelarOperacao.Name = "btnCancelarOperacao";
-            this.btnCancelarOperacao.Size = new System.Drawing.Size(336, 34);
-            this.btnCancelarOperacao.TabIndex = 58;
-            this.btnCancelarOperacao.Text = "Cancelar Operação";
-            this.btnCancelarOperacao.UseVisualStyleBackColor = true;
-            this.btnCancelarOperacao.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(168, 430);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(336, 34);
+            this.btnCancel.TabIndex = 58;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -479,17 +479,17 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Close
+            // btnClose
             // 
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(950, 12);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(75, 47);
-            this.Close.TabIndex = 59;
-            this.Close.Text = "Fechar Janela";
-            this.Close.UseVisualStyleBackColor = true;
-            this.Close.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(950, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 47);
+            this.btnClose.TabIndex = 59;
+            this.btnClose.Text = "Fechar Janela";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label7
             // 
@@ -590,8 +590,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgViewLocals);
-            this.Controls.Add(this.Close);
-            this.Controls.Add(this.btnCancelarOperacao);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtIDLocal);
             this.Controls.Add(this.lblMID);
@@ -666,9 +666,9 @@
         private System.Windows.Forms.Label lblMID;
         private System.Windows.Forms.Label lblDescricaoFilme;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Button btnCancelarOperacao;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgViewLocals;
         private System.Windows.Forms.Panel panel2;

@@ -13,14 +13,36 @@ namespace WSN24_EduardoMoreno_M3.Local
         public FormApagarLocal()
         {
             InitializeComponent();
-            LoadLocals();
         }
 
         #region Métodos
 
         private void FormApagarLocal_Load(object sender, EventArgs e)
         {
-            LoadLocals();
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Apagar o Local.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return;
+            }
+            else
+            {
+                LoadLocals();
+            }
         }
 
         private void LoadLocals()
