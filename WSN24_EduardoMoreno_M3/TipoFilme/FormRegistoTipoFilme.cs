@@ -19,8 +19,108 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
 
         private void FormRegistoTipoFilme_Load(object sender, EventArgs e)
         {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            {
+                ShowViewOnlyControls(); // Mostra apenas elementos de visualização, sem esconder txtSearchTipoFilme, btnSearchTipoFilme e o DataGridView
+                ShowPermissionLabel(); // Mostra a label de falta de permissões
+            }
+            else if (role.ToLower() == "admin")
+            {
+                ShowAllControls(); // Admin pode ver e editar tudo
+            }
+            else if (role.ToLower() == "coordenador")
+            {
+                ShowAllControls(); // Coordenador pode ver tudo
+                DisableEditingControls(); // Mas não pode editar
+            }
+            else
+            {
+                ShowViewOnlyControls(); // Qualquer outro role não reconhecido só pode visualizar
+            }
+
             GenerateNewID();
             LoadTiposFilme();
+        }
+
+        private void ShowAllControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = true;
+                control.Enabled = true;
+            }
+
+            cbTiposFilme.Enabled = true;
+            btnClose.Enabled = true;
+        }
+
+        private void DisableEditingControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox && control != txtSearchTipoFilme)
+                {
+                    control.Enabled = false;
+                }
+                else if (control is ComboBox || control == btnClose)
+                {
+                    control.Enabled = true;
+                }
+                else if (control is Button && control != btnSearchTipoFilme)
+                {
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowViewOnlyControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control == txtSearchTipoFilme || control == btnSearchTipoFilme || control is DataGridView)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is ComboBox)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control == btnClose)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is TextBox || control is Button)
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowPermissionLabel()
+        {
+            // Label c/ falta de permissões
+            Label lblPermission1 = new Label
+            {
+                Text = "Não tens permissões para veres os IDs dos Tipos de Filme.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(196, 230)
+            };
+            this.Controls.Add(lblPermission1);
+            Label lblPermission2 = new Label
+            {
+                Text = "Não tens permissões para fazeres o registo dos Tipos de Filme.\nPede ao teu Admin de Sistema para adicionar por ti.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(196, 291)
+            };
+            this.Controls.Add(lblPermission2);
         }
 
         private void GenerateNewID()

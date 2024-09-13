@@ -100,20 +100,22 @@ namespace WSN24_EduardoMoreno_M3
         {
             string role = UserSession.Role;
 
-            if (role == "admin")
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
             {
-                // Admin pode ver tudo
-                ShowAllControls();
+                ShowViewOnlyControls(); // Mostra só os DataGridViews
             }
-            else if (role == "coordenador")
+            else if (role.ToLower() == "admin")
             {
-                // Coordenador pode ver tudo, mas não alterar
-                ShowAllControls();
+                ShowAllControls(); // Admin pode ver e editar tudo
             }
-            else if (role == "espetador")
+            else if (role.ToLower() == "coordenador")
             {
-                // Espetador só pode visualizar dados
-                ShowViewOnlyControls();
+                ShowAllControls(); // Coordenador pode ver tudo
+                DisableEditingControls(); // Mas não pode editar
+            }
+            else
+            {
+                ShowViewOnlyControls(); // Qualquer outro role não reconhecido só pode visualizar
             }
         }
 
@@ -141,7 +143,6 @@ namespace WSN24_EduardoMoreno_M3
 
         private void ShowViewOnlyControls()
         {
-            // Mostra apenas DataGridViews
             foreach (Control control in this.Controls)
             {
                 if (control is DataGridView)
@@ -149,14 +150,9 @@ namespace WSN24_EduardoMoreno_M3
                     control.Visible = true;
                     control.Enabled = true;
                 }
-                else if (control is TextBox || control is ComboBox || control is Button)
-                {
-                    control.Visible = false;
-                    control.Enabled = false;
-                }
                 else
                 {
-                    control.Visible = false;
+                    control.Visible = false; // Esconde qualquer outra coisa que não seja DataGridView
                     control.Enabled = false;
                 }
             }
