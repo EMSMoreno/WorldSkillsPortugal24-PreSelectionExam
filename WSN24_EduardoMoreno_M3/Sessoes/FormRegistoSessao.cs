@@ -17,18 +17,193 @@ namespace WSN24_EduardoMoreno_M3
         public FormRegistoSessao()
         {
             InitializeComponent();
-            InitializeForm();
         }
 
         #region Métodos
 
-        private void InitializeForm()
+        private void FormRegistoSessão_Load(object sender, EventArgs e)
         {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            {
+                HideEditingControls(); // Oculta campos e mostra labels de permissão
+                ShowPermissionLabel();
+            }
+            else if (role.ToLower() == "admin")
+            {
+                ShowAllControls(); // Admin pode ver e editar tudo
+            }
+            else if (role.ToLower() == "coordenador")
+            {
+                ShowAllControls(); // Coordenador pode ver tudo mas não pode editar
+                DisableEditingControls();
+            }
+            else
+            {
+                ShowViewOnlyControls(); // Qualquer outro role só pode visualizar
+            }
+
             LoadSalas();
             LoadFilmes();
             LoadCinemas();
             ShowDataOnGridView();
             GenerateNewID();
+        }
+
+        private void HideEditingControls()
+        {
+            cbCinema.Visible = false;
+            cbCinema.Enabled = false;
+            cbFilme.Visible = false;
+            cbFilme.Enabled = false;
+            cbSala.Visible = false;
+            cbSala.Enabled = false;
+            dtpData.Visible = false;
+            dtpData.Enabled = false;
+            txtIDSessao.Visible = false;
+            txtIDSessao.Enabled = false;
+            btnRegistoTipoFilme.Visible = false;
+            btnCancel.Visible = false;
+
+            //Extra
+            txtHour.Visible = false;
+            txtHour.Enabled = false;
+            chkActive.Visible = false;
+            chkActive.Enabled = false;
+        }
+
+        private void ShowPermissionLabel()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label && control.ForeColor == System.Drawing.Color.Red)
+                {
+                    this.Controls.Remove(control);
+                }
+            }
+
+            Label lblPermission1 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres os IDs dos Cinemas associados às Sessões.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(187, 216)
+            };
+            this.Controls.Add(lblPermission1);
+
+            Label lblPermission2 = new Label
+            {
+                Text = "Não tens permissões para \n " +
+                "veres os IDs das Sessões.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(187, 272)
+            };
+            this.Controls.Add(lblPermission2);
+
+            Label lblPermission3 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres os IDs dos Filmes.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(354, 272)
+            };
+            this.Controls.Add(lblPermission3);
+
+            Label lblPermission4 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres as Datas das Sessões.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(354, 320)
+            };
+            this.Controls.Add(lblPermission4);
+
+            Label lblPermission5 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres os IDs das Salas.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(186, 318)
+            };
+            this.Controls.Add(lblPermission5);
+
+            Label lblPermission6 = new Label
+            {
+                Text = "Não tens permissões para \n" +
+                "veres as Horas das Sessões.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(187, 365)
+            };
+            this.Controls.Add(lblPermission6);
+        }
+
+        private void ShowAllControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = true;
+                control.Enabled = true;
+            }
+
+            cbCinema.Enabled = true;
+            cbFilme.Enabled = true;
+            cbSala.Enabled = true;
+            dtpData.Enabled = true;
+            txtIDSessao.Enabled = true;
+            btnClose.Enabled = true;
+        }
+
+        private void DisableEditingControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox && control != txtSearchSessões)
+                {
+                    control.Enabled = false;
+                }
+                else if (control is ComboBox || control == btnClose)
+                {
+                    control.Enabled = true;
+                }
+                else if (control is Button && control != btnSearchSessões)
+                {
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowViewOnlyControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control == txtSearchSessões || control == btnSearchSessões || control is DataGridView)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is ComboBox)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control == btnClose)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is TextBox || control is Button)
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
+                }
+            }
         }
 
         private void GenerateNewID()

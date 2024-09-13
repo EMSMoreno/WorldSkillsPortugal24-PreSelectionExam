@@ -78,7 +78,7 @@
             this.txtHour = new System.Windows.Forms.TextBox();
             this.lblHora = new System.Windows.Forms.Label();
             this.btnRegistoTipoFilme = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgViewSessions = new System.Windows.Forms.DataGridView();
@@ -502,18 +502,18 @@
             this.btnRegistoTipoFilme.UseVisualStyleBackColor = false;
             this.btnRegistoTipoFilme.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(166, 451);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(353, 35);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Cancelar Operação";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(166, 451);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(353, 35);
+            this.btnCancel.TabIndex = 68;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnClose
             // 
@@ -694,7 +694,7 @@
             this.Controls.Add(this.dgViewSessions);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegistoTipoFilme);
             this.Controls.Add(this.txtHour);
             this.Controls.Add(this.lblHora);
@@ -710,6 +710,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegistoSessao";
             this.Text = "FormRegistoSessao";
+            this.Load += new System.EventHandler(this.FormRegistoSessão_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -771,7 +772,7 @@
         private System.Windows.Forms.TextBox txtHour;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Button btnRegistoTipoFilme;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgViewSessions;

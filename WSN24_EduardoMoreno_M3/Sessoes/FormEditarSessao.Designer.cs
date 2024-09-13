@@ -563,6 +563,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEditarSessao";
             this.Text = "FormEditarSessao";
+            this.Load += new System.EventHandler(this.FormEditarSessao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgViewSessions)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
