@@ -1,4 +1,6 @@
-# WorldSkills Pre-Selection Test: Skillian Cinemas
+# WorldSkills Portugal 2024 - Category 09: IT Software Solutions for Business
+
+Repository used for Pre-Selection Test (theme: Skilian Cinemas).
 
 ![alt text](https://worldskillsportugal.iefp.pt/wp-content/uploads/2024/04/SP2024_1920x1080-1.jpg)
 
@@ -40,6 +42,9 @@ The main technologies and tools used in the development of this project are:
 ## Features
 
 - **Login System and Dark Mode**
+- **Hashed Password**
+- **Roles (Admin, Coordenator and User)**
+- **Search Bar**
 - **Movie Registration**
 - **Types of Movies Associated w/ Movies**
 - **Session Management**
@@ -50,9 +55,6 @@ The main technologies and tools used in the development of this project are:
 This project was developed for the WorldSkills Portugal Pre-Selection Test, where it achieved 1st place and took place in May 2024.
 
 The theme of the test was Skillian Cinemas, and the objective was to create a CRUD for different entities, not only at the frontend level (client-side and UX/UI) but also at the backend level (server-side, with respective databases created with SQL Server), thus creating a robust full-stack application.
-
-# Contributions
-Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 # Contact Me
 For more information, please contact me via email: emsmoreno@gmail.com
