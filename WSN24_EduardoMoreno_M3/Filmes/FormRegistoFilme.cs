@@ -28,23 +28,23 @@ namespace WSN24_EduardoMoreno_M3
         {
             string role = UserSession.Role;
 
-            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            if (string.IsNullOrEmpty(role))
             {
-                HideEditingControls(); // Oculta campos e mostra labels de permissão
+                HideEditingControls();
                 ShowPermissionLabel();
             }
             else if (role.ToLower() == "admin")
             {
-                ShowAllControls(); // Admin pode ver e editar tudo
+                ShowAllControls();
             }
             else if (role.ToLower() == "coordenador")
             {
-                ShowAllControls(); // Coordenador pode ver tudo mas não pode editar
+                ShowAllControls();
                 DisableEditingControls();
             }
             else
             {
-                ShowViewOnlyControls(); // Qualquer outro role só pode visualizar
+                ShowViewOnlyControls();
             }
 
             ShowDataOnGridView();
@@ -58,10 +58,9 @@ namespace WSN24_EduardoMoreno_M3
             txtName.Visible = false;
             txtDescription.Visible = false;
             txtYear.Visible = false;
-            cbTipoFilme.Enabled = false;
+            cbTipoFilme.Visible = false;
             btnCreateMovie.Visible = false;
             btnCancel.Visible = false;
-            cbTipoFilme.Visible = false;
             btnClose.Visible = true;
         }
 
@@ -138,7 +137,7 @@ namespace WSN24_EduardoMoreno_M3
             txtName.Visible = true;
             txtDescription.Visible = true;
             txtYear.Visible = true;
-            cbTipoFilme.Enabled = true;
+            cbTipoFilme.Visible = true;
             btnCreateMovie.Visible = true;
             btnCancel.Visible = true;
             dgViewMovies.Visible = true;

@@ -21,23 +21,23 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
         {
             string role = UserSession.Role;
 
-            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            if (string.IsNullOrEmpty(role))
             {
-                ShowViewOnlyControls(); // Mostra apenas elementos de visualização, sem esconder txtSearchTipoFilme, btnSearchTipoFilme e o DataGridView
+                ShowViewOnlyControls();
                 ShowPermissionLabel();
             }
             else if (role.ToLower() == "admin")
             {
-                ShowAllControls(); // Admin pode ver e editar tudo
+                ShowAllControls();
             }
             else if (role.ToLower() == "coordenador")
             {
-                ShowAllControls(); // Coordenador pode ver tudo mas não pode editar
+                ShowAllControls();
                 DisableEditingControls();
             }
             else
             {
-                ShowViewOnlyControls(); // Qualquer outro role só pode visualizar
+                ShowViewOnlyControls();
             }
 
             GenerateNewID();
@@ -283,6 +283,7 @@ namespace WSN24_EduardoMoreno_M3.TipoFilme
             }
 
             SearchTiposFilme(searchTerm);
+            txtSearchTipoFilme.Clear();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

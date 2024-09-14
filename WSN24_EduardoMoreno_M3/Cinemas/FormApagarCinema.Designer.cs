@@ -72,7 +72,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblApagarTipoFilme = new System.Windows.Forms.Label();
             this.cbCinemas = new System.Windows.Forms.ComboBox();
-            this.btnCreateMovie = new System.Windows.Forms.Button();
+            this.btnDeleteMovie = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -435,19 +435,19 @@
             this.cbCinemas.Size = new System.Drawing.Size(231, 21);
             this.cbCinemas.TabIndex = 79;
             // 
-            // btnCreateMovie
+            // btnDeleteMovie
             // 
-            this.btnCreateMovie.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCreateMovie.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btnCreateMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCreateMovie.Location = new System.Drawing.Point(329, 286);
-            this.btnCreateMovie.Name = "btnCreateMovie";
-            this.btnCreateMovie.Size = new System.Drawing.Size(231, 34);
-            this.btnCreateMovie.TabIndex = 78;
-            this.btnCreateMovie.Text = "Eliminar Cinema";
-            this.btnCreateMovie.UseVisualStyleBackColor = false;
-            this.btnCreateMovie.Click += new System.EventHandler(this.btnDeleteCinema_Click);
+            this.btnDeleteMovie.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDeleteMovie.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnDeleteMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDeleteMovie.Location = new System.Drawing.Point(329, 286);
+            this.btnDeleteMovie.Name = "btnDeleteMovie";
+            this.btnDeleteMovie.Size = new System.Drawing.Size(231, 34);
+            this.btnDeleteMovie.TabIndex = 78;
+            this.btnDeleteMovie.Text = "Eliminar Cinema";
+            this.btnDeleteMovie.UseVisualStyleBackColor = false;
+            this.btnDeleteMovie.Click += new System.EventHandler(this.btnDeleteCinema_Click);
             // 
             // label6
             // 
@@ -491,7 +491,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblApagarTipoFilme);
             this.Controls.Add(this.cbCinemas);
-            this.Controls.Add(this.btnCreateMovie);
+            this.Controls.Add(this.btnDeleteMovie);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
@@ -559,7 +559,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblApagarTipoFilme;
         private System.Windows.Forms.ComboBox cbCinemas;
-        private System.Windows.Forms.Button btnCreateMovie;
+        private System.Windows.Forms.Button btnDeleteMovie;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCancel;

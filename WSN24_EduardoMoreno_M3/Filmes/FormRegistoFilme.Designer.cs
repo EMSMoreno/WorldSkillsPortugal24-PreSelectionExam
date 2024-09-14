@@ -602,9 +602,9 @@ namespace WSN24_EduardoMoreno_M3
             // cbTipoFilme
             // 
             this.cbTipoFilme.FormattingEnabled = true;
-            this.cbTipoFilme.Location = new System.Drawing.Point(318, 381);
+            this.cbTipoFilme.Location = new System.Drawing.Point(338, 381);
             this.cbTipoFilme.Name = "cbTipoFilme";
-            this.cbTipoFilme.Size = new System.Drawing.Size(143, 21);
+            this.cbTipoFilme.Size = new System.Drawing.Size(123, 21);
             this.cbTipoFilme.TabIndex = 48;
             // 
             // filmeBindingSource
