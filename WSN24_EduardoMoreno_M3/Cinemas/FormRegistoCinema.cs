@@ -17,16 +17,150 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         public FormRegistoCinema()
         {
             InitializeComponent();
-            LoadLocals();
-            LoadCinemas();
         }
 
         #region Métodos
 
         private void FormRegistoCinema_Load(object sender, EventArgs e)
         {
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role)) // Se o utilizador não tiver role (NULL ou "")
+            {
+                HideEditingControls(); // Oculta campos e mostra labels de permissão
+                ShowPermissionLabel();
+            }
+            else if (role.ToLower() == "admin")
+            {
+                ShowAllControls(); // Admin pode ver e editar tudo
+            }
+            else if (role.ToLower() == "coordenador")
+            {
+                ShowAllControls(); // Coordenador pode ver tudo mas não pode editar
+                DisableEditingControls();
+            }
+            else
+            {
+                ShowViewOnlyControls(); // Qualquer outro role só pode visualizar
+            }
+
             LoadLocals();
             LoadCinemas();
+        }
+
+        private void HideEditingControls()
+        {
+            txtIDCinema.Visible = false;
+            txtNameMovie.Visible = false;
+            cbLocal.Visible = false;
+            btnCreateMovie.Visible = false;
+            btnCancel.Visible = false;
+            btnClose.Visible = true;
+        }
+
+        private void ShowPermissionLabel()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Label && control.ForeColor == System.Drawing.Color.Red)
+                {
+                    this.Controls.Remove(control);
+                }
+            }
+
+            Label lblPermission1 = new Label
+            {
+                Text = "Não tens permissões para veres os IDs dos Cinemas.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(180, 249)
+            };
+            this.Controls.Add(lblPermission1);
+
+            Label lblPermission2 = new Label
+            {
+                Text = "Não tens permissões para veres os Nomes dos Cinemas.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(180, 297)
+            };
+            this.Controls.Add(lblPermission2);
+
+            Label lblPermission3 = new Label
+            {
+                Text = "Não tens permissões para veres os Locais associados aos Cinemas.",
+                AutoSize = true,
+                ForeColor = System.Drawing.Color.Red,
+                Location = new System.Drawing.Point(180, 348)
+            };
+            this.Controls.Add(lblPermission3);
+
+        }
+
+        private void ShowAllControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Visible = true;
+                control.Enabled = true;
+            }
+
+            txtIDCinema.Visible = true;
+            txtNameMovie.Visible = true;
+            cbLocal.Visible = true;
+            btnCreateMovie.Visible = true;
+            btnCancel.Visible = true;
+            btnClose.Visible = true;
+            dgViewCinemas.Visible = true;
+            dgSearchCinema.Visible = true;
+            txtSearchCinema.Visible = true;
+            btnSearchCinema.Visible = true;
+        }
+
+        private void DisableEditingControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox && control != txtSearchCinema)
+                {
+                    control.Enabled = false;
+                }
+                else if (control is ComboBox || control == btnClose)
+                {
+                    control.Enabled = true;
+                }
+                else if (control is Button && control != btnSearchCinema)
+                {
+                    control.Enabled = false;
+                }
+            }
+        }
+
+        private void ShowViewOnlyControls()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control == txtSearchCinema || control == btnSearchCinema || control is DataGridView)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is ComboBox)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control == btnClose)
+                {
+                    control.Visible = true;
+                    control.Enabled = true;
+                }
+                else if (control is TextBox || control is Button)
+                {
+                    control.Visible = false;
+                    control.Enabled = false;
+                }
+            }
         }
 
         private void LoadLocals()
@@ -98,7 +232,7 @@ namespace WSN24_EduardoMoreno_M3.Cinema
 
         private void ClearAllData()
         {
-            txtName.Clear();
+            txtNameMovie.Clear();
             cbLocal.SelectedIndex = -1;
         }
 
@@ -122,7 +256,7 @@ namespace WSN24_EduardoMoreno_M3.Cinema
 
                     if (dt.Rows.Count > 0)
                     {
-                        dataGridViewCinema.DataSource = dt;
+                        dgSearchCinema.DataSource = dt;
                     }
                     else
                     {
@@ -142,13 +276,13 @@ namespace WSN24_EduardoMoreno_M3.Cinema
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || cbLocal.SelectedValue == null)
+            if (string.IsNullOrWhiteSpace(txtNameMovie.Text) || cbLocal.SelectedValue == null)
             {
                 MessageBox.Show("Preencha todos os campos antes de salvar.");
                 return;
             }
 
-            if (CinemaExists(txtName.Text, (int)cbLocal.SelectedValue))
+            if (CinemaExists(txtNameMovie.Text, (int)cbLocal.SelectedValue))
             {
                 MessageBox.Show("Esse cinema já está registrado no local selecionado.");
                 return;
@@ -161,7 +295,7 @@ namespace WSN24_EduardoMoreno_M3.Cinema
                     con.Open();
                     cmd = new SqlCommand("INSERT INTO Cinema (nome, id_local) VALUES (@nome, @id_local)", con);
 
-                    cmd.Parameters.AddWithValue("@nome", txtName.Text);
+                    cmd.Parameters.AddWithValue("@nome", txtNameMovie.Text);
                     cmd.Parameters.AddWithValue("@id_local", cbLocal.SelectedValue);
 
                     cmd.ExecuteNonQuery();

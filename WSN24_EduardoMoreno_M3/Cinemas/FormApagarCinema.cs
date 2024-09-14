@@ -13,14 +13,36 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         public FormApagarCinema()
         {
             InitializeComponent();
-            LoadCinemas();
         }
 
         #region Métodos
 
         private void FormApagarCinema_Load(object sender, EventArgs e)
         {
-            LoadCinemas();
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Apagar o Cinema.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return;
+            }
+            else
+            {
+                LoadCinemas();
+            }
         }
 
         private void LoadCinemas()
@@ -87,6 +109,11 @@ namespace WSN24_EduardoMoreno_M3.Cinema
             }
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            cbCinemas.Text = string.Empty;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -94,9 +121,5 @@ namespace WSN24_EduardoMoreno_M3.Cinema
 
         #endregion
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            cbCinemas.Text = string.Empty;
-        }
     }
 }

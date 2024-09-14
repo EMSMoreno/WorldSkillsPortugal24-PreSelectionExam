@@ -17,14 +17,36 @@ namespace WSN24_EduardoMoreno_M3.Cinema
         public FormEditarCinema()
         {
             InitializeComponent();
-            LoadCinemas();
         }
 
         #region Métodos
 
         private void FormEditarCinema_Load(object sender, EventArgs e)
         {
-            LoadCinemas();
+            string role = UserSession.Role;
+
+            if (string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Não tens permissão para aceder ao Form de Editar o Cinema.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is FormPrincipal)
+                    {
+                        form.BringToFront();
+                        return;
+                    }
+                }
+
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
+
+                return;
+            }
+            else
+            {
+                LoadCinemas();
+            }
         }
 
         private void LoadCinemas()

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistoCinema));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,23 +70,23 @@
             this.apagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.Close = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dgViewCinemas = new System.Windows.Forms.DataGridView();
-            this.btnCancelarOperacao = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnCreateMovie = new System.Windows.Forms.Button();
             this.txtIDCinema = new System.Windows.Forms.TextBox();
             this.lblMID = new System.Windows.Forms.Label();
             this.lblNomeCinema = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNameMovie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbLocal = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridViewCinema = new System.Windows.Forms.DataGridView();
-            this.btnSearchLocal = new System.Windows.Forms.Button();
+            this.dgSearchCinema = new System.Windows.Forms.DataGridView();
+            this.btnSearchCinema = new System.Windows.Forms.Button();
             this.txtSearchCinema = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,7 +94,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewCinemas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCinema)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearchCinema)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -419,17 +419,17 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "@2024 WorldSkills Portugal Pre-Selection Exam -  Portugal, May 2024";
             // 
-            // Close
+            // btnClose
             // 
-            this.Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Close.Location = new System.Drawing.Point(950, 12);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(75, 47);
-            this.Close.TabIndex = 64;
-            this.Close.Text = "Fechar Janela";
-            this.Close.UseVisualStyleBackColor = true;
-            this.Close.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(950, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 47);
+            this.btnClose.TabIndex = 64;
+            this.btnClose.Text = "Fechar Janela";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label7
             // 
@@ -443,31 +443,31 @@
             // 
             // dgViewCinemas
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgViewCinemas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgViewCinemas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgViewCinemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewCinemas.Location = new System.Drawing.Point(509, 201);
             this.dgViewCinemas.Name = "dgViewCinemas";
             this.dgViewCinemas.Size = new System.Drawing.Size(516, 281);
             this.dgViewCinemas.TabIndex = 73;
             // 
-            // btnCancelarOperacao
+            // btnCancel
             // 
-            this.btnCancelarOperacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnCancelarOperacao.Location = new System.Drawing.Point(168, 448);
-            this.btnCancelarOperacao.Name = "btnCancelarOperacao";
-            this.btnCancelarOperacao.Size = new System.Drawing.Size(331, 34);
-            this.btnCancelarOperacao.TabIndex = 72;
-            this.btnCancelarOperacao.Text = "Cancelar Operação";
-            this.btnCancelarOperacao.UseVisualStyleBackColor = true;
-            this.btnCancelarOperacao.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(168, 448);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(331, 34);
+            this.btnCancel.TabIndex = 72;
+            this.btnCancel.Text = "Cancelar Operação";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCreateMovie
             // 
@@ -510,13 +510,13 @@
             this.lblNomeCinema.TabIndex = 68;
             this.lblNomeCinema.Text = "Nome Cinema:";
             // 
-            // txtName
+            // txtNameMovie
             // 
-            this.txtName.Location = new System.Drawing.Point(187, 297);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(288, 20);
-            this.txtName.TabIndex = 67;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNameMovie.Location = new System.Drawing.Point(187, 297);
+            this.txtNameMovie.Name = "txtNameMovie";
+            this.txtNameMovie.Size = new System.Drawing.Size(288, 20);
+            this.txtNameMovie.TabIndex = 67;
+            this.txtNameMovie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -575,26 +575,26 @@
             this.label9.TabIndex = 95;
             this.label9.Text = "Procurar Cinemas";
             // 
-            // dataGridViewCinema
+            // dgSearchCinema
             // 
-            this.dataGridViewCinema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCinema.Location = new System.Drawing.Point(509, 511);
-            this.dataGridViewCinema.Name = "dataGridViewCinema";
-            this.dataGridViewCinema.Size = new System.Drawing.Size(516, 105);
-            this.dataGridViewCinema.TabIndex = 94;
+            this.dgSearchCinema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSearchCinema.Location = new System.Drawing.Point(509, 511);
+            this.dgSearchCinema.Name = "dgSearchCinema";
+            this.dgSearchCinema.Size = new System.Drawing.Size(516, 105);
+            this.dgSearchCinema.TabIndex = 94;
             // 
-            // btnSearchLocal
+            // btnSearchCinema
             // 
-            this.btnSearchLocal.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.btnSearchLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchLocal.Location = new System.Drawing.Point(403, 552);
-            this.btnSearchLocal.Name = "btnSearchLocal";
-            this.btnSearchLocal.Size = new System.Drawing.Size(96, 47);
-            this.btnSearchLocal.TabIndex = 93;
-            this.btnSearchLocal.Text = "Procurar Cinema";
-            this.btnSearchLocal.UseVisualStyleBackColor = true;
-            this.btnSearchLocal.Click += new System.EventHandler(this.btnSearchLocal_Click);
+            this.btnSearchCinema.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.btnSearchCinema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCinema.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCinema.Location = new System.Drawing.Point(403, 552);
+            this.btnSearchCinema.Name = "btnSearchCinema";
+            this.btnSearchCinema.Size = new System.Drawing.Size(96, 47);
+            this.btnSearchCinema.TabIndex = 93;
+            this.btnSearchCinema.Text = "Procurar Cinema";
+            this.btnSearchCinema.UseVisualStyleBackColor = true;
+            this.btnSearchCinema.Click += new System.EventHandler(this.btnSearchLocal_Click);
             // 
             // txtSearchCinema
             // 
@@ -610,29 +610,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 656);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dataGridViewCinema);
-            this.Controls.Add(this.btnSearchLocal);
+            this.Controls.Add(this.dgSearchCinema);
+            this.Controls.Add(this.btnSearchCinema);
             this.Controls.Add(this.txtSearchCinema);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbLocal);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgViewCinemas);
-            this.Controls.Add(this.btnCancelarOperacao);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCreateMovie);
             this.Controls.Add(this.txtIDCinema);
             this.Controls.Add(this.lblMID);
             this.Controls.Add(this.lblNomeCinema);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtNameMovie);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Close);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegistoCinema";
             this.Text = "FormRegistoCinema";
+            this.Load += new System.EventHandler(this.FormRegistoCinema_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -642,7 +643,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewCinemas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCinema)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearchCinema)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,23 +691,23 @@
         private System.Windows.Forms.ToolStripMenuItem apagarToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgViewCinemas;
-        private System.Windows.Forms.Button btnCancelarOperacao;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnCreateMovie;
         private System.Windows.Forms.TextBox txtIDCinema;
         private System.Windows.Forms.Label lblMID;
         private System.Windows.Forms.Label lblNomeCinema;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtNameMovie;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbLocal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridViewCinema;
-        private System.Windows.Forms.Button btnSearchLocal;
+        private System.Windows.Forms.DataGridView dgSearchCinema;
+        private System.Windows.Forms.Button btnSearchCinema;
         private System.Windows.Forms.TextBox txtSearchCinema;
     }
 }
