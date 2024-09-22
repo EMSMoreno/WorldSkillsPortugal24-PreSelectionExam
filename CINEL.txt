@@ -1,0 +1,13 @@
+Outlook
+eduardo.sousa.moreno@formandos.cinel.pt
+Rov24125
+
+GPT
+eduardo.sousa.moreno@formandos.cinel.pt
+Rov24125_!Bardock004#
+
+SQL - Generate Scripts - script file
+Estrutura - schema only
+Estrutura e Dados - Data only
+
+Fazer Search Bar / Roles /Função Hash Password / CRUDS / Login
